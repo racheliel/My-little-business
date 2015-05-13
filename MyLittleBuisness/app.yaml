@@ -17,9 +17,6 @@ handlers:
   
 - url: /home
   script: web.pages.home.app
-
-- url: /signUpBusiness
-  script: web.pages.signUpBusiness.app 
   
 - url: /sign
   script: web.pages.sign.app
@@ -30,17 +27,11 @@ handlers:
 - url: /editMyPage
   script: web.pages.editMyPage.app
   
-- url: /businessHome
-  script: web.pages.businessHome.app
-  
 - url: /myBusiness
   script: web.pages.myBusiness.app
 
 - url: /signUp
   script: web.pages.signUp.app
-  
-- url: /signUpFairOrganizer
-  script: web.pages.signUpFairOrganizer.app
 
 - url: /aboutUs
   script: web.pages.aboutUs.app
