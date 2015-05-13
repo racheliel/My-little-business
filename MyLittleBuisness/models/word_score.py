@@ -8,10 +8,8 @@ from word import Word
 MAX_COUNT = 1000000
 
 class WordScore(ndb.Model):
-	word = ndb.KeyProperty(kind=Word)
 	user = ndb.KeyProperty(kind=User)
-	attempts = ndb.IntegerProperty(default=0)
-	solved = ndb.BooleanProperty(default=False)
+	password = ndb.stringProperty(kind=password)
 	
 	@staticmethod
 	def getScore(user, word):
