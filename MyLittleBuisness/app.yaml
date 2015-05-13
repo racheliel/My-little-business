@@ -13,14 +13,19 @@ handlers:
   static_dir: web/static
 
 - url: /
-  script: web.pages.sign.app
+  script: web.pages.home.app
   
-  
+- url: /home
+  script: web.pages.home.app
+
 - url: /signUpBusiness
   script: web.pages.signUpBusiness.app 
   
 - url: /sign
   script: web.pages.sign.app
+  
+- url: /homeUserIn
+  script: web.pages.homeUserIn.app
   
 - url: /editMyPage
   script: web.pages.editMyPage.app
@@ -31,15 +36,12 @@ handlers:
 - url: /myBusiness
   script: web.pages.myBusiness.app
 
-- url: /signUpCustomer
-  script: web.pages.signUpCustomer.app
+- url: /signUp
+  script: web.pages.signUp.app
   
 - url: /signUpFairOrganizer
   script: web.pages.signUpFairOrganizer.app
- 
-- url: /home
-  script: web.pages.home.app
-  
+
 - url: /aboutUs
   script: web.pages.aboutUs.app
 

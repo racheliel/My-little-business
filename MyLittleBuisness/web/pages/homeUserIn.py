@@ -15,10 +15,9 @@ class IndexHandler(webapp2.RequestHandler):
 			template_params['user'] = user.email
 #		html = self.redirect('/home')
 		
-		html = template.render("web/templates/home.html", template_params)
+		html = template.render("web/templates/homeUserIn.html", template_params)
 		self.response.write(html)
 
 app = webapp2.WSGIApplication([
-	('/', IndexHandler),
-	('/home', IndexHandler)
+	('/homeUserIn', IndexHandler)
 ], debug=True)

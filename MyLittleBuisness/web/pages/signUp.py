@@ -15,9 +15,9 @@ class IndexHandler(webapp2.RequestHandler):
 #			template_params['user'] = user.email
 #			html = self.redirect('/business')
 	
-		html = template.render("web/templates/signUpCustomer.html", template_params)
+		html = template.render("web/templates/signUp.html", template_params)
 		self.response.write(html)
 
 app = webapp2.WSGIApplication([
-	('/signUpCustomer', IndexHandler)
+	('/signUp', IndexHandler)
 ], debug=True)
