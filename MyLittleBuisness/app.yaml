@@ -47,6 +47,9 @@ handlers:
   
 - url: /salesEvents
   script: web.pages.salesEvents.app
+
+- url: /salesEvents
+  script: web.pages.salesEventsReg.app
   
 - url: /Organizer1 
   script: web.pages.Organizer1.app
