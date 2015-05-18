@@ -10,7 +10,7 @@ class IndexHandler(webapp2.RequestHandler):
 		user = User.checkUser()
 		if not user:
 			template_params['loginUrl'] = User.loginUrl()
-			html = template.render("web/templates/sign.html", template_params)
+			html = template.render("web/templates/homeUserIn.html", template_params)
 		else:
 			template_params['logoutUrl'] = User.logoutUrl()
 			template_params['user'] = user.email
