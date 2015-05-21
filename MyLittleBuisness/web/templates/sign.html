@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="/static/css/styleLogin.css" type="text/css" media="screen">
 <link rel="stylesheet" href="/static/css/layout.css" type="text/css" media="screen">
-
+<script type="text/javascript" src="/static/js/index.js"></script>
 </head>
 <body id="page0">
 <!-- header -->
@@ -28,19 +28,11 @@
         <div class="row-padding">
           <div class="wrapper">
 		  <p>
-	<p>
-      <label for="login">Email:</label>
-      <input type="text" name="login" id="login" value="name@example.com">
-    </p>
+	 Login :<br>
+        <input type="text" placeholder="email@example.com" id="login_email"><br>
+        <input type="password" placeholder="password" id="login_password"><br>
+        <center><a href="homeUserIn"><button id="login">Login</button></a>
 
-    <p>
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" value="4815162342">
-    </p>
-
-    <p class="login-submit">
-      <a href="homeUserIn"><button type="submit" class="login-button">Login</button></a>
-    </p>
 
     <p class="forgot-password"><a href="home">Forgot your password?</a></p>
   </form>

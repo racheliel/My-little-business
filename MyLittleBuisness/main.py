@@ -1,25 +1,76 @@
-#!/usr/bin/env python
-#
-# Copyright 2007 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+from google.appengine.ext.webapp import template
 import webapp2
+import json
+from models.user import User
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('hanni')
+        user = None
+        if self.request.cookies.get('our_token'):   
+            user = User.checkToken(self.request.cookies.get('our_token'))
+
+        template_variables = {}
+        if user:
+            template_variables['user'] = user.email
+
+        html = template.render('web/templates/homeUserIn.html', template_variables)
+        self.response.write(html)
+
+class LoginHandler(webapp2.RequestHandler):
+    def get(self):
+        email = self.request.get('email')
+        password = self.request.get('password')
+        user = User.query(User.email == email).get()
+        if not user or not user.checkPassword(password):
+            self.error(403)
+            self.response.write('Wrong username or password')
+            return
+
+        self.response.set_cookie('our_token', str(user.key.id()))
+        self.response.write(json.dumps({'status':'OK'}))
+
+class RegisterHandler(webapp2.RequestHandler):
+    def get(self):
+        email = self.request.get('email')
+        password = self.request.get('password')
+        if not password:
+            self.error(403)
+            self.response.write('Empty password submitted')
+            return
+
+        user = User.query(User.email == email).get()
+        if user:
+            self.error(402)
+            self.response.write('Email taken')
+            return
+
+        user = User()
+        user.email = email
+        user.setPassword(password)
+        user.put()
+        self.response.set_cookie('our_token', str(user.key.id()))
+        self.response.write(json.dumps({'status':'OK'}))
+
+class LogoutHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.delete_cookie('our_token')
+        self.redirect('/')
+
+class PersonalHandler(webapp2.RequestHandler):
+    def get(self):
+        user = None
+        if self.request.cookies.get('our_token'):
+            user = User.checkToken(self.request.cookies.get('our_token'))
+
+        if not user:
+            self.redirect('/')
+
+        html = template.render('web/templates/homeUserIn.html', {})
+        self.response.write(html)
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/login', LoginHandler),
+    ('/register', RegisterHandler)
+ #   ('/logout', LogoutHandler),
 ], debug=True)

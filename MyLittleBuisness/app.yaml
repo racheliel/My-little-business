@@ -11,7 +11,10 @@ handlers:
   
 - url: /static
   static_dir: web/static
-
+  
+- url: .*
+  script: main.app
+  
 - url: /
   script: web.pages.home.app
   
