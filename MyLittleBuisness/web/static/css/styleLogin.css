@@ -245,21 +245,25 @@ fieldset label.infield {
     }
 	
 .row-login {
-	width:55%;
+	width:65%;
 	padding:13px 0 22px;
 	border-radius:88px;
-	margin-top:-100px;
-	margin-left:550px;
+	margin-top:100px;
+	margin-left:250px;
 	-moz-border-radius:88px;
 	-webkit-border-radius:88px;
 	background: #373737 ;/*url(../images/bg.png);*/
 }
 
 .row-signup {
-	width:20%;
-	padding:13px 0 22px;
-	margin-top:120px;
+	width:100%;
+	padding:53px 0 82px;
+	margin-top:50px;
+    border-radius:88px;
+	-moz-border-radius:88px;
+	-webkit-border-radius:88px;
 	background: #fff ;
+
 }
 
 

@@ -112,41 +112,7 @@
 	 </div>
 
 	{% else %}
-<div class="wrapper">	
-     <div class="row-signup">
-   <div class="wrapper">
-	 <p>
-           	   <!-- sign up -->
 
-   <article>
-<h1> Sign up: </h1>
-<form>
-	<ul><h7>
-        <li id="liStyle">
-        	<label for="email">Your Email:</label>
-            <input type="email" size="30" id="email" />
-        </li>
-        <li id="liStyle">
-        	<label for="name">password:</label>
-            <input type="password" size="20" id="name" />
-        </li>
-        <li id="liStyle">
-            <label>Upload a profile picture:</label>
-            <input type="file" />
-        </li>
-</h7>
-	</ul>
-    <p>
-               <center><a href="homeUserIn"><button id="register">register</button></a>
-                             <h7><button type="reset" class="right">נקה</button></h7>
-    </p>
-</form>
-</article>
-	            </div>
-            </div>
-  
-	 
-	  </p> </div> 
 	<div class="row-login">
         <div class="row-padding">
           <div class="wrapper">
@@ -154,7 +120,7 @@
 	 Login :<br>
         <input type="text" placeholder="email@example.com" id="login_email"><br>
         <input type="password" placeholder="password" id="login_password"><br>
-        <center><a href="homeUserIn"><button id="login">Login</button></a>
+        <center><a href="homeUserIn"><button id="login">התחבר</button></a>
 
 
     <p class="forgot-password"><a href="home">Forgot your password?</a></p>
@@ -164,6 +130,40 @@
 	
 	  </div>  </div>
         </div>
+        
+        
+                   	   <!-- sign up -->
+<div class="wrapper">	
+     <div class="row-signup">
+
+
+   <article>
+<center><h7> :הרשמה </h7></center>
+<form>
+	<ul>
+        <li id="liStyle"><p>
+        	<label for="email">Your Email:</label>
+            <input type="email" size="30" id="email" /><h7>:אימייל</h7>
+        </li></br></p>
+        <li id="liStyle"><p>
+        	<label for="name">password:</label>
+            <input type="password" size="20" id="name" /><h7>:סיסמא</h7>
+        </li></br></p>
+        <li id="liStyle">
+            <label>Upload a profile picture:</label>
+            <input type="file" /><h7>:העלאת תמונת פרופיל</h7>
+        </li>
+
+	</ul>
+    <p>
+               <center><a href="homeUserIn"><button id="register">הרשם</button></a>
+                             <h7><button type="reset" class="right">נקה</button></h7>
+    </p>
+</form>
+</article>
+	            </div>
+            </div>
+  
 
     {%endif%}
  </div>

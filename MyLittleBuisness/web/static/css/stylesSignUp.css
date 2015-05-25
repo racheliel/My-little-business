@@ -4,7 +4,7 @@ a:hover {text-decoration:none;}
 h1 {font-size:6em;font-family: 'Engagement', cursive;line-height:1.89em;}
 .left {float:left;}
 .right {float:right;}
-form {width:560px;margin:0px auto;text-align:left;}
+form {width:560px;margin:0px auto;text-align:right;}
 p {padding:23px 0px;border-top:1px dotted #c7c7c7;}
 
 /*****************/
@@ -14,7 +14,7 @@ p {padding:23px 0px;border-top:1px dotted #c7c7c7;}
 padding:26px 0px;border-top:1px dotted #c7c7c7;min-height:27px;
 }
 label {
-	float:left;
+	float:right;
 	width:180px;
 }
 
