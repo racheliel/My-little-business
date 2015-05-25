@@ -8,8 +8,7 @@
 <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="/static/css/layout.css" type="text/css" media="screen">
 
-<script type="text/javascript" src="/static/js/index.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
 <script type="text/javascript" src="/static/js/jquery-1.6.min.js"></script>
 <script src="/static/js/cufon-yui.js" type="text/javascript"></script>
 <script src="/static/js/cufon-replace.js" type="text/javascript"></script>
@@ -31,11 +30,12 @@
 	
 	
          <h1> <a class="logo" href="home">My Little Business</a> <strong class="slog">The most creative ideas</strong> </h1>
-{%if user%}
+
     <div class="row-1">     
  <a href="myBusiness"><img src="/static/img/myBuss.png" alt="myBuss" /></a>
  <a href="Organizer1"><img src="/static/img/myEvent.png" alt="myEvent" /></a> 
-   <a href="sign"><img src="/static/img/out.png" alt="signout" /></a>   
+   <a href="sign"><img src="/static/img/out.png" alt="signout" /></a>  
+
    </div>
 	  
 	  <div class="row-2">
@@ -111,63 +111,10 @@
  
 	 </div>
 
-	{% else %}
-
-	<div class="row-login">
-        <div class="row-padding">
-          <div class="wrapper">
-		  <p>
-	 Login :<br>
-        <input type="text" placeholder="email@example.com" id="login_email"><br>
-        <input type="password" placeholder="password" id="login_password"><br>
-        <center><a href="homeUserIn"><button id="login">התחבר</button></a>
-
-
-    <p class="forgot-password"><a href="home">Forgot your password?</a></p>
-  </form>
-
-	</p>
-	
-	  </div>  </div>
-        </div>
-        
-        
-                   	   <!-- sign up -->
-<div class="wrapper">	
-     <div class="row-signup">
-
-
-   <article>
-<center><h7> :הרשמה </h7></center>
-<form>
-	<ul>
-        <li id="liStyle"><p>
-        	<label for="email">Your Email:</label>
-            <input type="email" size="30" id="email" /><h7>:אימייל</h7>
-        </li></br></p>
-        <li id="liStyle"><p>
-        	<label for="name">password:</label>
-            <input type="password" size="20" id="name" /><h7>:סיסמא</h7>
-        </li></br></p>
-        <li id="liStyle">
-            <label>Upload a profile picture:</label>
-            <input type="file" /><h7>:העלאת תמונת פרופיל</h7>
-        </li>
-
-	</ul>
-    <p>
-               <center><a href="homeUserIn"><button id="register">הרשם</button></a>
-                             <h7><button type="reset" class="right">נקה</button></h7>
-    </p>
-</form>
-</article>
-	            </div>
-            </div>
-  
-
-    {%endif%}
  </div>
-</div>            
+</div>  
+
+         
     <!-- footer -->
     <footer>
       <div class="row-top">
