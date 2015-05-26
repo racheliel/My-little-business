@@ -8,13 +8,11 @@ handlers:
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
+
   
 - url: /static
   static_dir: web/static
-  
-- url: .*
-  script: main.app
-  
+
 - url: /
   script: web.pages.home.app
   
@@ -22,8 +20,8 @@ handlers:
   script: web.pages.home.app
   
 - url: /sign
-  script: web.pages.sign.app
-  
+  script: web.pages.sign.app  
+
 - url: /homeUserIn
   script: web.pages.homeUserIn.app
   
@@ -33,8 +31,6 @@ handlers:
 - url: /myBusiness
   script: web.pages.myBusiness.app
 
-- url: /signUp
-  script: web.pages.signUp.app
 
 - url: /aboutUs
   script: web.pages.aboutUs.app
@@ -62,7 +58,9 @@ handlers:
 
 - url: /editOrganizerPage 
   script: web.pages.editOrganizerPage.app  
-  
+
+- url: .*
+  script: main.app  
   
 libraries:
 - name: webapp2
