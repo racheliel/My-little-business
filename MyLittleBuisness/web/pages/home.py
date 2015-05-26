@@ -1,6 +1,10 @@
 from google.appengine.ext.webapp import template
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 516a02a... login g
 =======
 
 >>>>>>> parent of 516a02a... login g

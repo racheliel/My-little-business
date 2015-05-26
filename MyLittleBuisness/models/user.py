@@ -7,6 +7,7 @@ class User(ndb.Model):
 	@staticmethod
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	def checkToken(token):
 		user = User.get_by_id(long(token))
 		return user
@@ -50,6 +51,8 @@ class User(ndb.Model):
 		for user in query:
 			user.key.delete()
 =======
+=======
+>>>>>>> parent of 516a02a... login g
 =======
 >>>>>>> parent of 516a02a... login g
 	def checkUser():

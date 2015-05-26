@@ -2,8 +2,13 @@ from google.appengine.api import users
 from google.appengine.ext.webapp import template
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 from models.user import User
 import HTML
+=======
+
+from models.user import User
+>>>>>>> parent of 516a02a... login g
 =======
 
 from models.user import User
@@ -24,12 +29,15 @@ class IndexHandler(webapp2.RequestHandler):
 			self.redirect('/')
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 		myEmail = user.email
 
 		template_params['emailUser'] = myEmail
 				
 =======
+=======
+>>>>>>> parent of 516a02a... login g
 =======
 >>>>>>> parent of 516a02a... login g
         myEmail = user.email
