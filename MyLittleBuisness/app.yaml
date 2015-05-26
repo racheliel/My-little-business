@@ -12,12 +12,6 @@ handlers:
 - url: /static
   static_dir: web/static
   
-- url: .*
-  script: main.app
-  
-- url: /
-  script: web.pages.home.app
-  
 - url: /home
   script: web.pages.home.app
   
@@ -62,7 +56,12 @@ handlers:
 
 - url: /editOrganizerPage 
   script: web.pages.editOrganizerPage.app  
-  
+
+- url: /
+  script: web.pages.home.app
+
+- url: .*
+  script: main.app 
   
 libraries:
 - name: webapp2

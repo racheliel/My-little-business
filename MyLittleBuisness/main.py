@@ -51,10 +51,10 @@ class RegisterHandler(webapp2.RequestHandler):
         self.response.set_cookie('our_token', str(user.key.id()))
         self.response.write(json.dumps({'status':'OK'}))
 
-class LogoutHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.delete_cookie('our_token')
-        self.redirect('/')
+#class LogoutHandler(webapp2.RequestHandler):
+ #   def get(self):
+  #      self.response.delete_cookie('our_token')
+   #     self.redirect('/')
 
 class PersonalHandler(webapp2.RequestHandler):
     def get(self):

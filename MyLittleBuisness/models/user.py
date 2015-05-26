@@ -23,3 +23,7 @@ class User(ndb.Model):
             return True
 
         return False
+		
+		
+		
+		
