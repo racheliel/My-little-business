@@ -34,8 +34,8 @@ handlers:
 - url: /signUp
   script: web.pages.signUp.app
 
-- url: /login
-  script: web.pages.login.app
+- url: /loginGoogle
+  script: web.pages.loginGoogle.app
   
 - url: /aboutUs
   script: web.pages.aboutUs.app

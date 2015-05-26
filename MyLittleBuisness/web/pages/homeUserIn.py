@@ -7,14 +7,16 @@ import webapp2
 class IndexHandler(webapp2.RequestHandler):
 	def get(self):
 		template_params = {}
-#		user = "racheli"
-#		if not user:
-#			template_params['login'] = User.login()
-#			html = template.render("web/templates/sign.html", template_params)
-#		else:
-#			template_params['logout'] = User.logout()
-#			template_params['user'] = user.email
-			html = template.render("web/templates/homeUserIn.html", template_params)
+		user = None
+		if self.request.cookies.get('session'):
+			user = User.checkToken(self.request.cookies.get('session'))
+		if not user:
+			self.redirect('/')
+        myEmail = user.email
+        template_params['emailUser'] = myEmail
+            
+            
+		html = template.render("web/templates/homeUserIn.html", template_params)
 	
 		self.response.write(html)
 
