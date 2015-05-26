@@ -12,7 +12,6 @@ $(".modal-wide").on("show.bs.modal", function() {
 function submitLogin() {
     var email = $('#login_email').val();
     var password = $('#login_password').val();
-    alert("bdskdjsdn");
     $.ajax({
 		url:'/login',
 		type:'GET',
@@ -20,6 +19,7 @@ function submitLogin() {
         data:{email:email, password:password},
 		success:function(data, status, xhr) {
             location.reload();
+            window.location.href = "/homeUserIn";	
 		},
 		error:function(xhr, status, error) {
             alert("the login faild!!");
@@ -32,7 +32,7 @@ function submitLogin() {
 function submitRegister() {
     var email = $('#reg_email').val();
     var password = $('#reg_password').val();
-	/*$.ajax({
+	$.ajax({
 		url:'/signUp',
 		type:'GET',
 		dataType:'json',
@@ -45,5 +45,5 @@ function submitRegister() {
             alert("sign up faild");
 			console.error(xhr, status, error);
 		}
-	});*/
+	});
 }
