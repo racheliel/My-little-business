@@ -31,7 +31,12 @@ handlers:
 - url: /myBusiness
   script: web.pages.myBusiness.app
 
+- url: /signUp
+  script: web.pages.signUp.app
 
+- url: /login
+  script: web.pages.login.app
+  
 - url: /aboutUs
   script: web.pages.aboutUs.app
 

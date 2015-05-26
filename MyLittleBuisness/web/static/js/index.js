@@ -1,7 +1,7 @@
 
 $(function() {  
-   $('#login').on('click', submitLogin);
-   $('#register').on('click', submitRegister);
+    $('#login').on('click', submitLogin);
+    $('#register').on('click', submitRegister);
 });
 
 $(".modal-wide").on("show.bs.modal", function() {
@@ -12,6 +12,7 @@ $(".modal-wide").on("show.bs.modal", function() {
 function submitLogin() {
     var email = $('#login_email').val();
     var password = $('#login_password').val();
+    alert("bdskdjsdn");
     $.ajax({
 		url:'/login',
 		type:'GET',
@@ -31,7 +32,7 @@ function submitLogin() {
 function submitRegister() {
     var email = $('#reg_email').val();
     var password = $('#reg_password').val();
-	$.ajax({
+	/*$.ajax({
 		url:'/signUp',
 		type:'GET',
 		dataType:'json',
@@ -44,5 +45,5 @@ function submitRegister() {
             alert("sign up faild");
 			console.error(xhr, status, error);
 		}
-	});
+	});*/
 }
