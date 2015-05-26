@@ -1,5 +1,4 @@
 from google.appengine.ext.webapp import template
-
 from models.user import User
 from google.appengine.api import users
 from google.appengine.ext import ndb

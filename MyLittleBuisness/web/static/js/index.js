@@ -14,13 +14,11 @@ $(document).ready(function() {
 
 
 function render() {
-
    var additionalParams = {
      'callback': signinCallback
    };
 
-
-   var signinButton = document.getElementById('googleLogin');
+   var signinButton = document.getElementById('loginGoogle');
    signinButton.addEventListener('click', function() {
      gapi.auth.signIn(additionalParams);
    });
