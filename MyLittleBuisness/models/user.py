@@ -5,6 +5,7 @@ class User(ndb.Model):
 	GroupID = ndb.IntegerProperty()
 	
 	@staticmethod
+<<<<<<< HEAD
 	def checkToken(token):
 		user = User.get_by_id(long(token))
 		return user
@@ -47,6 +48,22 @@ class User(ndb.Model):
 		query = User.query(User.email == user_name).fetch()
 		for user in query:
 			user.key.delete()
+=======
+	def checkUser():
+		googleUser = users.get_current_user()
+		if not googleUser:
+			return False
+		
+		user = User.query(User.email == googleUser.email()).get()
+		if user:
+			return user
+		
+		return False
+	
+	@staticmethod
+	def loginUrl():
+		return users.create_login_url('/connect')
+>>>>>>> parent of 516a02a... login g
 	
 
 			

@@ -1,4 +1,8 @@
 from google.appengine.ext.webapp import template
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 516a02a... login g
 from models.user import User
 import webapp2
 import json

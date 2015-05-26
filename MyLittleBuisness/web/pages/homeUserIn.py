@@ -1,7 +1,12 @@
 from google.appengine.api import users
 from google.appengine.ext.webapp import template
+<<<<<<< HEAD
 from models.user import User
 import HTML
+=======
+
+from models.user import User
+>>>>>>> parent of 516a02a... login g
 import webapp2
 
 class IndexHandler(webapp2.RequestHandler):
@@ -12,11 +17,17 @@ class IndexHandler(webapp2.RequestHandler):
 			user = User.checkToken(self.request.cookies.get('session'))
 		if not user:
 			self.redirect('/')
+<<<<<<< HEAD
 		
 		myEmail = user.email
 
 		template_params['emailUser'] = myEmail
 				
+=======
+        myEmail = user.email
+        template_params['emailUser'] = myEmail
+            
+>>>>>>> parent of 516a02a... login g
             
 		html = template.render("web/templates/homeUserIn.html", template_params)
 		self.response.write(html)
