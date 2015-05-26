@@ -1,36 +1,12 @@
+#this model represents a user in our system
+
 from google.appengine.api import users
 from google.appengine.ext import ndb
 
 class User(ndb.Model):
 	email = ndb.StringProperty()
-
-	@staticmethod
-	def checkToken(token):
-		user = User.get_by_id(long(token))
-		return user
 	
-	@staticmethod
-	def checkIfUserExists(user_name):
-		query = User.query(User.email == user_name).get()
-		if query:
-			return query
-		else:
-			return None
 	
-
-	@staticmethod
-	def addUser(user_email):
-		user = User()
-		user.email = user_email
-		user.put()
-		return user 
-	
-	@classmethod		
-	def deleteUser(self,user_name):
-		query = User.query(User.email == user_name).fetch()
-		for user in query:
-			user.key.delete()
-		
 	@staticmethod
 	def checkUser():
 		googleUser = users.get_current_user()
@@ -43,11 +19,12 @@ class User(ndb.Model):
 		
 		return False
 	
+	#generates a url at which the user can login, and then will be redirected back to his original location
 	@staticmethod
 	def loginUrl():
 		return users.create_login_url('/connect')
 	
-	
+	#generates a url at which the user can logout, and then will be redirected back to his original location
 	@staticmethod
 	def logoutUrl():
 		return users.create_logout_url('/')
