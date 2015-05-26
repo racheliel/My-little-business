@@ -9,10 +9,10 @@ class IndexHandler(webapp2.RequestHandler):
 		user = None
 		if self.request.cookies.get('session'):
 			user = User.checkToken(self.request.cookies.get('session'))
-#		if not user:
-#			self.redirect('/')
-#		
-#		myEmail = user.email
+		if not user:
+			self.redirect('/')
+		
+		myEmail = user.email
 
 		template_params['emailUser'] = myEmail
 						
