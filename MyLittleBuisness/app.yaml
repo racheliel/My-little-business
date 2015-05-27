@@ -25,6 +25,9 @@ handlers:
 - url: /homeUserIn
   script: web.pages.homeUserIn.app
   
+- url: /salesEventsToUser
+  script: web.pages.salesEventsToUser.app
+  
 - url: /editMyPage
   script: web.pages.editMyPage.app
   
