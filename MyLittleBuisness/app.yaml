@@ -19,8 +19,8 @@ handlers:
 - url: /home
   script: web.pages.home.app
   
-- url: /sign
-  script: web.pages.sign.app  
+- url: /logout
+  script: web.pages.homeUserIn.app  
 
 - url: /homeUserIn
   script: web.pages.homeUserIn.app
@@ -33,9 +33,6 @@ handlers:
   
 - url: /myBusiness
   script: web.pages.myBusiness.app
-
-- url: /signUp
-  script: web.pages.signUp.app
 
 - url: /loginGoogle
   script: web.pages.loginGoogle.app
