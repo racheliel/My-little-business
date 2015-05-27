@@ -8,13 +8,9 @@ handlers:
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
-
   
 - url: /static
   static_dir: web/static
-
-- url: /
-  script: web.pages.home.app
   
 - url: /home
   script: web.pages.home.app
@@ -62,10 +58,14 @@ handlers:
   script: web.pages.editEvent.app
 
 - url: /editOrganizerPage 
-  script: web.pages.editOrganizerPage.app  
+  script: web.pages.editOrganizerPage.app 
+
+- url: /
+  script: web.pages.home.app  
 
 - url: .*
   script: main.app  
+  
   
 libraries:
 - name: webapp2

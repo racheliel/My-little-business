@@ -2,6 +2,8 @@ from google.appengine.ext.webapp import template
 from models.user import User
 import webapp2
 import HTML
+import json
+
 
 class IndexHandler(webapp2.RequestHandler):
 	def get(self):

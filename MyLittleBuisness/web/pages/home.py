@@ -8,7 +8,7 @@ class DefaultHandler(webapp2.RequestHandler):
 		template_params = {}
 		if self.request.cookies.get('session'):    
 			user = User.checkToken(self.request.cookies.get('session'))
-			self.redirect('/homeUserIn')
+		#	self.redirect('/homeUserIn')
 			return
 		email = self.request.get('email')
 		user = None
