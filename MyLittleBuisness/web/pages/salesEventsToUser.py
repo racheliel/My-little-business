@@ -7,13 +7,15 @@ import webapp2
 class IndexHandler(webapp2.RequestHandler):
 	def get(self):
 		template_params = {}
-#		user = User.checkUser()
-#		if not user:
-#			template_params['loginUrl'] = User.loginUrl()
-#		else:
-#			template_params['logoutUrl'] = User.logoutUrl()
-#			template_params['user'] = user.email
-	#			html = self.redirect('/salesEvents')
+		user = None
+		if self.request.cookies.get('session'):
+			user = User.checkToken(self.request.cookies.get('session'))
+		if not user:
+			self.redirect('/')
+		
+		myEmail = user.email
+
+		template_params['emailUser'] = myEmail
 
 		html = template.render("web/templates/salesEventsToUser.html", template_params)
 		self.response.write(html)
