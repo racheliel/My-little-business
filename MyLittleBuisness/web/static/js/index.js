@@ -6,7 +6,7 @@ $(document).ready(function() {
       appId: '1455131861452263',
       version: 'v2.3'
     });     
-    $('#login,#feedbutton').removeAttr('disabled');
+    $('#loginbutton,#feedbutton').removeAttr('disabled');
     FB.getLoginStatus(updateStatusCallback);
   });
   render();
@@ -40,6 +40,7 @@ function signinCallback(authResult) {
 				dataType:'text',
 				data:{email:email},
 				success:function(data, status, xhr) {
+                    alert("success");
 					window.location.replace("/homeUserIn");
 				},
 				error:function(xhr, status, error) {
@@ -84,6 +85,7 @@ function connected() {
 		dataType:'text',
         data:{email:email},
 		success:function(data, status, xhr) {
+            alert("success");
             window.location.replace("/homeUserIn");
 		},
 		error:function(xhr, status, error) {
