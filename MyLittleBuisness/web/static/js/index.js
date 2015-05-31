@@ -40,7 +40,6 @@ function signinCallback(authResult) {
 				dataType:'text',
 				data:{email:email},
 				success:function(data, status, xhr) {
-					alert("welcome "+ email);
 					window.location.replace("/homeUserIn");
 				},
 				error:function(xhr, status, error) {
@@ -85,7 +84,6 @@ function connected() {
 		dataType:'text',
         data:{email:email},
 		success:function(data, status, xhr) {
-			alert("welcome "+ email);
             window.location.replace("/homeUserIn");
 		},
 		error:function(xhr, status, error) {
