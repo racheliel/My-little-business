@@ -7,16 +7,18 @@ import webapp2
 class IndexHandler(webapp2.RequestHandler):
 	def get(self):
 		template_params = {}
-#		user = User.checkUser()
-#		if not user:
-#			template_params['loginUrl'] = User.loginUrl()
-#		else:
-#			template_params['logoutUrl'] = User.logoutUrl()
-#			template_params['user'] = user.email
-#				html = self.redirect('/favorites')
+		user = None
+		if self.request.cookies.get('session'):
+			user = User.checkToken(self.request.cookies.get('session'))
+			myEmail = user.email
+			template_params['emailUser'] = myEmail
+			
+		if not user:
+			self.redirect('/')
 
 		html = template.render("web/templates/favorites.html", template_params)
 		self.response.write(html)
+		
 
 app = webapp2.WSGIApplication([
 	('/favorites', IndexHandler)
