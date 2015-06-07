@@ -41,7 +41,7 @@ class Page(ndb.Model):
 
     @staticmethod
     def getAllPages(user):
-        arr_a = Page.getAdminGroups(user)
-        arr_b = Page.getUserGroups(user)
+        arr_a = Page.getAdminPages(user)
+        arr_b = Page.getUserPages(user)
 
         return arr_a + arr_b
