@@ -6,11 +6,6 @@ import json
 
 
 
-class AllPagesHandler(webapp2.RequestHandler):
-    def get(self):
-        self.redirect('/')
-        return
-
 class PageHandler(webapp2.RequestHandler):
     def get(self, page_id):
         template_params = {}

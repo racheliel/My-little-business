@@ -25,8 +25,8 @@ function addMember() {
             populateMembers(data.members);
 		},
 		error:function(xhr, status, error) {
-            alert(xhr.responseText);
-			console.error(xhr, status, error);
+		alert(xhr.responseText);
+		console.error(xhr, status, error);
 		}
 	});
 }
@@ -41,8 +41,8 @@ function refreshMembers() {
             populateMembers(data.members);
 		},
 		error:function(xhr, status, error) {
-            alert(xhr.responseText);
-			console.error(xhr, status, error);
+		alert(xhr.responseText);
+		console.error(xhr, status, error);
 		}
 	});
 }
@@ -51,10 +51,10 @@ function populateMembers(members) {
     console.log(members);
     var members_str = '';
     for(var member in members) {
-        //console.log(groups[group]);
+       // console.log(pages[page]);
         members_str += ''+members[member].email+'<br>';
     }
-    //console.log(groups_str)
+    //console.log(pages_str)
     $('#members').html(members_str);
     //$('#groups').html(groups_str);
 }

@@ -23,8 +23,8 @@ function create_PageBus() {
             populatePages(data.pages);
 		},
 		error:function(xhr, status, error) {
-            alert(xhr.responseText);
-			console.error(xhr, status, error);
+		alert(xhr.responseText);
+		console.error(xhr, status, error);
 		}
 	});
 }
@@ -38,8 +38,8 @@ function refreshPages() {
             populatePages(data.pages);
 		},
 		error:function(xhr, status, error) {
-            alert(xhr.responseText);
-			console.error(xhr, status, error);
+		alert(xhr.responseText);
+		console.error(xhr, status, error);
 		}
 	});
 }
@@ -48,10 +48,10 @@ function populatePages(myPages) {
     console.log(myPages);
     var Page_str = '';
     for(var page in myPage) {
-        //console.log(groups[group]);
-        groups_str += '<a href="/myPages/'+myPages[page].id+'">'+myPages[page].title+'</a>'+(myPages[page].admin ? '<span>(admin)</span>': '')+'<br>';
+        //console.log(pages[page]);
+        Page_str += '<a href="/myPages/'+myPages[page].id+'">'+myPages[page].title+'</a>'+(myPages[page].admin ? '<span>(admin)</span>': '')+'<br>';
     }
-    //console.log(groups_str)
+    //console.log(pages_str)
     $('#myPages').html(Page_str);
     //$('#groups').html(groups_str);
 }
