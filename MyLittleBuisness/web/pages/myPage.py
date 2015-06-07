@@ -16,16 +16,10 @@ class IndexHandler(webapp2.RequestHandler):
 
 		template_params['email'] = myEmail
 						
-		html = template.render("web/templates/homeUserIn.html", template_params)
+		html = template.render("web/templates/myPage.html", template_params)
 		self.response.write(html)
        
-class LogoutHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.delete_cookie('session')
-        self.redirect('/home')
-        
 
 app = webapp2.WSGIApplication([
-	('/homeUserIn', IndexHandler),
-    ('/logout', LogoutHandler)
+	('/myPage', IndexHandler)
 ], debug=True)

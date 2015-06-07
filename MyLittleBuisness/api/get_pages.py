@@ -2,9 +2,9 @@ from google.appengine.ext.webapp import template
 import webapp2
 import json
 from models.user import User
-from models.group import Group
+from models.page import Page
 
-class GetGroups(webapp2.RequestHandler):
+class Getpages(webapp2.RequestHandler):
     def get(self):
         user = None
         if self.request.cookies.get('our_token'):    #the cookie that should contain the access token!
@@ -15,10 +15,10 @@ class GetGroups(webapp2.RequestHandler):
             self.response.write('No user - access denied')
             return
 
-        groups = Group.getAllGroups(user)
-        self.response.write(json.dumps({"status": "OK", "groups": groups}))
+        pages = Page.getAllPages(user)
+        self.response.write(json.dumps({"status": "OK", "pages": pages}))
 
 
 app = webapp2.WSGIApplication([
-    ('/api/get_groups', GetGroups)
+    ('/api/get_pages', Getpages)
 ], debug=True)

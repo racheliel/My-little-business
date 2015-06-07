@@ -2,7 +2,7 @@ from google.appengine.ext.webapp import template
 import webapp2
 import json
 from models.user import User
-from models.group import Group
+from models.page import Page
 
 import time
 
@@ -17,13 +17,13 @@ class createPageBus(webapp2.RequestHandler):
             self.response.write('No user - access denied')
             return
 
-        group = Group()
-        group.title = self.request.get('title')
-        group.admin = user.key
-        group.put()
+        page = Page()
+        page.title = self.request.get('title')
+        page.admin = user.key
+        page.put()
         time.sleep(0.5)
-        groups = Group.getAllGroups(user)
-        self.response.write(json.dumps({"status": "OK", "groups": groups}))
+        pages = Page.getAllPages(user)
+        self.response.write(json.dumps({"status": "OK", "pages": pages}))
 
 app = webapp2.WSGIApplication([
     ('/api/createPageBus', createPageBus)

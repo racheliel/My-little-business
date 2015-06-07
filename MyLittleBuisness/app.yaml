@@ -19,8 +19,11 @@ handlers:
 - url: /home
   script: web.pages.home.app
   
-- url: /myPages[\/]?(.*)
-  script: web.pages.group.app
+- url: /pages[\/]?(.*)
+  script: web.pages.page.app
+  
+- url: /myPage
+  script: web.pages.myPage.app
   
 - url: /logout
   script: web.pages.homeUserIn.app  

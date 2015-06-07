@@ -1,6 +1,6 @@
-var groupID = '';
+var pageID = '';
 $(function() {
-    groupID = $('#group_id').val();
+    pageID = $('#page_id').val();
     refreshMembers();
    $('#add_member').on('click', addMember);
 });
@@ -19,7 +19,7 @@ function addMember() {
 		url:'/api/add_member',
 		type:'GET',
 		dataType:'json',
-        data:{group_id:groupID, member_email:new_member},
+        data:{page_id:pageID, member_email:new_member},
 		success:function(data, status, xhr) {
             $('#new_member').val('');
             populateMembers(data.members);
@@ -36,7 +36,7 @@ function refreshMembers() {
 		url:'/api/members',
 		type:'GET',
 		dataType:'json',
-        data:{group:groupID},
+        data:{page:pageID},
 		success:function(data, status, xhr) {
             populateMembers(data.members);
 		},

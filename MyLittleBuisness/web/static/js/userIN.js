@@ -1,14 +1,14 @@
 $(function() {
-    refreshGroups();
-    $('#createPageBus').on('click', createPageBus);
+    refreshPages();
+    $('#createPageBus').on('click', create_PageBus);
 });
 
 
-function createPageBus() {
-    $('#buss_title').css('background', '#FFF');
-    var title = $('#buss_title').val();
+function create_PageBus() {
+    $('#page_title').css('background', '#FFF');
+    var title = $('#page_title').val();
     if(!title) {
-        $('#buss_title').css('background', '#FAA');
+        $('#page_title').css('background', '#FAA');
         return;
     }
 
@@ -19,8 +19,8 @@ function createPageBus() {
 		dataType:'json',
         data:{title:title},
 		success:function(data, status, xhr) {
-            $('#buss_title').val('');
-            populateGroups(data.groups);
+            $('#page_title').val('');
+            populatePages(data.pages);
 		},
 		error:function(xhr, status, error) {
             alert(xhr.responseText);
@@ -29,13 +29,13 @@ function createPageBus() {
 	});
 }
 
-function refreshGroups() {
+function refreshPages() {
     $.ajax({
-		url:'/api/get_groups',
+		url:'/api/get_pages',
 		type:'GET',
 		dataType:'json',
 		success:function(data, status, xhr) {
-            populateGroups(data.groups);
+            populatePages(data.pages);
 		},
 		error:function(xhr, status, error) {
             alert(xhr.responseText);
@@ -44,15 +44,15 @@ function refreshGroups() {
 	});
 }
 
-function populateGroups(myPage) {
-    console.log(myPage);
-    var groups_str = '';
+function populatePages(myPages) {
+    console.log(myPages);
+    var Page_str = '';
     for(var page in myPage) {
         //console.log(groups[group]);
-        groups_str += '<a href="/myPage/'+myPage[page].id+'">'+myPage[page].title+'</a>'+(myPage[page].admin ? '<span>(admin)</span>': '')+'<br>';
+        groups_str += '<a href="/myPages/'+myPages[page].id+'">'+myPages[page].title+'</a>'+(myPages[page].admin ? '<span>(admin)</span>': '')+'<br>';
     }
     //console.log(groups_str)
-    $('#myPage').html(groups_str);
+    $('#myPages').html(Page_str);
     //$('#groups').html(groups_str);
 }
 

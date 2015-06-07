@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Group page</title>
+    <link rel="stylesheet" href="../static/css/styles.css"/>
+    <script type="application/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="application/javascript" src="/static/js/page.js"></script>
+</head>
+<body>
+    <input type="hidden" id="page_id" value="{{page_id}}">
+   <div>Hello, {{email}}. You can <a href="/logout">logout</a> here</div><br>
+
+    {% if no_access %}
+        <div>You do not have access to this group</div>
+    {% else %}
+        Title: {{ page_title }}<br>
+        Admin: {{ page_admin }}<br><br>
+
+        Add member: <input type="text" id="new_member"><button id="add_member">Add member</button><br/>
+
+
+        memebers:
+        <div id="members"></div>
+
+    {% endif %}
+
+   </div>
+</body>
+</html>
