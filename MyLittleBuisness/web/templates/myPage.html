@@ -3,24 +3,69 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Personal data page</title>
-    <link rel="stylesheet" href="/static/css/style.css"/>
+	<link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="/static/css/layout.css" type="text/css" media="screen">
 	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="application/javascript" src="/static/js/userIN.js"></script>
 
 </head>
-<body>
-   <div>Hello, {{email}}. You can <a href="/logout">logout</a> here</div><br>
+<body id="page1">
+	<div class="bg">
+		<div class="main">
+		<header>
+			<h1> <a class="logo" href="home">My Little Business</a> <strong class="slog">The most creative ideas</strong> </h1>
 
-    You can create a group here:<br>
-    new group: <input type="text" id="page_title"/>
-    <button id="createPageB">Create group</button><br><br>
+		<div class="row-1">             
+			<a href="logout"><img src="/static/img/out.png" alt="signout" /></a>  
+				<h7>Hello,<span id='emailUser'> {{email}}</span></h7>      
+		</div>
+</br>
+	   <div class="row-pages"><h7>
+    You can create a business pages here:<br>
+    new business: <input type="text" id="page_title"/>
+    <button id="createPageB">Create business page</button><br><br>
 
 
     This is your personal data<br>
     Email: {{ email }}<br>
-    Your groups:
+    Your business pages :
    <div id="pages">
 
-   </div>
+   </h7></div>
+</div>   
+   	   <!-- footer -->
+    <footer>
+      <div class="row-top">
+        <div class="row-padding">
+          <div class="wrapper">
+            <div class="col-1">
+              <h4>Address:</h4>
+              <dl class="address">
+                <dt><span>Country:</span>Israel</dt>
+                <dd><span>City:</span>Jerusalem</dd>
+                <dd><span>Email:</span><a href="#">MyLittleBusinessSite@gmail.com</a></dd>
+              </dl>
+            </div>
+            <div class="col-2">
+              <h4>Follow Us:</h4>
+              <ul class="list-services">
+                <li class="item-1"><a href="#">Facebook</a></li>
+                <li class="item-2"><a href="#">Twitter</a></li>
+                <li class="item-3"><a href="#">LinkedIn</a></li>
+              </ul>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+      <div class="row-bot">
+        <div class="aligncenter">
+          <center>
+		  <p class="p0">Copyright &copy; <a href="#">Racheli Elkaslasi, Hanni Gabai, Michal Gisri,Uriel Shani</a></p>
+        </center>
+		</div>
+      </div>
+    </footer>
 </body>
 </html>
