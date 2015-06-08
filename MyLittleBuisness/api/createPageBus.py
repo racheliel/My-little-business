@@ -8,7 +8,7 @@ import time
 
 class createPageBus(webapp2.RequestHandler):
     def get(self):
-        user = None
+        user = User.checkToken(self.request.cookies.get('session'))
         if self.request.cookies.get('our_token'):    #the cookie that should contain the access token!
             user = User.checkToken(self.request.cookies.get('our_token'))
 

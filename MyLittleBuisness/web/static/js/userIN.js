@@ -1,6 +1,6 @@
 $(function() {
     refreshPages();
-    $('#createPageBus').on('click', create_PageBus);
+    $('#createPageB').on('click', create_PageBus);
 });
 
 
@@ -44,15 +44,15 @@ function refreshPages() {
 	});
 }
 
-function populatePages(myPages) {
-    console.log(myPages);
+function populatePages(pages) {
+    console.log(pages);
     var Pages_str = '';
-    for(var page in myPages) {
+    for(var page in pages) {
         //console.log(pages[page]);
-        Pages_str += '<a href="/myPages/'+myPages[page].id+'">'+myPages[page].title+'</a>'+(myPages[page].admin ? '<span>(admin)</span>': '')+'<br>';
+        Pages_str += '<a href="/pages/'+pages[page].id+'">'+pages[page].title+'</a>'+(pages[page].admin ? '<span>(admin)</span>': '')+'<br>';
     }
     //console.log(pages_str)
-    $('#myPages').html(Pages_str);
+    $('#pages').html(Pages_str);
     //$('#groups').html(groups_str);
 }
 
