@@ -46,13 +46,13 @@ function refreshPages() {
 
 function populatePages(myPages) {
     console.log(myPages);
-    var Page_str = '';
-    for(var page in myPage) {
+    var Pages_str = '';
+    for(var page in myPages) {
         //console.log(pages[page]);
-        Page_str += '<a href="/myPages/'+myPages[page].id+'">'+myPages[page].title+'</a>'+(myPages[page].admin ? '<span>(admin)</span>': '')+'<br>';
+        Pages_str += '<a href="/myPages/'+myPages[page].id+'">'+myPages[page].title+'</a>'+(myPages[page].admin ? '<span>(admin)</span>': '')+'<br>';
     }
     //console.log(pages_str)
-    $('#myPages').html(Page_str);
+    $('#myPages').html(Pages_str);
     //$('#groups').html(groups_str);
 }
 
