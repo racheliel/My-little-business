@@ -49,7 +49,7 @@ function populatePages(pages) {
     var Pages_str = '';
     for(var page in pages) {
         //console.log(pages[page]);
-        Pages_str += '<a href="/pages/'+pages[page].id+'">'+pages[page].title+'</a>'+(pages[page].admin ? '<span>(admin)</span>': '')+'<br>';
+        Pages_str += '<a href="/myBusiness/'+pages[page].id+'">'+pages[page].title+'</a>'+(pages[page].admin ? '<span>(admin)</span>': '')+'<br>';
     }
     //console.log(pages_str)
     $('#pages').html(Pages_str);
