@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="/static/css/layout.css" type="text/css" media="screen">
 	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="application/javascript" src="/static/js/createPageBus.js"></script>
-    <script type="application/javascript" src="/static/js/createPageEvent.js"></script>
+    <script type="application/javascript" src="/static/js/userIN.js"></script>
+
 </head>
 <body id="page1">
 	<div class="bg">
@@ -21,23 +21,17 @@
 				<h7>Hello,<span id='emailUser'> {{email}}</span></h7>      
 		</div>
 </br>
-	   <div class="row-pages"><h7><br>
-    שם דף העסק החדש: <input type="text" id="page_title"/>
-    <button id="createPageB">צור דף עסק חדש</button><br><br>
+	   <div class="row-pages"><h7>
+    You can create a business pages here:<br>
+    new business: <input type="text" id="page_title"/>
+    <button id="createPageB">Create business page</button><br><br>
 
-    דפי העסק שלי :
+
+    This is your personal data<br>
+    Email: {{ email }}<br>
+    Your business pages :
    <div id="pages">
 
-   </div>
-    <br>
-    נושא האירוע: <input type="text" id="page_title"/>
-    תאריך האירוע: <input type="text" id="page_date"/>
-    מיקום האירוע: <input type="text" id="page_place"/>
-    קטגוריית האירוע: <input type="text" id="page_category"/>
-    <button id="createPageE">צור אירוע מכירה</button><br><br>
-
-    האירועים שלי :
-       <div id="events">
    </h7></div>
 </div>   
    	   <!-- footer -->
