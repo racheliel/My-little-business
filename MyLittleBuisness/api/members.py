@@ -6,7 +6,7 @@ from models.page import Page
 
 class GetPages(webapp2.RequestHandler):
     def get(self):
-        page = Page.get_by_id(int(self.request.get('page')))
+        page = Page.get_by_id((self.request.get('page')))
         user = None
         if self.request.cookies.get('our_token'):    #the cookie that should contain the access token!
             user = User.checkToken(self.request.cookies.get('our_token'))
