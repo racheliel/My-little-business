@@ -48,8 +48,13 @@ function populatePages(pages) {
     console.log(pages);
     var Pages_str = '';
     for(var page in pages) {
+<<<<<<< HEAD:MyLittleBuisness/web/static/js/createPageBus.js
         Pages_str += '<a href="/pages/'+pages[page].id+'">'+pages[page].title+'</a>'+(pages[page].admin ? '<span>(admin)</span>': '')+'<br>';
 
+=======
+        //console.log(pages[page]);
+        Pages_str += '<a href="/pages/'+pages[page].id+'">'+pages[page].title+'</a>'+(pages[page].admin ? '<span>(admin)</span>': '')+'<br>';
+>>>>>>> parent of 7620a93... uodate:MyLittleBuisness/web/static/js/userIN.js
     }
     $('#pages').html(Pages_str);
 }
