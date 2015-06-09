@@ -16,7 +16,6 @@ class Getevents(webapp2.RequestHandler):
             self.response.write('No user - access denied')
             return
         
-
         events = Event.getAllEvent(user)
         self.response.write(json.dumps({"status": "OK", "events": events}))
 
