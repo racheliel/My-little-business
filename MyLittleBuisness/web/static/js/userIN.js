@@ -50,6 +50,15 @@ function populatePages(pages) {
     for(var page in pages) {
 <<<<<<< HEAD:MyLittleBuisness/web/static/js/createPageBus.js
 <<<<<<< HEAD
+<<<<<<< HEAD:MyLittleBuisness/web/static/js/createPageBus.js
+        Pages_str += '<a href="/pages/'+pages[page].id+'">'+pages[page].title+'</a>'+(pages[page].admin ? '<span>(admin)</span>': '')+'<br>';
+
+=======
+        //console.log(pages[page]);
+        Pages_str += '<a href="/pages/'+pages[page].id+'">'+pages[page].title+'</a>'+(pages[page].admin ? '<span>(admin)</span>': '')+'<br>';
+>>>>>>> parent of 7620a93... uodate:MyLittleBuisness/web/static/js/userIN.js
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD:MyLittleBuisness/web/static/js/userIN.js
         //console.log(pages[page]);
 <<<<<<< HEAD:MyLittleBuisness/web/static/js/createPageBus.js
@@ -66,6 +75,7 @@ function populatePages(pages) {
 =======
         Pages_str += '<a href="/pages/'+pages[page].id+'">'+pages[page].title+'</a>'+(pages[page].admin ? '<span>(admin)</span>': '')+'<br>';
 
+>>>>>>> origin/master
 >>>>>>> origin/master
     }
     //console.log(pages_str)
