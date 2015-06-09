@@ -10,15 +10,7 @@ class PageHandler(webapp2.RequestHandler):
     def get(self, page_id):
         template_params = {}
         user = None
-<<<<<<< HEAD
-        if self.request.cookies.get('our_token'):
-           user = User.checkToken(self.request.cookies.get('our_token'))
 
-        if not user:
-           self.redirect('/')
-
-        template_params['email'] = user.email
-=======
 	if self.request.cookies.get('our_token'):    #the cookie that should contain the access token!
            user = User.checkToken(self.request.cookies.get('our_token'))
 
@@ -26,7 +18,6 @@ class PageHandler(webapp2.RequestHandler):
            self.redirect('/home')
 
 	template_params['email'] = user.email
->>>>>>> origin/master
 
 
         html = template.render('web/templates/page.html', template_params)
