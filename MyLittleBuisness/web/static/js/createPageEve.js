@@ -42,7 +42,7 @@ function create_Event() {
             $('#page_date').val('');
             $('#page_place').val('');
             $('#page_category').val('');
-            populateEvents(data.events);
+            populatePages(data.events);
 		},
 		error:function(xhr, status, error) {
             alert(xhr.responseText);
@@ -66,11 +66,11 @@ function refreshEvents() {
 	});
 }
 
-function populateEvents(events) {
+function populatePages(events) {
     console.log(events);
     var Pages_str = '';
     for(var event in events) {
-        Pages_str += events[event].id+' '+events[event].title+' '+events[event].date+' '+events[event].place+' '+events[event].category+'<br>';
+        Pages_str += events[event].id+' '+events[event].title+' '+events[event].date+' '+events[event].place+' '+events[event].category+' '+(pages[event].admin ? '<span>(admin)</span>': '')+'<br>';
     }
     //$('#events').html(Pages_str);'<a href="/events/'"></a>
 }
