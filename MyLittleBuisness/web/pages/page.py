@@ -14,13 +14,12 @@ class PageHandler(webapp2.RequestHandler):
            user = User.checkToken(self.request.cookies.get('our_token'))
 
        if not user:
-           self.redirect('/')
+           self.redirect('/home')
 
        template_params['email'] = user.email
 
 
-
-        html = template.render('web/templates/page.html', template_params)
+        html = template.render('web/templates/home.html', template_params)
         self.response.write(html)
 
 app = webapp2.WSGIApplication([

@@ -25,8 +25,7 @@ class createEvent(webapp2.RequestHandler):
         event.admin = user.key
         event.put()
         time.sleep(0.5)
-        events = Event.getAllEvent(user)
-        self.response.write(json.dumps({"status": "OK", "events": events}))
+        self.response.write(json.dumps({"status": "OK"}))
 
 app = webapp2.WSGIApplication([
     ('/api/createEvent', createEvent)
