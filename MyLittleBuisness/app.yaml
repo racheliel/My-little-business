@@ -24,6 +24,9 @@ handlers:
   
 - url: /pages[\/]?(.*)
   script: web.pages.page.app
+
+- url: /events[\/]?(.*)
+  script: web.pages.event.app
   
 - url: /myPage
   script: web.pages.myPage.app

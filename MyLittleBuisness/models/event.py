@@ -2,7 +2,7 @@ from google.appengine.ext import ndb
 
 class Event(ndb.Model):
     title = ndb.StringProperty()
-    date = ndb.DateTimeProperty(required = True)
+    date = ndb.stringProperty()
     place = ndb.StringProperty()
     category = ndb.StringProperty()
     admin = ndb.KeyProperty()
@@ -19,10 +19,9 @@ class Event(ndb.Model):
     @staticmethod
     def getAdminEvent(user):
         q = Event.query(Event.admin == user.key)
-        pages_arr = []
+        events_arr = []
         for event in q:
-            pages_arr.append({
-                "title": event.title,
+            events_arr.append({
                 "title": event.title,
                 "date" : event.date,
                 "place" : event.place,
@@ -31,14 +30,14 @@ class Event(ndb.Model):
                 "admin": True
             })
 
-        return pages_arr
+        return events_arr
 
     @staticmethod
     def getUserEvent(user):
         q = Event.query(Event.members == user.key)
-        pages_arr = []
+        events_arr = []
         for event in q:
-            event.append({
+            events_arr.append({
                 "title": event.title,
                 "date" : event.date,
                 "place" : event.place,
@@ -47,7 +46,7 @@ class Event(ndb.Model):
                 "admin": False
             })
 
-        return pages_arr
+        return events_arr
 
     @staticmethod
     def getAllEvent(user):

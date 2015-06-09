@@ -5,10 +5,10 @@ $(function() {
 
 
 function create_Event() {
-    $('#page_title').css('background', '#FFF');
-    var title = $('#page_title').val();
+    $('#page_title1').css('background', '#FFF');
+    var title = $('#page_title1').val();
     if(!title) {
-        $('#page_title').css('background', '#FAA');
+        $('#page_title1').css('background', '#FAA');
         return;
         }
     $('#page_date').css('background', '#FFF');
@@ -22,8 +22,8 @@ function create_Event() {
         $('#page_place').css('background', '#FAA');
         return;}
         $('#page_category').css('background', '#FFF');
-    var ategory = $('#page_category').val();
-    if(!ategory) {
+    var category = $('#page_category').val();
+    if(!category) {
         $('#page_category').css('background', '#FAA');
         return;
    }
@@ -38,15 +38,15 @@ function create_Event() {
         data:{place:place},
         data:{category:category},
 		success:function(data, status, xhr) {
-            $('#page_title').val('');
+            $('#page_title1').val('');
             $('#page_date').val('');
             $('#page_place').val('');
             $('#page_category').val('');
             populateEvents(data.events);
 		},
 		error:function(xhr, status, error) {
-            alert(xhr.responseText);
-            console.error(xhr, status, error);
+        alert(xhr.responseText);
+        console.error(xhr, status, error);
 		}
 	});
 }
@@ -57,21 +57,21 @@ function refreshEvents() {
 		type:'GET',
 		dataType:'json',
 		success:function(data, status, xhr) {
-            populatePages(data.pages);
+            populateEvents(data.events);
 		},
 		error:function(xhr, status, error) {
-            alert(xhr.responseText);
-            console.error(xhr, status, error);
+        alert(xhr.responseText);
+        console.error(xhr, status, error);
 		}
 	});
 }
 
 function populateEvents(events) {
     console.log(events);
-    var Pages_str = '';
+    var events_str = '';
     for(var event in events) {
-        Pages_str += events[event].id+' '+events[event].title+' '+events[event].date+' '+events[event].place+' '+events[event].category+'<br>';
+        events_str += '<a href="/events/'+events[event].id+' '+events[event].title+'"></a> '+events[event].date+' '+events[event].place+' '+events[event].category+'<br>';
     }
-    //$('#events').html(Pages_str);'<a href="/events/'"></a>
+    $('#events').html(events_str);
 }
 
