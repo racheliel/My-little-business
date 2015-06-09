@@ -18,14 +18,6 @@ class PageHandler(webapp2.RequestHandler):
 
        template_params['email'] = user.email
 
-       page = Page.get_by_id(int(page_id))
-       if page.admin != user.key and user.key not in page.members:
-           template_params['no_access'] = True
-        else:
-           template_params['page_title'] = page.title
-           template_params['page_admin'] = page.admin.get().email
-           template_params['page_id'] = page_id
-
 
 
         html = template.render('web/templates/page.html', template_params)

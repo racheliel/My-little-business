@@ -51,7 +51,7 @@ function populateMembers(members) {
     console.log(members);
     var members_str = '';
     for(var member in members) {
-       // console.log(pages[page]);
+       // console.log(members[member]);
         members_str += ''+members[member].email+'<br>';
     }
     //console.log(pages_str)
