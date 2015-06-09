@@ -48,11 +48,13 @@ function populatePages(pages) {
     console.log(pages);
     var Pages_str = '';
     for(var page in pages) {
+<<<<<<< HEAD:MyLittleBuisness/web/static/js/userIN.js
         //console.log(pages[page]);
         Pages_str += '<a href="/myBusiness/'+pages[page].id+'">'+pages[page].title+'</a>'+(pages[page].admin ? '<span>(admin)</span>': '')+'<br>';
+=======
+        Pages_str += '<a href="/pages/'+pages[page].id+'">'+pages[page].title+'</a>'+(pages[page].admin ? '<span>(admin)</span>': '')+'<br>';
+>>>>>>> origin/master:MyLittleBuisness/web/static/js/createPageBus.js
     }
-    //console.log(pages_str)
     $('#pages').html(Pages_str);
-    //$('#groups').html(groups_str);
 }
 
