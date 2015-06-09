@@ -70,8 +70,8 @@ function populateEvents(events) {
     console.log(events);
     var events_str = '';
     for(var event in events) {
-        events_str += '<a href="/events/'+events[event].id+' '+events[event].title+'"></a> '+events[event].date+' '+events[event].place+' '+events[event].category+'<br>';
+        events_str += '<a href="/events/'+events[event].id+'">'+events[event].title+'<span> </span>'+events[event].date+'<span> </span>'+events[event].place+'<span> </span>'+events[event].category+'</a><span> </span>'+(events[event].admin ? '<span>(admin)</span>': '')+'<br>';
     }
     $('#events').html(events_str);
 }
-
+'<a href="/events/'+events[event].id+'">'+events[event].title+'<span> </span>'+events[event].date+'<span> </span>'+events[event].place+'<span> </span>'+events[event].category+'</a><span> </span>'+(events[event].admin ? '<span>(admin)</span>': '')+'<br>';

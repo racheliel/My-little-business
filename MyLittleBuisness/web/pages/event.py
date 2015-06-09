@@ -7,21 +7,22 @@ import json
 
 
 class PageHandler(webapp2.RequestHandler):
-    def get(self, page_id):
-        template_params = {}
-        user = None
-       if self.request.cookies.get('our_token'):    #the cookie that should contain the access token!
-           user = User.checkToken(self.request.cookies.get('our_token'))
+    def get(self, event_id):
+		template_params = {}
+		user = None
+		if self.request.cookies.get('session'):
+			user = User.checkToken(self.request.cookies.get('session'))
+		if not user:
+			self.redirect('/')
+		
+		myEmail = user.email
 
-       if not user:
-           self.redirect('/')
+		template_params['email'] = myEmail
+						
+		html = template.render("web/templates/event.html", template_params)
+		self.response.write(html)
+       
 
-       template_params['email'] = user.email
-
-
-
-        html = template.render('web/templates/event.html', template_params)
-        self.response.write(html)
 
 app = webapp2.WSGIApplication([
 	('/events/(.*)', PageHandler),
