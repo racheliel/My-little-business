@@ -2,9 +2,11 @@ from google.appengine.ext import ndb
 
 class Page(ndb.Model):
     title = ndb.StringProperty()
+    name = ndb.StringProperty()
+    address = ndb.StringProperty()
+    details = ndb.StringProperty()                  
     admin = ndb.KeyProperty()
-    members = ndb.KeyProperty(repeated=True)
-
+    members =  ndb.KeyProperty()
     def getMembers(self):
         members = []
         for member in self.members:

@@ -2,30 +2,122 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Group page</title>
-	
-    <link rel="stylesheet" href="/static/css/style.css"/>
+    <title>Bussi</title>
+    
+	<link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="/static/css/layout.css" type="text/css" media="screen">
 	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="application/javascript" src="/static/js/page.js"></script>
+
+  </head>
+<body id="page1">
+	<div class="bg">
+		<div class="main">
+		<header>
+			<h1> <a class="logo" href="home">My Little Business</a> <strong class="slog">The most creative ideas</strong> </h1>
+
+		<div class="row-1">             
+			<a href="logout"><img src="/static/img/out.png" alt="signout" /></a>  
+				<h7>Hello,<span id='email'> {{email}}</span></h7>      
+		</div>	
+
 </head>
 <body>
     <input type="hidden" id="page_id" value="{{page_id}}">
-   <div>Hello, {{email}}. You can</div><br>
+<div class="row-pages"><h7><br>
 
- <!--   {% if no_access %}
-        <div>You do not have access to this group</div>
+   {% if no_access %}
+        <div>
+        <h7>שם העסק:<span id='title'> {{title}}</span></h7>
+		<h7>שם המוכר:<span id='name'> {{name}}</span></h7>            
+		<h7>אימייל העסק ליצירת קשר:<span id='email'> {{email}}</span></h7>   
+		<h7>כתובת העסק:<span id='adress'> {{adress}}</span></h7>   
+		<h7>פרטי העסק:<span id='details'> {{details}}</span></h7>                   
+        </div>
     {% else %}
-        Title: {{ page_title }}<br>
-        Admin: {{ page_admin }}<br><br>
-
-        Add member: <input type="text" id="new_member"><button id="add_member">Add member</button><br/>
-
-
-        memebers:
-        <div id="members"></div>
+	<ul><h7><br>
+        <li id="liStyle">
+        	<label for="name">שם:</label>
+            <input type="text" size="30" id="name" />
+	    </li><br>
+		<li id="liStyle">
+        	<label for="email">שם העסק:</label>
+            <input type="text" size="40" id="name" />
+        </li><br>
+		<li id="liStyle">
+        	<label for="name">אימייל:</label>
+            <input type="text" size="30" id="name" />
+	  </li><br>
+		<li id="liStyle">
+        	<label for="email">כתובת:</label>
+            <input type="text" size="40" id="name" />
+        </li><br>
+        <li id="liStyle">
+            <label>העלאת לוגו העסק:</label>
+            <input type="file" />
+        </li><br></h7>
+		</ul>
+		<li>		
+		<div class="b1"> על העסק שלי: </div>
+		<textarea class="message"></textarea>
+		</li>
+ <div class="b1"> העלאת תמונות:  </div>
+	        <li id="liStyle">
+            <label></label>
+            <input type="file" />
+        </li>
+		<br>
+		<br>
+	  <div class="b1"> שינוי התמונות שלי:  </div>
+		     <li>
+			 <img src="/static/img/b1.jpg" alt=""><p> <button type="delete picture" class="right">מחיקה</button> </p>
+              <img src="/static/img/b2.jpg" alt="">  <p> <button type="delete picture" class="right">מחיקה</button> </p>
+             <img src="/static/img/b3.jpg" alt="">  <p> <button type="delete picture" class="right">מחיקה</button> </p>
+			  <img src="/static/img/b4.jpg" alt=""> <p> <button type="delete picture" class="right">מחיקה</button> </p>
+				<img src="/static/img/b5.jpg" alt=""> <p> <button type="delete picture" class="right">מחיקה</button> </p>
+				</li>
+	<br><br><br><br>
+	<center>
+		<a href="myBusiness"><img src="/static/img/save.png" alt="save" /></a> 
+	<a href="myBusiness"><img src="/static/img/canchel.png" alt="canchel" /></a> 
 
     {% endif %}
--->
-
+</div>
+</div> </div>   
+   	   <!-- footer -->
+    <footer>
+      <div class="row-top">
+        <div class="row-padding">
+          <div class="wrapper">
+            <div class="col-1">
+              <h4>Address:</h4>
+              <dl class="address">
+                <dt><span>Country:</span>Israel</dt>
+                <dd><span>City:</span>Jerusalem</dd>
+                <dd><span>Email:</span><a href="#">MyLittleBusinessSite@gmail.com</a></dd>
+              </dl>
+            </div>
+            <div class="col-2">
+              <h4>Follow Us:</h4>
+              <ul class="list-services">
+                <li class="item-1"><a href="#">Facebook</a></li>
+                <li class="item-2"><a href="#">Twitter</a></li>
+                <li class="item-3"><a href="#">LinkedIn</a></li>
+              </ul>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+      <div class="row-bot">
+        <div class="aligncenter">
+          <center>
+		  <p class="p0">Copyright &copy; <a href="#">Racheli Elkaslasi, Hanni Gabai, Michal Gisri,Uriel Shani</a></p>
+        </center>
+		</div>
+      </div>
+    </footer>
+    
 </body>
 </html>

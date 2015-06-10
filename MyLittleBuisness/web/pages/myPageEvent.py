@@ -1,13 +1,11 @@
 from google.appengine.ext.webapp import template
 from models.user import User
-from models.page import Page
+from models.event import Event
 import webapp2
-import json
 
 
-
-class PageHandler(webapp2.RequestHandler):
-    def get(self, page_id):
+class IndexHandler(webapp2.RequestHandler):
+	def get(self):
 		template_params = {}
 		user = None
 		if self.request.cookies.get('session'):
@@ -16,16 +14,15 @@ class PageHandler(webapp2.RequestHandler):
 			self.redirect('/')
 		
 		template_params['email'] = user.email
-#		template_params['title'] = page.title
-#		template_params['details'] = page.details
-#		template_params['address'] = page.address
-#		template_params['name'] = page.name
+		template_params['title'] = event.title
+        template_params['date'] = event.date
+        template_params['place'] = event.place
+        template_params['category'] = event.category
         
-		html = template.render("web/templates/page.html", template_params)
+		html = template.render("web/templates/myPageEvent.html", template_params)
 		self.response.write(html)
        
 
-
 app = webapp2.WSGIApplication([
-	('/pages/(.*)', PageHandler),
+	('/myPageEvent', IndexHandler)
 ], debug=True)
