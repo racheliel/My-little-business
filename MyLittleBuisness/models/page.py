@@ -10,13 +10,13 @@ class Page(ndb.Model):
     members =  ndb.KeyProperty()
     
     @staticmethod
-    def addPage(title,name,address,details,email):
+    def addPage(_title,_name,_address,_details,_email):
         page = Page()
-        page.title = title
-        page.name = name
-        page.address = address        
-        page.details = details
-        page.emailBuss = email
+        page.title = _title
+        page.name = _name
+        page.address = _address        
+        page.details = _details
+        page.emailBuss = _email
         page.put()
         return page 
 	
