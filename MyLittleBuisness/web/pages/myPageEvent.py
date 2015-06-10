@@ -14,10 +14,10 @@ class IndexHandler(webapp2.RequestHandler):
 			self.redirect('/')
 		
 		template_params['email'] = user.email
-		template_params['title'] = event.title
-        template_params['date'] = event.date
-        template_params['place'] = event.place
-        template_params['category'] = event.category
+#		template_params['title'] = event.title
+#		template_params['date'] = event.date
+#		template_params['place'] = event.place
+#		template_params['category'] = event.category
         
 		html = template.render("web/templates/myPageEvent.html", template_params)
 		self.response.write(html)
