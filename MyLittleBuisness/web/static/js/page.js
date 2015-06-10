@@ -2,8 +2,8 @@ var pageID = '';
 $(function() {
     pageID = $('#page_id').val();
 	if(pageID)
-    refreshMembers();
-   $('#save').on('click', save);
+		refreshMembers();
+   $('#add_member').on('click', addMember);
 });
 
 
