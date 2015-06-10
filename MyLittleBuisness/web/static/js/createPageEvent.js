@@ -74,4 +74,4 @@ function populateEvents(events) {
     }
     $('#events').html(events_str);
 }
-'<a href="/events/'+events[event].id+'">'+events[event].title+'<span> </span>'+events[event].date+'<span> </span>'+events[event].place+'<span> </span>'+events[event].category+'</a><span> </span>'+(events[event].admin ? '<span>(admin)</span>': '')+'<br>';
+//'<a href="/events/'+events[event].id+'">'+events[event].title+'<span> </span>'+events[event].date+'<span> </span>'+events[event].place+'<span> </span>'+events[event].category+'</a><span> </span>'+(events[event].admin ? '<span>(admin)</span>': '')+'<br>';

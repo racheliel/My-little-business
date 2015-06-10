@@ -1,6 +1,7 @@
 var pageID = '';
 $(function() {
     pageID = $('#page_id').val();
+	if(pageID)
     refreshMembers();
    $('#add_member').on('click', addMember);
 });
