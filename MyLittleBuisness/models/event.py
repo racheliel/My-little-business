@@ -15,6 +15,10 @@ class Event(ndb.Model):
 
         return members
 
+	@staticmethod
+	def checkToken(token):
+		event = Event.get_by_id(long(token))
+		return event
 
     @staticmethod
     def getAdminEvent(user):
