@@ -2,13 +2,12 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Personal data page</title>
+    <title>My Events Page</title>
     
 	<link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="/static/css/layout.css" type="text/css" media="screen">
 	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="application/javascript" src="/static/js/createPageBus.js"></script>
  <script type="application/javascript" src="/static/js/createPageEvent.js"></script>
  
 
@@ -23,15 +22,35 @@
 			<a href="logout"><img src="/static/img/out.png" alt="signout" /></a>  
 				<h7>Hello,<span id='emailUser'> {{email}}</span></h7>      
 		</div>
-</br>
-	   <div class="row-pages"><h7><br>
-    שם דף העסק החדש: <input type="text" id="page_title"/>
-    <button id="createPageB">צור דף עסק חדש</button><br><br>
+<div class="row-pages"><h7><br>
+<br> 
+<center>   האירועים שלי :</center>
+<br>
+   נושא האירוע: <input type="text" id="page_title1"/><br>
+    תאריך האירוע: <input type="text" id="page_date"/><br>
+    מיקום האירוע: <input type="text" id="page_place"/><br>
+    קטגוריית האירוע: <input type="text" id="page_category"/><br>
+  <button id="createPageE">צור אירוע מכירה</button><br><br>
 
-    דפי העסק שלי :
-   <div id="pages">
 
+      <div id="events">
+       
    </div>
+
+<!--
+<form name="myform">
+
+<textarea name="inputtext" cols="135" rows="6" dir="rtl">
+נושא האירוע:    			    תאריך:   		   מיקום: 		     פרטים נוספים:   		
+</textarea>
+<p>
+<input type="button" value="הוסף אירוע" onClick="addtext();">
+<p>
+<textarea id="outputtext" name="outputtext" cols="135" rows="200" dir="rtl"></textarea>
+
+
+
+</form>-->
   
    </h7>
 </div> </div>   
