@@ -7,14 +7,6 @@ import webapp2
 class IndexHandler(webapp2.RequestHandler):
 	def get(self):
 		template_params = {}
-		user = None
-		if self.request.cookies.get('session'):
-			user = User.checkToken(self.request.cookies.get('session'))
-			myEmail = user.email
-			template_params['emailUser'] = myEmail
-			
-		if not user:
-			self.redirect('/')
 		
 		html = template.render("web/templates/contacts.html", template_params)
 		self.response.write(html)
