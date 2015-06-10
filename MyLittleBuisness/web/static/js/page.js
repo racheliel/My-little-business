@@ -8,12 +8,33 @@ $(function() {
 
 
 function addMember() {
-    $('#new_member').css('background', '#FFF');
-    var new_member = $('#new_member').val();
-    if(!new_member) {
-        $('#new_member').css('background', '#FAA');
-        return;
-    }
+    $('#title').css('background', '#FFF');
+    var title = $('#title').val();
+    $('#details').css('background', '#FFF');
+    var details = $('#details').val();
+    $('#address').css('background', '#FFF');
+    var address = $('#address').val();
+    $('#name').css('background', '#FFF');
+    var name = $('#name').val();
+    $('#emailBuss').css('background', '#FFF');
+    var emailBuss = $('#emailBuss').val();
+    
+    if(!title) {
+        $('#title').css('background', '#FAA');
+        return;}
+    if(!details) {
+        $('#details').css('background', '#FAA');
+        return;}
+    if(!address) {
+        $('#address').css('background', '#FAA');
+        return;}
+    if(!name) {
+        $('#name').css('background', '#FAA');
+        return;}
+    if(!emailBuss) {
+        $('#emailBuss').css('background', '#FAA');
+        return;}        
+   
 
 
     $.ajax({
