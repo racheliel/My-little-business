@@ -5,21 +5,45 @@ $(function() {
 
 
 function create_PageBus() {
-    $('#page_title').css('background', '#FFF');
-    var title = $('#page_title').val();
+    $('#title').css('background', '#FFF');
+    var title = $('#title').val();
+    $('#details').css('background', '#FFF');
+    var details = $('#details').val();
+    $('#address').css('background', '#FFF');
+    var address = $('#address').val();
+    $('#name').css('background', '#FFF');
+    var name = $('#name').val();
+    $('#emailBuss').css('background', '#FFF');
+    var emailBuss = $('#emailBuss').val();
+    
     if(!title) {
-        $('#page_title').css('background', '#FAA');
-        return;
-    }
-
+        $('#title').css('background', '#FAA');
+        return;}
+    if(!details) {
+        $('#details').css('background', '#FAA');
+        return;}
+    if(!address) {
+        $('#address').css('background', '#FAA');
+        return;}
+    if(!name) {
+        $('#name').css('background', '#FAA');
+        return;}
+    if(!emailBuss) {
+        $('#emailBuss').css('background', '#FAA');
+        return;}    
+    
 
     $.ajax({
 		url:'/api/createPageBus',
 		type:'GET',
 		dataType:'json',
-        data:{title:title},
+        data:{title:title,name:name,address:address,details:details,emailBuss:emailBuss},
 		success:function(data, status, xhr) {
             $('#page_title').val('');
+            $('#page_details').val('');
+            $('#page_address').val('');
+            $('#page_name').val('');
+            $('#page_emailBuss').val('');
             populatePages(data.pages);
 		},
 		error:function(xhr, status, error) {

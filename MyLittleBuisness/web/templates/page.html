@@ -31,17 +31,17 @@
         <div>
         <h7><span id='title'> {{title}}</span>שם העסק:</h7>
 		<h7><span id='name'> {{name}}</span>שם בעל העסק:</h7>            
-		<h7><span id='email'> {{email}}</span>אימייל העסק ליצירת קשר:</h7>   
-		<h7><span id='emailBuss'> {{emailBuss}}</span>כתובת העסק:</h7>   
+		<h7><span id='emailBuss'> {{emailBuss}}</span>אימייל העסק ליצירת קשר:</h7>   
+		<h7><span id='address'> {{address}}</span>כתובת העסק:</h7>   
 		<h7><span id='details'> {{details}}</span>פרטי העסק:</h7>                   
         </div>
     {% else %}
 	<ul><h7><br>
-    שם העסק: <input type="text" id="title"/><br>
-   שם בעל העסק: <input type="text" id="name"/><br>
-   אימייל העסק ליצירת קשר: <input type="text" id="emailBuss"/><br>
-        כתובת העסק: <input type="text" id="address"/><br>
-    פרטי העסק: <input type="text" id="details"/><br>
+    שם העסק: <input type="text" id="title"/>{{title}}<br>
+   שם בעל העסק: <input type="text" id="name"/>{{name}}<br>
+   אימייל העסק ליצירת קשר: <input type="text" id="emailBuss"/>{{emailBuss}}<br>
+        כתובת העסק: <input type="text" id="address"/>{{address}}<br>
+    פרטי העסק: <input type="text" id="details"/><textarea>{{details}}</textarea><br>
         <li id="liStyle">
             <label>העלאת לוגו העסק:</label>
             <input type="file" />

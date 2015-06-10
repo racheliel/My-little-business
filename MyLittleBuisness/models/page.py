@@ -8,6 +8,25 @@ class Page(ndb.Model):
     emailBuss = ndb.StringProperty()  
     admin = ndb.KeyProperty()
     members =  ndb.KeyProperty()
+    
+    	@staticmethod
+	def addPage(title,name,address,details,email):
+		page = Page()
+		page.title = title
+		page.name = name
+		page.address = address        
+		page.details = details
+		page.emailBuss = email
+		page.put()
+		return page 
+	
+
+	@classmethod		
+	def deleteUser(self,user_name):
+		query = User.query(User.email == user_name).fetch()
+		for user in query:
+			user.key.delete()
+
     def getMembers(self):
         members = []
         for member in self.members:

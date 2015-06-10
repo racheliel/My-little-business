@@ -8,32 +8,8 @@ $(function() {
 
 
 function addMember() {
-    $('#title').css('background', '#FFF');
-    var title = $('#title').val();
-    $('#details').css('background', '#FFF');
-    var details = $('#details').val();
-    $('#address').css('background', '#FFF');
-    var address = $('#address').val();
-    $('#name').css('background', '#FFF');
-    var name = $('#name').val();
-    $('#emailBuss').css('background', '#FFF');
-    var emailBuss = $('#emailBuss').val();
-    
-    if(!title) {
-        $('#title').css('background', '#FAA');
-        return;}
-    if(!details) {
-        $('#details').css('background', '#FAA');
-        return;}
-    if(!address) {
-        $('#address').css('background', '#FAA');
-        return;}
-    if(!name) {
-        $('#name').css('background', '#FAA');
-        return;}
-    if(!emailBuss) {
-        $('#emailBuss').css('background', '#FAA');
-        return;}        
+
+}        
    
 
 
