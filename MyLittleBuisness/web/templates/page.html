@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="he">
     <meta charset="UTF-8">
     <title>Bussi</title>
     
@@ -11,7 +11,7 @@
     <script type="application/javascript" src="/static/js/page.js"></script>
 
   </head>
-<body id="page1">
+<body id="page1" dir="rtl">
 	<div class="bg">
 		<div class="main">
 		<header>
@@ -41,7 +41,7 @@
    שם בעל העסק: <input type="text" id="name"/>{{name}}<br>
    אימייל העסק ליצירת קשר: <input type="text" id="emailBuss"/>{{emailBuss}}<br>
         כתובת העסק: <input type="text" id="address"/>{{address}}<br>
-    פרטי העסק: <input type="text" id="details"/><textarea>{{details}}</textarea><br>
+    פרטי העסק:<textarea name="comments"  id="details" cols="30" rows="10">{{details}}</textarea><br>
         <li id="liStyle">
             <label>העלאת לוגו העסק:</label>
             <input type="file" />
@@ -57,13 +57,6 @@
 		<br>
 		<br>
 	  <div class="b1"> שינוי התמונות שלי:  </div>
-		     <li>
-			 <img src="/static/img/b1.jpg" alt=""><p> <button type="delete picture" class="right">מחיקה</button> </p>
-              <img src="/static/img/b2.jpg" alt="">  <p> <button type="delete picture" class="right">מחיקה</button> </p>
-             <img src="/static/img/b3.jpg" alt="">  <p> <button type="delete picture" class="right">מחיקה</button> </p>
-			  <img src="/static/img/b4.jpg" alt=""> <p> <button type="delete picture" class="right">מחיקה</button> </p>
-				<img src="/static/img/b5.jpg" alt=""> <p> <button type="delete picture" class="right">מחיקה</button> </p>
-				</li>
 	<br><br><br><br>
 	<center>
 <button id="save">שמירה</button>
