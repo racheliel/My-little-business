@@ -12,12 +12,16 @@ class IndexHandler(webapp2.RequestHandler):
 			user = User.checkToken(self.request.cookies.get('session'))
 		if not user:
 			self.redirect('/')
-		
-		template_params['email'] = user.email
-#		template_params['title'] = event.title
-#		template_params['date'] = event.date
-#		template_params['place'] = event.place
-#		template_params['category'] = event.category
+		Email = user.email
+		Title = event.title
+		Date = event.date
+		Place = event.place
+		Category = event.category
+		template_params['email'] = Email 
+		template_params['title'] = Title
+		template_params['date'] = Date
+		template_params['place'] = Place
+		template_params['category'] = Category
         
 		html = template.render("web/templates/myPageEvent.html", template_params)
 		self.response.write(html)

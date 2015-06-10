@@ -7,6 +7,9 @@
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 <link rel="stylesheet" type="text/css" href="/static/css/styleEvenS.css">
 <link rel="stylesheet" type="text/css" href="/static/css/layout.css">
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="application/javascript" src="/static/js/createPageEvent.js"></script>
+
 
 
 </head>
@@ -40,17 +43,18 @@
 		<div class="row-event">
         <div class="row-padding">
           <div class="wrapper">
-		  
+		  {% if no_access %}
 		<table dir="rtl" cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
 		<div>
+		      <div id="events">
+
 	<tr><th>תאריך ושעה</th><th>מקום</th><th>קטגוריה</th><th>להשתתפות</th></tr><!-- Table Header -->
     
-<tr><td>13/5/2015<br><br>9:00-15:00</td><td>בנייני האומה,<br><br>ירושלים</td><td>אופנה</td><td><button type="register" class="right">בקש להשתתף</button></td></tr><!-- Table Row -->
-<tr><td>20/5/2015<br><br>18:00-22:00</td><td>היכל התרבות,<br> <br>אשקלון</td><td>אוכל</td><td><button type="register" class="right">בקש להשתתף</button></td></tr><!-- Table Row -->
-<tr><td>23/5/2015<br><br>15:00-20:00</td><td>מרכז קהילתי,<br> <br>גבעת שמואל</td><td>מעצבים</td><td><button type="register" class="right">בקש להשתתף</button></td></tr><!-- Table Row -->
+<tr><td>{{date}}</td><td>{{place}}</td><td>{{category}}</td><td><button type="register" class="right">בקש להשתתף</button></td></tr><!-- Table Row -->
+
 </div>
 	</table>
-		
+{% endif %}		
 		
 		
 </div></div>		

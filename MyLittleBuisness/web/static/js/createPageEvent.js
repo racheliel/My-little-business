@@ -33,17 +33,18 @@ function create_Event() {
 		url:'/api/createEvent',
 		type:'GET',
 		dataType:'json',
-        data:{title:title},
-        data:{date:date},
-        data:{place:place},
-        data:{category:category},
+
+        data:{category:category,title:title,date:date,place:place},
 		success:function(data, status, xhr) {
             $('#page_title1').val('');
             $('#page_date').val('');
             $('#page_place').val('');
             $('#page_category').val('');
+			refreshEvents();
             populateEvents(data.events);
+			
 		},
+
 		error:function(xhr, status, error) {
         alert(xhr.responseText);
         console.error(xhr, status, error);
@@ -70,7 +71,6 @@ function populateEvents(events) {
     console.log(events);
     var events_str = '';
     for(var event in events) {
-        events_str += '<a href="/events/'+events[event].id+'">'+events[event].title+'<span> </span>'+events[event].date+'<span> </span>'+events[event].place+'<span> </span>'+events[event].category+'</a><span> </span>'+(events[event].admin ? '<span>(admin)</span>': '')+'<br>';
-    }
+events_str += '<a href="/events/'+events[event].id+'"> נושא: '+(events[event].title+'<span> תאריך: </span>'+events[event].date+'<span> מיקום: </span>'+events[event].place+'<span> קטגוריה: </span>'+events[event].category)+'</a><span> </span>'+(events[event].admin ? '<span>(admin)</span>': '')+'<br>';    }
     $('#events').html(events_str);
 }

@@ -1,11 +1,11 @@
 from google.appengine.ext import ndb
 
 class Event(ndb.Model):
-    title = ndb.StringProperty()
-    date = ndb.StringProperty()
-    place = ndb.StringProperty()
-    category = ndb.StringProperty()
-    admin = ndb.KeyProperty()
+    title = ndb.StringProperty(required=True)
+    date = ndb.StringProperty(required=True)
+    place = ndb.StringProperty(required=True)
+    category = ndb.StringProperty(required=True)
+    admin = ndb.KeyProperty(required=True)
     members = ndb.KeyProperty(repeated=True)
 
     def getMembers(self):
