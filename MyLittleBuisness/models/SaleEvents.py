@@ -1,7 +1,7 @@
 from google.appengine.api import users
 from google.appengine.ext import ndb
 
-class User(ndb.Model):
+class SaleEvents(ndb.Model):
 	email = ndb.StringProperty()
 	
 	
@@ -38,3 +38,14 @@ class User(ndb.Model):
 
 		else:
 			return "not connected"
+			
+	def getAllEventForAllUser(self):
+		allUser = User.getAllUser()
+		allEvent=[]
+		if allUser:
+			for user in allUser:
+				allEvent.append(user)
+			return allUser
+		else
+			return None
+	
