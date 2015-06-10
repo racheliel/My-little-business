@@ -20,7 +20,7 @@ class PageHandler(webapp2.RequestHandler):
 #		template_params['details'] = page.details
 #		template_params['address'] = page.address
 #		template_params['name'] = page.name
-        
+#		template_params['emailBuss'] = page.emailBuss        
 		html = template.render("web/templates/page.html", template_params)
 		self.response.write(html)
        

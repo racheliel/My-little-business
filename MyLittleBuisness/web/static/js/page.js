@@ -2,7 +2,7 @@ var pageID = '';
 $(function() {
     pageID = $('#page_id').val();
     refreshMembers();
-   $('#add_member').on('click', addMember);
+   $('#save').on('click', save);
 });
 
 

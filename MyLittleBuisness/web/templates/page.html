@@ -29,30 +29,19 @@
 
    {% if no_access %}
         <div>
-        <h7>שם העסק:<span id='title'> {{title}}</span></h7>
-		<h7>שם המוכר:<span id='name'> {{name}}</span></h7>            
-		<h7>אימייל העסק ליצירת קשר:<span id='email'> {{email}}</span></h7>   
-		<h7>כתובת העסק:<span id='adress'> {{adress}}</span></h7>   
-		<h7>פרטי העסק:<span id='details'> {{details}}</span></h7>                   
+        <h7><span id='title'> {{title}}</span>שם העסק:</h7>
+		<h7><span id='name'> {{name}}</span>שם בעל העסק:</h7>            
+		<h7><span id='email'> {{email}}</span>אימייל העסק ליצירת קשר:</h7>   
+		<h7><span id='emailBuss'> {{emailBuss}}</span>כתובת העסק:</h7>   
+		<h7><span id='details'> {{details}}</span>פרטי העסק:</h7>                   
         </div>
     {% else %}
 	<ul><h7><br>
-        <li id="liStyle">
-        	<label for="name">שם:</label>
-            <input type="text" size="30" id="name" />
-	    </li><br>
-		<li id="liStyle">
-        	<label for="email">שם העסק:</label>
-            <input type="text" size="40" id="name" />
-        </li><br>
-		<li id="liStyle">
-        	<label for="name">אימייל:</label>
-            <input type="text" size="30" id="name" />
-	  </li><br>
-		<li id="liStyle">
-        	<label for="email">כתובת:</label>
-            <input type="text" size="40" id="name" />
-        </li><br>
+    שם העסק: <input type="text" id="title"/><br>
+   שם בעל העסק: <input type="text" id="name"/><br>
+   אימייל העסק ליצירת קשר: <input type="text" id="emailBuss"/><br>
+        כתובת העסק: <input type="text" id="address"/><br>
+    פרטי העסק: <input type="text" id="details"/><br>
         <li id="liStyle">
             <label>העלאת לוגו העסק:</label>
             <input type="file" />
@@ -79,9 +68,7 @@
 				</li>
 	<br><br><br><br>
 	<center>
-		<a href="myBusiness"><img src="/static/img/save.png" alt="save" /></a> 
-	<a href="myBusiness"><img src="/static/img/canchel.png" alt="canchel" /></a> 
-
+<button id="save">שמירה</button>
     {% endif %}
 </div>
 </div> </div>   

@@ -5,6 +5,7 @@ class Page(ndb.Model):
     name = ndb.StringProperty()
     address = ndb.StringProperty()
     details = ndb.StringProperty()                  
+    emailBuss = ndb.StringProperty()  
     admin = ndb.KeyProperty()
     members =  ndb.KeyProperty()
     def getMembers(self):
