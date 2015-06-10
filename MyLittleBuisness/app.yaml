@@ -64,6 +64,9 @@ handlers:
 - url: /favorites
   script: web.pages.favorites.app
   
+- url: /sendEmail
+  script: web.pages.sendEmail.app
+  
 - url: /salesEvents
   script: web.pages.salesEvents.app
   

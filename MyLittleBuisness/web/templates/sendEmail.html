@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
 <title>My Little Business</title>
-		
+
 <link rel="stylesheet" type="text/css" href="/static/css/reset.css" >
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 <link rel="stylesheet" type="text/css" href="/static/css/styleEvenS.css">
 <link rel="stylesheet" type="text/css" href="/static/css/layout.css">
+<link rel="stylesheet" href="/static/css/styleCon.css" type="text/css" media="screen">
+
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="application/javascript" src="/static/js/createPageEvent.js"></script>
+
+
 
 </head>
 <body id="page1">
@@ -18,47 +24,24 @@
 	
          <h1> <a class="logo" href="home">My Little Business</a> <strong class="slog">The most creative ideas</strong> </h1>
 
-
-   <div class="row-1">             
-	<a href="logout"><img src="/static/img/out.png" alt="signout" /></a>  
-	<h7>Hello,<span id='emailUser'> {{emailUser}}</span></h7>    
+    <div class="row-1">             
+   <a href="logout"><img src="/static/img/out.png" alt="signout" /></a>  
+   </br><h7>Hello,<span id='emailUser'> {{emailUser}}</span></h7> 
    </div>
 	  
-	  <div class="row-2">
-        <nav>
-          <ul class="menu">
-            <li><a  href="home">Home Page</a></li>
-          <li><a class="active" href="salesEvents">Sales Events</a></li>
-			<li><a href="favorites">My Favorites</a></li>
-			<li><a href="aboutUs">About Us</a></li>
-            <li class="last-item"><a href="contacts">Contact Us</a></li>
-          </ul>
-        </nav>
-		</div>
-		
-		<div class="row-event">
-        <div class="row-padding">
-          <div class="wrapper">
-		  
-		<table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
-		<div>
-	<tr><th>Date & Time</th><th>Place</th><th>Category</th><th>Event organizer</th></tr><!-- Table Header -->
-    
-<tr><td>13/5/2015<br><br>9:00-15:00</td><td>Binyanei Hauma,<br><br> Jerusalem</td><td>Fashion</td><td>Uriel shany</td></tr><!-- Table Row -->
-<tr><td>20/5/2015<br><br>18:00-22:00</td><td>Cultural Hall,<br> <br>Ashkelon</td><td>Uncategorized</td><td>Racheli Tehila</td></tr><!-- Table Row -->
-<tr><td>23/5/2015<br><br>15:00-20:00</td><td>Community center,<br> <br>Givat Shmuel</td><td>Fashion</td><td>Hanni Gabai</td></tr><!-- Table Row -->
-</div>
-	</table>
-	
-	
-<a href="javascript://" onCLick="window.open('../sendEmail')"> לחץ להצטרפות </a>
-		
-		
-		
-</div></div>		
-      </div>
-      </div>      
-	  </div>	  
+</br>
+	<div class="row-pages"><h7><br>
+    <div class="wrapper">
+                    <div>בקשת הצטרפות לאירוע המכירות</div>
+					</br>
+					<div>ספר על העסק שלך:</div>
+                    <textarea class="text"></textarea>
+                  </div>
+   <div class="buttons"> <a class="button-2" href="#">שלח בקשת הצטרפות</a> </div>
+   </h7>
+</div> </div></div> </div>    
+
+	  
 	   <!-- footer -->
     <footer>
       <div class="row-top">
