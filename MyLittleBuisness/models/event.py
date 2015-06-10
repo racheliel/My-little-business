@@ -16,6 +16,16 @@ class Event(ndb.Model):
         return members
 
 	@staticmethod
+	def addEvent(_title,_date,_place,_category):
+		event = Event()
+		event.title = _title
+		event.date = _date
+		event.category = _category
+		event.put()
+		return event
+		
+		
+	@staticmethod
 	def checkToken(token):
 		event = Event.get_by_id(long(token))
 		return event
