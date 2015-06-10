@@ -16,8 +16,7 @@ class IndexHandler(webapp2.RequestHandler):
 		myEmail = user.email
 
 		template_params['email'] = myEmail
-		html = template.render("web/templates/myPage.html", template_params)
-		self.response.write(html)
+        
  #       title = self.request.get('page_title')
   #      address = self.request.get('page_address')   
    #     name = self.request.get('page_name')
@@ -33,7 +32,9 @@ class IndexHandler(webapp2.RequestHandler):
 #			self.response.set_cookie('session', str(user.key.id()))
 #			return
 #		else:
-
+		html = template.render("web/templates/myPage.html", template_params)
+		self.response.write(html)
+        
 app = webapp2.WSGIApplication([
 	('/myPage', IndexHandler)
 ], debug=True)

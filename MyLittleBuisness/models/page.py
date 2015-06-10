@@ -1,4 +1,5 @@
 from google.appengine.ext import ndb
+from models.user import User
 
 class Page(ndb.Model):
     title = ndb.StringProperty()
@@ -67,3 +68,12 @@ class Page(ndb.Model):
         arr_b = Page.getUserPages(user)
 
         return arr_a + arr_b
+    @staticmethod
+    def getPageUser(user,title):
+        allPage = Page.getAllPages(user)
+        if allPage:
+            for page in allPage:
+                if(page.title == title)
+                    return page
+        else:
+            return None

@@ -14,7 +14,9 @@ class PageHandler(webapp2.RequestHandler):
 			user = User.checkToken(self.request.cookies.get('session'))
 		if not user:
 			self.redirect('/')
-		
+		page = Page.getPageUser(user,title)
+        if page:
+            
        
 		html = template.render("web/templates/page.html", template_params)
 		self.response.write(html)
