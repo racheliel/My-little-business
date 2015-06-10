@@ -3,33 +3,32 @@ $(function() {
     $('#createPageB').on('click', create_PageBus);
 });
 
-
 function create_PageBus() {
-    $('#title').css('background', '#FFF');
-    var title = $('#title').val();
-    $('#details').css('background', '#FFF');
-    var details = $('#details').val();
-    $('#address').css('background', '#FFF');
-    var address = $('#address').val();
-    $('#name').css('background', '#FFF');
-    var name = $('#name').val();
-    $('#emailBuss').css('background', '#FFF');
-    var emailBuss = $('#emailBuss').val();
+    $('#page_title').css('background', '#FFF');
+    var title = $('#page_title').val();
+    $('#page_details').css('background', '#FFF');
+    var details = $('#page_details').val();
+    $('#page_address').css('background', '#FFF');
+    var address = $('#page_address').val();
+    $('#page_name').css('background', '#FFF');
+    var name = $('#page_name').val();
+    $('#page_emailBuss').css('background', '#FFF');
+    var emailBuss = $('#page_emailBuss').val();
     
     if(!title) {
-        $('#title').css('background', '#FAA');
+        $('#page_title').css('background', '#FAA');
         return;}
     if(!details) {
-        $('#details').css('background', '#FAA');
+        $('#page_details').css('background', '#FAA');
         return;}
     if(!address) {
-        $('#address').css('background', '#FAA');
+        $('#page_address').css('background', '#FAA');
         return;}
     if(!name) {
-        $('#name').css('background', '#FAA');
+        $('#page_name').css('background', '#FAA');
         return;}
     if(!emailBuss) {
-        $('#emailBuss').css('background', '#FAA');
+        $('#page_emailBuss').css('background', '#FAA');
         return;}    
     
 
