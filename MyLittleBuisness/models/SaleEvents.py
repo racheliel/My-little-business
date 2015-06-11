@@ -38,7 +38,8 @@ class SaleEvents(ndb.Model):
 
 		else:
 			return "not connected"
-			
+	
+	@staticmethod	
 	def getAllEventForAllUser(self):
 		allUser = User.getAllUser()
 		allEvent=[]
