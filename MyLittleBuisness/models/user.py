@@ -1,5 +1,5 @@
 from google.appengine.ext import ndb
-
+import event
 class User(ndb.Model):
 	email = ndb.StringProperty(required=True)
 	

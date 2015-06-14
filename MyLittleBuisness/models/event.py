@@ -1,4 +1,5 @@
 from google.appengine.ext import ndb
+import user
 
 class Event(ndb.Model):
     title = ndb.StringProperty(required=True)
@@ -25,14 +26,14 @@ class Event(ndb.Model):
 		return event
 		
 		
-	@staticmethod
-	def checkToken(token):
-		event = Event.get_by_id(long(token))
-		return event
+#	@staticmethod
+#	def checkToken(token):
+#		event = Event.get_by_id(long(token))
+#		return event
 
     @staticmethod
-    def getAdminEvent(user):
-        q = Event.query(Event.admin == user.key)
+    def getAdminEvent(user_name):
+        q = Event.query(Event.members == user_name)
         events_arr = []
         for event in q:
             events_arr.append({

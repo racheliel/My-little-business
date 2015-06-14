@@ -17,7 +17,7 @@ class createEvent(webapp2.RequestHandler):
             self.response.write('No user - access denied')
             return
 
-        event = Event()
+        event = Event.getAdminEvent(self.request.cookies.get('session'))
         event.title = self.request.get('title')
         event.date = self.request.get('date')
         event.place = self.request.get('place')

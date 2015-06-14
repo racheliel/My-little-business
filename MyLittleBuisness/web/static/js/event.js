@@ -1,7 +1,8 @@
 var eventID = '';
 $(function() {
     eventID = $('#event_id').val();
-    refreshMembers();
+	if(eventID)
+		refreshMembers();
    $('#add_member').on('click', addMember);
 });
 
@@ -19,7 +20,7 @@ function addMember() {
 		url:'/api/add_member',
 		type:'GET',
 		dataType:'json',
-        data:{page_id:pageID, member_email:new_member},
+        data:{event_id:eventID, member_email:new_member},
 		success:function(data, status, xhr) {
             $('#new_member').val('');
             populateMembers(data.members);
@@ -36,7 +37,7 @@ function refreshMembers() {
 		url:'/api/members',
 		type:'GET',
 		dataType:'json',
-        data:{page:pageID},
+        data:{event:eventID},
 		success:function(data, status, xhr) {
             populateMembers(data.members);
 		},
