@@ -21,35 +21,20 @@ namespace finalProject
         {
             return eventD.getPassword(userN);
         }
-        public LinkedList<string> getAllEventType()
+
+
+        public void deleteEvent(DateTime date, string user, string place, string name, string cat)
         {
-            return eventD.getAllEventType();
+            Events e = new Events(user, date, place,name,cat);
+            eventD.deleteEvent(e);
         }
 
-        public int getIDEvent(string str)
+
+        public LinkedList<Events> getEvents(string username)
         {
-            return eventD.getIDEvent(str);
-        }
-        public void deleteUserEvent(int eID,DateTime date,string user,string place)
-        {
-            Events e = new Events(user, eID, date, place);
-            eventD.deleteUserEvent(e);
+            return eventD.getEvents(username);
         }
 
-        public string getTypeEvent(int num)
-        {
-            return eventD.getTypeEvent(num);
-        }
-
-        public LinkedList<Events> getUsersEvents(string name)
-        {
-            return eventD.getUsersEvents(name);
-        }
-        public void addNewUser(string userN, string pass, string email, string first, string last)
-        {
-            Users u = new Users(userN, pass, email, first, last);
-            eventD.createUser(u);
-        }
 
         public Boolean chackUser(string userN)
         {
@@ -61,12 +46,57 @@ namespace finalProject
             return eventD.signIn(pass,userN);
         }
 
-        public void createUserEvent(string userName, int eventID, DateTime date_time, string place)
+
+        public Business getBusiness(string str)
         {
-            Events e =new Events(userName,eventID,date_time, place);
-            eventD.createUserEvent(e);
+            return eventD.getBusiness(str);
         }
 
+        public LinkedList<Business> getAllBusiness()
+        {
+            return eventD.getAllBusiness();
+        }
+
+        public LinkedList<Favorit> getFavorit(string user)
+        {
+            return eventD.getFavorit(user);
+        }
+
+        public LinkedList<Feedback> getFeedback(string buss)
+        {
+            return eventD.getFeedback(buss);
+        }
+
+
+        public LinkedList<Events> getAllEvents()
+        {
+           return eventD.getAllEvents();
+        }
+
+        public void addFavorit(Favorit f)
+        {
+            eventD.addFavorit(f);
+        }
+
+        public void createUser(Users u)
+        {
+            eventD.createUser(u);
+        }
+
+        public void addFeedback(Feedback f)
+        {
+            eventD.addFeedback(f);
+        }
+
+        public void deleteFavorit(Favorit f)
+        {
+            eventD.deleteFavorit(f);
+        }
+
+        public void createEvent(Events e)
+        {
+            eventD.createEvent(e);
+        }
 
     }
 }
