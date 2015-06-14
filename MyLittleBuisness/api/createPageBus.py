@@ -17,12 +17,25 @@ class createPageBus(webapp2.RequestHandler):
             self.error(403)
             self.response.write('No user - access denied')
             return
-
-        page = Page()
+            
+        page = None
         page.title = self.request.get('title')
-        page.admin = user.key
-        page.put()
-        time.sleep(0.5)
+        page.name = self.request.get('name')
+        page.address = self.request.get('address')
+        page.details = self.request.get('details')
+        page.emailBuss = self.request.get('emailBuss')        
+        page.admin = user.key            
+        
+		if page:
+			if Page.checkIfPageExists(page.title,user.email):
+				self.response.write(json.dumps({'status':'exists'}))
+				return
+			else:
+				page = Page.addPage(page.title,page.name,page.address,page.details,page.emailBuss,page.admin)
+				time.sleep(0.5);
+
+ #       page.put()
+ #       time.sleep(0.5)
         pages = Page.getAllPages(user)
         self.response.write(json.dumps({"status": "OK", "pages": pages}))
 

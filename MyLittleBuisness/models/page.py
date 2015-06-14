@@ -11,13 +11,14 @@ class Page(ndb.Model):
     members =  ndb.KeyProperty()
     
     @staticmethod
-    def addPage(_title,_name,_address,_details,_email):
+    def addPage(_title,_name,_address,_details,_email,_admin):
         page = Page()
         page.title = _title
         page.name = _name
         page.address = _address        
         page.details = _details
         page.emailBuss = _email
+        page.admin=_admin
         page.put()
         return page 
 	
@@ -62,6 +63,8 @@ class Page(ndb.Model):
 
         return pages_arr
 
+        
+
     @staticmethod
     def getAllPages(user):
         arr_a = Page.getAdminPages(user)
@@ -77,3 +80,6 @@ class Page(ndb.Model):
                     return page
         else:
             return None
+    @staticmethod            
+    def checkIfPageExists(page.title,user.email):
+        
