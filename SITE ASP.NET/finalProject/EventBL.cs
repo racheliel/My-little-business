@@ -45,9 +45,9 @@ namespace finalProject
         {
             return eventD.getUsersEvents(name);
         }
-        public void addNewUser(string userN, string pass, string email, string first, string last, DateTime time)
+        public void addNewUser(string userN, string pass, string email, string first, string last)
         {
-            Users u = new Users(userN, pass, email, first, last, time);
+            Users u = new Users(userN, pass, email, first, last);
             eventD.createUser(u);
         }
 

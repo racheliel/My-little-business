@@ -231,7 +231,7 @@ namespace finalProject
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO FeedbacksTable (BusName,Feedback,UserName)" + "VALUES ('" + f.BusName + "','" + f.Feedback + "','" + f.UserName + ");";
+             string sqlString = "INSERT INTO FeedbacksTable (BusName,Feedback,UserName)" + "VALUES ('" + f.BusName + "','" + f.Strfeedback + "','" + f.UserName + ");";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {

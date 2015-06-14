@@ -36,8 +36,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width: 100%; height: 276px; margin-top: 0px;">
     <tr>
-        <td class="auto-style8" colspan="3">
-            <div style="color: #C27DD2; background-color: #FFFFCC; font-size: 32px; font-weight: 700; height: 52px; width: 1151px; margin-top: 0px; margin-bottom: 16px;">
+        <td class="auto-style8" colspan="3" style="font-size: 20px; font-weight: 600; background-color: #C0C0C0; color: #000000">
+            <div>
                 Welcome Guest</div>
         </td>
     </tr>
@@ -64,60 +64,7 @@
         <td class="auto-style10">Email:&nbsp;&nbsp;
             <asp:TextBox ID="email" runat="server" Width="219px"></asp:TextBox>
         </td>
-        <td class="auto-style15">Birth Date:&nbsp;&nbsp;
-            <asp:DropDownList ID="month" runat="server">
-                <asp:ListItem>month</asp:ListItem>
-                <asp:ListItem>1</asp:ListItem>
-                <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>3</asp:ListItem>
-                <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
-                <asp:ListItem>11</asp:ListItem>
-                <asp:ListItem>12</asp:ListItem>
-            </asp:DropDownList>
-            <asp:DropDownList ID="day" runat="server">
-                <asp:ListItem>day</asp:ListItem>
-                <asp:ListItem>1</asp:ListItem>
-                <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem Value="3"></asp:ListItem>
-                <asp:ListItem Value="4"></asp:ListItem>
-                <asp:ListItem Value="5"></asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem Value="7"></asp:ListItem>
-                <asp:ListItem Value="8"></asp:ListItem>
-                <asp:ListItem Value="9"></asp:ListItem>
-                <asp:ListItem Value="10"></asp:ListItem>
-                <asp:ListItem>11</asp:ListItem>
-                <asp:ListItem>12</asp:ListItem>
-                <asp:ListItem>13</asp:ListItem>
-                <asp:ListItem>14</asp:ListItem>
-                <asp:ListItem>15</asp:ListItem>
-                <asp:ListItem Value="16"></asp:ListItem>
-                <asp:ListItem Value="17"></asp:ListItem>
-                <asp:ListItem Value="18"></asp:ListItem>
-                <asp:ListItem Value="19"></asp:ListItem>
-                <asp:ListItem Value="20"></asp:ListItem>
-                <asp:ListItem Value="21"></asp:ListItem>
-                <asp:ListItem Value="22"></asp:ListItem>
-                <asp:ListItem Value="23"></asp:ListItem>
-                <asp:ListItem>24</asp:ListItem>
-                <asp:ListItem Value="25"></asp:ListItem>
-                <asp:ListItem Value="26"></asp:ListItem>
-                <asp:ListItem>27</asp:ListItem>
-                <asp:ListItem Value="28"></asp:ListItem>
-                <asp:ListItem Value="29"></asp:ListItem>
-                <asp:ListItem Value="30"></asp:ListItem>
-                <asp:ListItem Value="31"></asp:ListItem>
-            </asp:DropDownList>
-            <asp:DropDownList ID="year" runat="server">
-                <asp:ListItem>year</asp:ListItem>
-            </asp:DropDownList>
-        </td>
+        <td class="auto-style15">&nbsp;</td>
     </tr>
     <tr>
         <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="height: 49px">

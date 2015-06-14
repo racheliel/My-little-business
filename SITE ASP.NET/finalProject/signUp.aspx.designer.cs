@@ -67,33 +67,6 @@ namespace finalProject {
         protected global::System.Web.UI.WebControls.TextBox email;
         
         /// <summary>
-        /// month control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList month;
-        
-        /// <summary>
-        /// day control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList day;
-        
-        /// <summary>
-        /// year control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList year;
-        
-        /// <summary>
         /// error control.
         /// </summary>
         /// <remarks>

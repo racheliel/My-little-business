@@ -9,14 +9,14 @@ namespace finalProject
     class Feedback
     {
         private string userName;
-        private string busName,feedback;
+        private string busName,strfeedback;
 
 
         public Feedback(string userName, string busName, string feedback)
         {
             this.userName = userName;
             this.busName = busName;
-            this.feedback = feedback; 
+            this.strfeedback = feedback; 
         }
 
         public string UserName
@@ -25,10 +25,10 @@ namespace finalProject
             set { userName = value; }
         }
 
-        public string Feedback
+        public string Strfeedback
         {
-            get { return feedback; }
-            set { feedback = value; }
+            get { return strfeedback; }
+            set { strfeedback = value; }
         }
 
         public string BusName
