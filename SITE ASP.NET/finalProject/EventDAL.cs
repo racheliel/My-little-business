@@ -45,7 +45,7 @@ namespace finalProject
             SqlDataReader rdr = com.ExecuteReader();
             if (rdr.Read())
             {
-                Users user = new Users((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3], (string)rdr[4], (DateTime)rdr[5]);
+                Users user = new Users((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3], (string)rdr[4]);
                 con.Close();
                 return user;
             }
@@ -55,7 +55,9 @@ namespace finalProject
                 return null;
             }
         }
-       public int getIDEvent(string str)
+
+        ////
+        public int getIDEvent(string str)
         {//get the name of event and returns the id of event
             con.Open();
             string sqlString = "Select EventID from EventsTable where EventName='" + str + "';";
@@ -70,7 +72,7 @@ namespace finalProject
             return num;
         }
 
-
+        ////
         public string getTypeEvent(int num)
         {//get event id and return event name
             con.Open();
@@ -87,6 +89,40 @@ namespace finalProject
         }
 
 
+        public LinkedList<Favorit> getFavorit(string user)
+        {
+            con.Open();
+            string sqlString = "Select * from FavoritTable where UserName='" + user + "';";
+            SqlCommand com = new SqlCommand(sqlString, con);
+            SqlDataReader rdr = com.ExecuteReader();
+            LinkedList<Favorit> favorits = new LinkedList<Favorit>();
+            Favorit f;
+            if (rdr.Read())
+            {
+                f = new Favorit((string)rdr[0], (string)rdr[1]);
+                favorits.AddFirst(f);
+            }
+            con.Close();
+            return favorits;
+        }
+
+        public LinkedList<Feedback> getFeedback(string buss)
+        {
+            con.Open();
+            string sqlString = "Select * from FeedbackTable where BusName='" + buss + "';";
+            SqlCommand com = new SqlCommand(sqlString, con);
+            SqlDataReader rdr = com.ExecuteReader();
+            LinkedList<Feedback> feedbacks = new LinkedList<Feedback>();
+            Feedback f;
+            if (rdr.Read())
+            {
+                f = new Feedback((string)rdr[2],(string)rdr[0],(string)rdr[1]);
+                feedbacks.AddFirst(f);
+            }
+            con.Close();
+            return feedbacks;
+        }
+
         public Users signIn(string pass, string userN)
         {//get user name name and password and returns the user if not exist return null
             con.Open();
@@ -96,7 +132,7 @@ namespace finalProject
 
             if(rdr.Read())
             {
-                Users user = new Users((string)rdr[0],(string)rdr[1],(string)rdr[2],(string)rdr[3],(string)rdr[4],(DateTime)rdr[5]);
+                Users user = new Users((string)rdr[0],(string)rdr[1],(string)rdr[2],(string)rdr[3],(string)rdr[4]);
                 con.Close();
                 return user;
             }
@@ -162,11 +198,24 @@ namespace finalProject
 
          }
 
+         public void addFavorit(Favorit f)
+         {//get user event and insert the event to the event table
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "INSERT INTO FavoritTable (UserName,BusName)" + "VALUES ('" + f.UserName +  "','" + f.BusName + "');";
+             SqlCommand com = new SqlCommand(sqlString, con);
+
+             com.ExecuteReader();
+
+             con.Close();
+
+         }
+
          public void createUser(Users u)
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO UsersTable (UserName,Password,Email,FirstName,LastName,BirthDate)" + "VALUES ('" + u.UserName + "','" + u.Pass + "','" + u.EMail + "','" + u.FirstName + "','" + u.LastName + "',CONVERT(datetime,'" + u.Birth_date + "',103));";
+             string sqlString = "INSERT INTO UsersTable (UserName,Password,Email,FirstName,LastName)" + "VALUES ('" + u.UserName + "','" + u.Pass + "','" + u.EMail + "','" + u.FirstName + "','" + u.LastName +");";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {
@@ -178,6 +227,21 @@ namespace finalProject
              }
          }
 
+         public void addFeedback(Feedback f)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "INSERT INTO FeedbacksTable (BusName,Feedback,UserName)" + "VALUES ('" + f.BusName + "','" + f.Feedback + "','" + f.UserName + ");";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
 
 
 

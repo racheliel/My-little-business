@@ -100,6 +100,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Favorit.cs" />
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,6 +108,7 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
+    <Compile Include="Feedback.cs" />
     <Compile Include="UsersEvents.cs" />
     <Compile Include="EventBL.cs" />
     <Compile Include="EventDAL.cs" />

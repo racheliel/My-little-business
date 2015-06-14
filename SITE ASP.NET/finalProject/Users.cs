@@ -10,17 +10,15 @@ namespace finalProject
     {
         private string userName,pass;
         private string firstName, lastName,eMail;
-        DateTime birth_date;
 
-        public Users(string userName, string pass, string eMail, string firstName, string lastName, DateTime date)
+
+        public Users(string userName, string pass, string eMail, string firstName, string lastName)
         {
             this.userName = userName;
             this.pass = pass;
             this.firstName = firstName; 
             this.lastName=lastName;
             this.eMail = eMail;
-            this.birth_date = date;
-
         }
 
         public string UserName
@@ -53,11 +51,6 @@ namespace finalProject
             set { eMail = value; }
         }
 
-        public DateTime Birth_date
-        {
-            get { return birth_date; }
-            set { birth_date = value; }
-        }
 
 
     }
