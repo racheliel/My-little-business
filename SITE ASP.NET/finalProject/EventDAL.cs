@@ -56,36 +56,39 @@ namespace finalProject
             }
         }
 
-        ////
-        public int getIDEvent(string str)
-        {//get the name of event and returns the id of event
+
+        public Business getBusiness(string str)
+        {
             con.Open();
-            string sqlString = "Select EventID from EventsTable where EventName='" + str + "';";
+            string sqlString = "Select BusName,UserName,Detailes,Place from BusinessTable where BusName='" + str + "';";
             SqlCommand com = new SqlCommand(sqlString, con);
             SqlDataReader rdr = com.ExecuteReader();
-            int num = -1;
+            Business b=null;
             if (rdr.Read())
             {
-                num = (int)rdr[0];
+                b = new Business((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3]);
             }
             con.Close();
-            return num;
+            return b;
         }
 
-        ////
-        public string getTypeEvent(int num)
-        {//get event id and return event name
+       
+        public LinkedList<Business> getAllBusiness()
+        {
             con.Open();
-            string sqlString = "Select EventName from EventsTable where EventID=" + num + ";";
+            string sqlString = "Select BusName,UserName,Detailes,Place from BusinessTable ;";
             SqlCommand com = new SqlCommand(sqlString, con);
             SqlDataReader rdr = com.ExecuteReader();
-            string str="";
+            LinkedList<Business> buss = new LinkedList<Business>();
+            Business b;
+            
             if (rdr.Read())
             {
-                str=(string)rdr[0];
+                b = new Business((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3]);
+                buss.AddFirst(b);
             }
             con.Close();
-            return str;
+            return buss;
         }
 
 
@@ -145,31 +148,13 @@ namespace finalProject
         }
 
 
-         public LinkedList<string> getAllEventType()
-        {
-            con.Open();
-            string sqlString = "Select EventName from EventsTable ;";
-            SqlCommand com = new SqlCommand(sqlString, con);
-            SqlDataReader rdr = com.ExecuteReader();
-
-            LinkedList<string> eventName = new LinkedList<string>();
-
-            while (rdr.Read())
-            {
-                string name = (string)rdr[0];
-                eventName.AddLast(name);
-            }
-            con.Close();
-            return eventName;
-        }
 
 
-
-         public LinkedList<Events> getEvents(string name)
+         public LinkedList<Events> getEvents(string userName)
          {//get user name and returns events of user name
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "Select *  from EventsTable t where t.UserName='" + name + "';"; 
+             string sqlString = "Select *  from EventsTable t where t.UserName='" + userName + "';"; 
              SqlCommand com = new SqlCommand(sqlString, con);
              SqlDataReader rdr = com.ExecuteReader();
 
@@ -184,7 +169,26 @@ namespace finalProject
              con.Close();
              return events;
          }
-        
+
+         public LinkedList<Events> getAllEvents()
+         {//get user name and returns events of user name
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "Select *  from EventsTable t ;";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             SqlDataReader rdr = com.ExecuteReader();
+
+             LinkedList<Events> events = new LinkedList<Events>();
+             Events temp;
+             while (rdr.Read())
+             {
+                 temp = new Events((string)rdr[0], (DateTime)rdr[2], (string)rdr[1], (string)rdr[3], (string)rdr[4]);
+
+                 events.AddLast(temp);
+             }
+             con.Close();
+             return events;
+         }
          public void createEvent(Events e)
          {//get user event and insert the event to the event table
              con = new SqlConnection(conString);
