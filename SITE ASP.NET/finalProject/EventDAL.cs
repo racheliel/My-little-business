@@ -263,7 +263,23 @@ namespace finalProject
              }
          }
 
+         public void deleteFavorit(Favorit f)
+         {//get user event and delete this event
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM FavoritTable WHERE UserName='" + f.UserName + "' AND BusName= '" + f.BusName + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+                 con.Close();
 
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
 
 
         
