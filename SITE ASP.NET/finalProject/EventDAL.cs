@@ -10,7 +10,7 @@ namespace finalProject
 {
     class EventDAL
     {
-        public string conString= "Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\Users\\חני\\Desktop\\פרויקט\\סופי+בונוס\\finalProject\\finalProject\\MLBDB.mdf;Integrated Security=True;Connect Timeout=30";
+        public string conString= "Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\GitHub\\My-little-business\\SITE ASP.NET\\MLBDB.mdf;Integrated Security=True;Connect Timeout=30";
         public SqlConnection con;
 
         public EventDAL()
