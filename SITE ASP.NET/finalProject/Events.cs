@@ -7,28 +7,34 @@ using System.Threading.Tasks;
 
 namespace finalProject
 {
-    class UsersEvents
+    class Events
     {
 
-        private int eventID;
         private DateTime date_time;
         private string place;
-        private string userName;
+        private string userName,catgory,name;
 
 
-        public UsersEvents(string userName,int eventID, DateTime date_time, string place)
+        public Events(string userName, DateTime date_time, string place,string name, string cat)
         {
-            this.eventID = eventID;
             this.date_time = date_time;
             this.place = place;
             this.userName = userName;
+            this.name = name;
+            this.catgory = cat;
 
         }
 
-        public int EventID
+        public string Name
         {
-            get { return eventID; }
-            set { eventID = value; }
+            get { return name; }
+            set { name = value; }
+        }
+
+        public string Catgory
+        {
+            get { return catgory; }
+            set { catgory = value; }
         }
 
         public DateTime Date_time

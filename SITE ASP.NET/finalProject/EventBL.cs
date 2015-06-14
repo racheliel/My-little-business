@@ -32,7 +32,7 @@ namespace finalProject
         }
         public void deleteUserEvent(int eID,DateTime date,string user,string place)
         {
-            UsersEvents e = new UsersEvents(user, eID, date, place);
+            Events e = new Events(user, eID, date, place);
             eventD.deleteUserEvent(e);
         }
 
@@ -41,7 +41,7 @@ namespace finalProject
             return eventD.getTypeEvent(num);
         }
 
-        public LinkedList<UsersEvents> getUsersEvents(string name)
+        public LinkedList<Events> getUsersEvents(string name)
         {
             return eventD.getUsersEvents(name);
         }
@@ -63,7 +63,7 @@ namespace finalProject
 
         public void createUserEvent(string userName, int eventID, DateTime date_time, string place)
         {
-            UsersEvents e =new UsersEvents(userName,eventID,date_time, place);
+            Events e =new Events(userName,eventID,date_time, place);
             eventD.createUserEvent(e);
         }
 

@@ -165,31 +165,31 @@ namespace finalProject
 
 
 
-         public LinkedList<UsersEvents> getUsersEvents(string name)
+         public LinkedList<Events> getEvents(string name)
          {//get user name and returns events of user name
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "Select t.UserName,t.EventID,t.Date,t.Place  from UsersEventsTable t where t.UserName='" + name + "';"; 
+             string sqlString = "Select *  from EventsTable t where t.UserName='" + name + "';"; 
              SqlCommand com = new SqlCommand(sqlString, con);
              SqlDataReader rdr = com.ExecuteReader();
 
-             LinkedList<UsersEvents> usersEvents = new LinkedList<UsersEvents>();
-             UsersEvents temp;
+             LinkedList<Events> events = new LinkedList<Events>();
+             Events temp;
              while (rdr.Read())
              {
-                 temp = new UsersEvents((string)rdr[0], (int)rdr[1], (DateTime)rdr[2], (string)rdr[3]);
+                 temp = new Events((string)rdr[0],(DateTime)rdr[2] , (string)rdr[1], (string)rdr[3], (string)rdr[4]);
 
-                 usersEvents.AddLast(temp);
+                 events.AddLast(temp);
              }
              con.Close();
-             return usersEvents;
+             return events;
          }
         
-         public void createUserEvent(UsersEvents e)
+         public void createEvent(Events e)
          {//get user event and insert the event to the event table
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO UsersEventsTable (UserName,Date,EventID,Place)" + "VALUES ('" + e.UserName + "',CONVERT(datetime,'" + e.Date_time + "',103)," + e.EventID + ",'" + e.Place + "');";
+             string sqlString = "INSERT INTO EventsTable (UserName,Date,Place,Name,Catgory)" + "VALUES ('" + e.UserName + "',CONVERT(datetime,'" + e.Date_time + "',103),'" + e.Place + "','" + e.Name + "','" + e.Catgory + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
 
                  com.ExecuteReader();
@@ -245,11 +245,11 @@ namespace finalProject
 
 
 
-         public void deleteUserEvent(UsersEvents e)
+         public void deleteEvent(Events e)
          {//get user event and delete this event
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "DELETE FROM UsersEventsTable WHERE UserName='" + e.UserName + "' AND Date=CONVERT(datetime,'" + e.Date_time + "',103);";
+             string sqlString = "DELETE FROM EventsTable WHERE UserName='" + e.UserName + "' AND Date=CONVERT(datetime,'" + e.Date_time + "',103) AND Name= '"+ e.Name +"';";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {

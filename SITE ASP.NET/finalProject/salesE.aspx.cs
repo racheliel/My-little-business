@@ -16,13 +16,13 @@ namespace finalProject
         protected void Page_Load(object sender, EventArgs e)
         {
             userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
-            LinkedList<UsersEvents> userEvents = eBL.getUsersEvents((string)(Session["user"]));
+            LinkedList<Events> userEvents = eBL.getUsersEvents((string)(Session["user"]));
             DataTable dt = new DataTable();
             dt.Columns.Add("event's name", typeof(string)); 
             dt.Columns.Add("event's date", typeof(DateTime));
             dt.Columns.Add("event's place", typeof(string));
             int count = -1;//check if exist event
-            foreach (UsersEvents i in userEvents)
+            foreach (Events i in userEvents)
             {
                 count = 0;
             DataRow row1 = dt.NewRow();
