@@ -86,6 +86,7 @@
     <Content Include="aboutUs.aspx" />
     <Content Include="homeC.aspx" />
     <Content Include="aboutUsC.aspx" />
+    <Content Include="contactUs.aspx" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -192,6 +193,13 @@
     </Compile>
     <Compile Include="aboutUsC.aspx.designer.cs">
       <DependentUpon>aboutUsC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contactUs.aspx.cs">
+      <DependentUpon>contactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contactUs.aspx.designer.cs">
+      <DependentUpon>contactUs.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>
