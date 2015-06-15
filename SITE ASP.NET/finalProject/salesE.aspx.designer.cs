@@ -10,7 +10,7 @@
 namespace finalProject {
     
     
-    public partial class WebForm5 {
+    public partial class salesE {
         
         /// <summary>
         /// userName control.
