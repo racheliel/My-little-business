@@ -86,6 +86,14 @@ namespace finalProject
            return eventD.getAllEvents();
         }
 
+        public string getEmailAdminEvent(string name, string user) {
+            return eventD.getEmailAdminEvent(name, user);
+        }
+
+        public string getMail(string user)
+        {
+            return eventD.getMail(user);
+        }
         public void addFavorit(Favorit f)
         {
             eventD.addFavorit(f);

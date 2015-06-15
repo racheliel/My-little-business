@@ -19,7 +19,8 @@ namespace finalProject
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-
+            if ((string)(Session["first"]) != "Guest")
+                Response.Redirect("~/homeC.aspx");
         }
 
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
@@ -43,7 +44,9 @@ namespace finalProject
 
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
-
+            if ((string)(Session["first"]) != "Guest") {
+                Response.Redirect("~/contactUs.aspx");
+            }
         }
 
         protected void Timer1_Tick1(object sender, EventArgs e)

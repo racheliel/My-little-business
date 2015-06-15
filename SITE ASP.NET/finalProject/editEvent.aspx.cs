@@ -39,13 +39,9 @@ namespace finalProject
                     minutes.Items.Add("0" + num);
                 num++;
             }
-           // LinkedList<string> typeE = eBL.getAllEvent();
-          //  foreach (string j in typeE)
-         //   {
-         //       type.Items.Add(j);
-        //    }
 
-                type.Text = (string)(Session["type"]);
+            name.Text = (string)(Session["name"]);
+            category.Text = (string)(Session["cat"]);
                 place.Text = (string)(Session["place"]);
                 month.Text = (string)(Session["mounth"]);
                 day.Text = (string)(Session["day"]);
@@ -79,7 +75,7 @@ namespace finalProject
         {
             try
             {
-                //eBL.deleteEvent( (DateTime)(Session["date"]), (string)(Session["user"]), (string)(Session["place"]));
+                eBL.deleteEvent((DateTime)(Session["date"]), (string)(Session["user"]), (string)(Session["place"]), (string)(Session["name"]), (string)(Session["cat"]));
 
                 int y = Convert.ToInt32(year.Text), m = Convert.ToInt32(month.Text), d = Convert.ToInt32(day.Text);
                 int h = Convert.ToInt32(hour.Text), mi = Convert.ToInt32(minutes.Text);
@@ -88,12 +84,12 @@ namespace finalProject
                 {
                     place.Text = " ";
                 }
-               // eBL.createEvent((string)(Session["user"]), time, place.Text);
-                Response.Redirect("~/connect.aspx");
+                eBL.createEvent((string)(Session["user"]), time, place.Text,name.Text,category.Text);
+                Response.Redirect("~/myEvent.aspx");
             }
             catch
             {
-                if (year.Text.Equals("year") || month.Text.Equals("month") || day.Text.Equals("day") || hour.Text.Equals("hour") || minutes.Text.Equals("minutes") || type.Text.Equals("type"))
+                if (year.Text.Equals("year") || month.Text.Equals("month") || day.Text.Equals("day") || hour.Text.Equals("hour") || minutes.Text.Equals("minutes") || name.Text.Equals("") || category.Text.Equals(""))
                 {
                     error.Text = "Event not edited, please fill in all tabs";
 
