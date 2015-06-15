@@ -29,7 +29,7 @@ namespace finalProject
                 mailMessage.To.Add(to.Text);
                 mailMessage.From = new MailAddress(mail);
                 mailMessage.Subject = head.Text;
-                mailMessage.Body = body.Text;
+                mailMessage.Body = body.Text + "\n from:" + from.Text;
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
                 smtpClient.EnableSsl = true;
                 smtpClient.Timeout = 10000;
