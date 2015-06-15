@@ -17,6 +17,12 @@ namespace finalProject
 
         }
 
+        public Boolean chackBusinessName(string busN)
+        {
+            return eventD.chackBusinessName(busN);
+        }
+
+
         public Users getPassword(string userN)
         {
             return eventD.getPassword(userN);
@@ -40,6 +46,13 @@ namespace finalProject
         {
             return eventD.chackUser(userN);
         }
+
+        public Business getBusinessForUser(string str)
+        {
+            return eventD.getBusinessForUser(str);
+
+        }
+
 
         public Users signIn(string pass, string userN)
         {
@@ -94,10 +107,26 @@ namespace finalProject
             eventD.deleteFavorit(f);
         }
 
+        public void deleteBusiness(Business b)
+        {
+            eventD.deleteBusiness(b);
+
+        }
+
         public void createEvent(string userName, DateTime date_time, string place,string name,string cat)
         {
             Events e = new Events(userName, date_time, place,name,cat);
             eventD.createEvent(e);
+        }
+
+        public string getImageLogo(string BusName)
+        {
+            return eventD.getImageLogo(BusName);
+        }
+
+        public void addBusiness(Business b)
+        {
+            eventD.addBusiness(b);
         }
 
     }

@@ -37,6 +37,27 @@ namespace finalProject
             }
         }
 
+        public Boolean chackBusinessName(string busN)
+        {//get bussines name and return true if exist
+            con.Open();
+            string sqlString = "Select * from BusinessTable where BusName='" + busN + "';";
+            SqlCommand com = new SqlCommand(sqlString, con);
+            SqlDataReader rdr = com.ExecuteReader();
+
+            if (rdr.Read())
+            {
+                con.Close();
+                return true;
+            }
+            else
+            {
+                con.Close();
+                return false;
+            }
+        }
+
+   
+
         public Users getPassword(string userN)
         {//get user name and return user deatel for someone that forgot the password
             con.Open();
@@ -60,7 +81,7 @@ namespace finalProject
         public Business getBusiness(string str)
         {
             con.Open();
-            string sqlString = "Select BusName,UserName,Detailes,Place from BusinessTable where BusName='" + str + "';";
+            string sqlString = "Select * from BusinessTable where BusName='" + str + "';";
             SqlCommand com = new SqlCommand(sqlString, con);
             SqlDataReader rdr = com.ExecuteReader();
             Business b=null;
@@ -71,6 +92,22 @@ namespace finalProject
             con.Close();
             return b;
         }
+
+        public Business getBusinessForUser(string str)
+        {
+            con.Open();
+            string sqlString = "Select * from BusinessTable where UserName='" + str + "';";
+            SqlCommand com = new SqlCommand(sqlString, con);
+            SqlDataReader rdr = com.ExecuteReader();
+            Business b = null;
+            if (rdr.Read())
+            {
+                b = new Business((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3]);
+            }
+            con.Close();
+            return b;
+        }
+
 
        
         public LinkedList<Business> getAllBusiness()
@@ -170,6 +207,23 @@ namespace finalProject
              return events;
          }
 
+         public string getImageLogo(string BusName)
+         {//get user name and returns events of user name
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "Select logo  from logos l where l.busName='" + BusName + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             SqlDataReader rdr = com.ExecuteReader();
+             string str = "";
+             while (rdr.Read())
+             {
+                 str= (string)rdr[0];
+             }
+             con.Close();
+             return str;
+         }
+
+
          public LinkedList<Events> getAllEvents()
          {//get user name and returns events of user name
              con = new SqlConnection(conString);
@@ -247,6 +301,24 @@ namespace finalProject
              }
          }
 
+         public void addBusiness(Business b)
+         {
+             con = new SqlConnection(conString);
+             con.Close();
+             con.Open();
+             string sqlString = "INSERT INTO BusinessTable (BusName,UserName,Detailes,Place)" + "VALUES ('" + b.BusName + "','" + b.UserName +"','"+b.Detailes+"','"+b.Place+ "');";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
 
 
          public void deleteEvent(Events e)
@@ -284,6 +356,25 @@ namespace finalProject
                  con.Close();
              }
          }
+         public void deleteBusiness(Business b)
+         {//get  business and deleted
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM BusinessTable WHERE BusName= '" + b.BusName + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
+
+
 
 
         

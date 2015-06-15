@@ -16,6 +16,7 @@ namespace finalProject
             this.userName = userName;
             this.detailes = detailes;
             this.place = place;
+         
         }
 
         public string BusName

@@ -6,14 +6,14 @@
             width: 70px;
         }
         .auto-style20 {
-            width: 1018px;
+            width: 1064px;
         }
         .auto-style21 {
             width: 70px;
             height: 30px;
         }
         .auto-style22 {
-            width: 1018px;
+            width: 1064px;
             height: 30px;
         }
         .auto-style23 {
@@ -24,7 +24,7 @@
         height: 62px;
     }
     .auto-style25 {
-        width: 1018px;
+        width: 1064px;
         height: 62px;
     }
     .auto-style26 {
@@ -34,19 +34,22 @@
             width: 371px;
             margin-left: 80px;
         }
+        .auto-style28 {
+            width: 326px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width:100%;">
         <tr>
-            <td style="background-color: #FFFFFF; color: #000000; font-size: 25px; font-weight: 700;">welcome
+            <td style="background-color: #FFFFFF; color: #000000; font-size: 25px; font-weight: 700;" class="auto-style28">welcome
             <asp:Label ID="userName" runat="server"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
             <td class="auto-style27">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="myEve" runat="server" BackColor="#66FF66" ForeColor="Black" OnClick="myEve_Click" Text="My Events" Width="139px" />
 &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="myBus" runat="server" BackColor="#66FF66" Text="My Business" Width="131px" />
+                <asp:Button ID="myBus" runat="server" BackColor="#66FF66" Text="My Business" Width="131px" OnClick="myBus_Click" />
             </td>
             <td>
             <asp:Button ID="out" runat="server" OnClick="out_Click" Text="Sign Out" />
@@ -96,7 +99,7 @@
             </td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td class="auto-style28">&nbsp;</td>
             <td class="auto-style27">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
