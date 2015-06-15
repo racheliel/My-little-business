@@ -42,11 +42,7 @@ namespace finalProject
                         minutes.Items.Add("0" + num);
                     num++;
                 }
-                LinkedList<string> typeE = eBL.getAllEventType();
-                foreach (string j in typeE)
-                {
-                    type.Items.Add(j);
-                }
+
                 Session.Add("addError", "1");
 
             }  
@@ -65,12 +61,12 @@ namespace finalProject
                 {
                     place.Text = " ";
                 }
-                eBL.createUserEvent((string)(Session["user"]), eBL.getIDEvent(type.Text), time, place.Text);
+                eBL.createEvent((string)(Session["user"]), time, place.Text,name.Text,category.Text);
                 Response.Redirect("~/connect.aspx");
             }
             catch
             {
-                if (place.Text.Equals("")||year.Text.Equals("year") || month.Text.Equals("month") || day.Text.Equals("day") || hour.Text.Equals("hour") || minutes.Text.Equals("minutes") || type.Text.Equals("type"))
+                if (place.Text.Equals("") || year.Text.Equals("year") || month.Text.Equals("month") || day.Text.Equals("day") || hour.Text.Equals("hour") || minutes.Text.Equals("minutes") || name.Text.Equals("") || category.Text.Equals(""))
                 {
                     error.Text = "Event don't created, please fill in all tabs";
                 }

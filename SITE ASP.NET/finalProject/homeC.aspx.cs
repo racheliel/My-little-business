@@ -13,7 +13,8 @@ namespace finalProject
         {
             Image1.ImageUrl = "4.png";
             userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
-
+            if(userName.Text == "")
+                Response.Redirect("~/home.aspx");
         }
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
@@ -75,6 +76,12 @@ namespace finalProject
             Session.Add("first", "Guest");
             Session.Add("last", "");
             Response.Redirect("~/home.aspx");
+        }
+
+        protected void myEve_Click(object sender, EventArgs e)
+        {
+            if ((string)(Session["first"]) != "Guest")
+                Response.Redirect("~/myEvent.aspx");
         }
 
 

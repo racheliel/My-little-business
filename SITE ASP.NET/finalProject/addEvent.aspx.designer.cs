@@ -13,13 +13,22 @@ namespace finalProject {
     public partial class WebForm7 {
         
         /// <summary>
-        /// type control.
+        /// name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList type;
+        protected global::System.Web.UI.WebControls.TextBox name;
+        
+        /// <summary>
+        /// category control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox category;
         
         /// <summary>
         /// place control.

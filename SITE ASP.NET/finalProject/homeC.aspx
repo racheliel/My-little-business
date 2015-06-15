@@ -32,6 +32,7 @@
     }
         .auto-style27 {
             width: 371px;
+            margin-left: 80px;
         }
     </style>
 </asp:Content>
@@ -40,8 +41,13 @@
         <tr>
             <td style="background-color: #FFFFFF; color: #000000; font-size: 25px; font-weight: 700;">welcome
             <asp:Label ID="userName" runat="server"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
-            <td class="auto-style27">&nbsp;</td>
+            <td class="auto-style27">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="myEve" runat="server" BackColor="#66FF66" ForeColor="Black" OnClick="myEve_Click" Text="My Events" Width="139px" />
+&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="myBus" runat="server" BackColor="#66FF66" Text="My Business" Width="131px" />
+            </td>
             <td>
             <asp:Button ID="out" runat="server" OnClick="out_Click" Text="Sign Out" />
             </td>
