@@ -107,7 +107,7 @@ namespace finalProject
             eventD.deleteFavorit(f);
         }
 
-        public void deleteBusiness(Business b)
+        public void deleteBusiness(string b)
         {
             eventD.deleteBusiness(b);
 
@@ -127,6 +127,12 @@ namespace finalProject
         public void addBusiness(Business b)
         {
             eventD.addBusiness(b);
+        }
+
+        public void deleteImage(string p)
+        {
+            eventD.deleteImage(p);
+
         }
 
     }

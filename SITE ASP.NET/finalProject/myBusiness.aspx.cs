@@ -86,14 +86,16 @@ namespace finalProject
 
         protected void save_Click(object sender, EventArgs e)
         {
-            Business b = new Business(busName.Text, (string)(Session["user"]), TextBox3.Text, TextBox2.Text);
             Boolean busN = eBL.chackBusinessName(busName.Text);
+            Business b = new Business(busName.Text, (string)(Session["user"]), TextBox3.Text, TextBox2.Text);
             if (busN == true)
             {
-                eBL.deleteBusiness(b);
+                eBL.deleteBusiness(busName.Text);
+
             }
             eBL.addBusiness(b);
-        //    Response.Redirect("~/homeC.aspx");
+
+            Response.Redirect("~/homeC.aspx");
 
         }
 
@@ -103,6 +105,7 @@ namespace finalProject
 
         protected void logoImage_Click(object sender, EventArgs e)
         {
+
             if (FileUpload1.HasFile)
             {
                 errorLogo.Text = "";
@@ -118,6 +121,29 @@ namespace finalProject
             }
             else
                 errorLogo.Text = "error upload logo";
+
+        }
+
+        protected void TextBox3_TextChanged(object sender, EventArgs e)
+        {
+            errorLogo.Text = TextBox3.Text;
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.CompareTo("deleterow") == 0)
+                 {
+                     int row = int.Parse(e.CommandArgument.ToString());
+                     string path =(string)(GridView1.Rows[row].Cells[0].Text.Trim());
+                     eBL.deleteImage(path);
+                 }
+
+
         }
     }
 }

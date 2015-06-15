@@ -304,9 +304,8 @@ namespace finalProject
          public void addBusiness(Business b)
          {
              con = new SqlConnection(conString);
-             con.Close();
              con.Open();
-             string sqlString = "INSERT INTO BusinessTable (BusName,UserName,Detailes,Place)" + "VALUES ('" + b.BusName + "','" + b.UserName +"','"+b.Detailes+"','"+b.Place+ "');";
+             string sqlString = "INSERT INTO BusinessTable (BusName,UserName,Detailes,Place)" + " VALUES ('" + b.BusName + "','" + b.UserName +"','"+b.Detailes+"','"+b.Place+ "');";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {
@@ -339,6 +338,23 @@ namespace finalProject
              }
          }
 
+         public void deleteImage(string p)
+         {//get user event and delete this event
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM uplodes WHERE image='" + p + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
          public void deleteFavorit(Favorit f)
          {//get user event and delete this event
              con = new SqlConnection(conString);
@@ -356,22 +372,22 @@ namespace finalProject
                  con.Close();
              }
          }
-         public void deleteBusiness(Business b)
+         public void deleteBusiness(string b)
          {//get  business and deleted
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "DELETE FROM BusinessTable WHERE BusName= '" + b.BusName + "';";
+             string sqlString = "delete from BusinessTable where BusName = '" + b + "';";
              SqlCommand com = new SqlCommand(sqlString, con);
-             try
+     //        try
              {
                  com.ExecuteReader();
                  con.Close();
 
              }
-             catch
+        /*     catch
              {
                  con.Close();
-             }
+             }*/
          }
 
 
