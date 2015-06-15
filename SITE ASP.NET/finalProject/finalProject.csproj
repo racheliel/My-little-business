@@ -86,11 +86,7 @@
     <Content Include="aboutUs.aspx" />
     <Content Include="homeC.aspx" />
     <Content Include="aboutUsC.aspx" />
-<<<<<<< HEAD
     <Content Include="myBusiness.aspx" />
-=======
-    <Content Include="contactUs.aspx" />
->>>>>>> origin/master
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -198,7 +194,6 @@
     <Compile Include="aboutUsC.aspx.designer.cs">
       <DependentUpon>aboutUsC.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="myBusiness.aspx.cs">
       <DependentUpon>myBusiness.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,15 +205,6 @@
   <ItemGroup>
     <Folder Include="logos\" />
     <Folder Include="uploads\" />
-=======
-    <Compile Include="contactUs.aspx.cs">
-      <DependentUpon>contactUs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="contactUs.aspx.designer.cs">
-      <DependentUpon>contactUs.aspx</DependentUpon>
-    </Compile>
->>>>>>> origin/master
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -28,11 +28,7 @@
 <br />
 <br />
                 To:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                <asp:Label ID="to" runat="server"></asp:Label>
-                <br />
-                <br />
-                From:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                <asp:Label ID="from" runat="server"></asp:Label>
+    <asp:TextBox ID="to" runat="server" Width="429px" ></asp:TextBox>
     <br />
     <br />
                 Subject:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -19,16 +19,7 @@ namespace finalProject {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label to;
-        
-        /// <summary>
-        /// from control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label from;
+        protected global::System.Web.UI.WebControls.TextBox to;
         
         /// <summary>
         /// head control.

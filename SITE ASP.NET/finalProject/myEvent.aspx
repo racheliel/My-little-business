@@ -50,6 +50,7 @@
                 <Columns>
                     <asp:ButtonField HeaderText="edit" Text="edit" CommandName="edit" />
                     <asp:ButtonField HeaderText="delete" Text="delete" CommandName="deleterow" />
+                    <asp:ButtonField CommandName="Invitation" HeaderText="Invitation" Text="Invitation" />
                 </Columns>
                 <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

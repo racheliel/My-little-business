@@ -12,7 +12,7 @@ namespace finalProject
     public partial class WebForm5 : System.Web.UI.Page
     {
         EventBL eBL = new EventBL();
-        int colName = 2, colDate = 4, colPlace = 5 , colCat=3;
+        int colName = 3, colDate = 5, colPlace = 6 , colCat=4;
         protected void Page_Load(object sender, EventArgs e)
         {
             userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
@@ -22,7 +22,7 @@ namespace finalProject
             dt.Columns.Add("event's category", typeof(string)); 
             dt.Columns.Add("event's date", typeof(DateTime));
             dt.Columns.Add("event's place", typeof(string));
-           dt.Columns.Add("event's Admin", typeof(string)); 
+            //dt.Columns.Add("event's nameuser", typeof(string)); 
             int count = -1;//check if exist event
             foreach (Events i in userEvents)
             {
@@ -32,7 +32,6 @@ namespace finalProject
             row1["event's category"] = i.Catgory;
             row1["event's date"] = i.Date_time;
             row1["event's place"] = i.Place;
-            row1["event's Admin"] = i.UserName;
             dt.Rows.Add(row1);
             }
             if (count== -1)
@@ -64,7 +63,7 @@ namespace finalProject
                 DateTime d = Convert.ToDateTime(dateString);
 
                 eBL.deleteEvent( d, (string)(Session["user"]), place,name,cat);
-                Response.Redirect("~/myEvent.aspx");
+                Response.Redirect("~/connect.aspx");
 
             }
             if (e.CommandName.CompareTo("edit") == 0)
@@ -77,7 +76,7 @@ namespace finalProject
                 DateTime d = Convert.ToDateTime(dateString);
 
                 Session.Add("date", d);
-                Session.Add("name", name);
+                Session.Add("type", name);
                 Session.Add("cat", cat);
                 Session.Add("place",place);
                 Session.Add("day", dateString.Substring(0, 2));
@@ -88,6 +87,11 @@ namespace finalProject
                 Session.Add("firstTime", "y");
 
                 Response.Redirect("~/editEvent.aspx");
+
+            }
+            if (e.CommandName.CompareTo("Invitation") == 0)
+            {
+                Response.Redirect("~/Invitation.aspx");
 
             }
 

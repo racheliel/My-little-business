@@ -184,21 +184,6 @@ namespace finalProject
           
         }
 
-        public string getMail(string user)
-        {
-            con.Open();
-            string sqlString = "Select Email from UsersTable where UserName='" + user + "';";
-            SqlCommand com = new SqlCommand(sqlString, con);
-            SqlDataReader rdr = com.ExecuteReader();
-            string e = "";
-            if (rdr.Read())
-            {
-               e=(string)rdr[0];
-               
-            } 
-            con.Close();
-            return e;
-        }
 
 
 
@@ -214,7 +199,7 @@ namespace finalProject
              Events temp;
              while (rdr.Read())
              {
-                 temp = new Events((string)rdr[0],(DateTime)rdr[1] , (string)rdr[2], (string)rdr[3], (string)rdr[4]);
+                 temp = new Events((string)rdr[0],(DateTime)rdr[2] , (string)rdr[1], (string)rdr[3], (string)rdr[4]);
 
                  events.AddLast(temp);
              }
@@ -222,7 +207,6 @@ namespace finalProject
              return events;
          }
 
-<<<<<<< HEAD
          public string getImageLogo(string BusName)
          {//get user name and returns events of user name
              con = new SqlConnection(conString);
@@ -240,30 +224,11 @@ namespace finalProject
          }
 
 
-=======
-         public string getEmailAdminEvent(string name, string user)
-         {
-             con = new SqlConnection(conString);
-             con.Open();
-             string sqlString = "Select u.Email from UsersTable u,EventsTable t where u.UserName=t.UserName AND t.UserName='" + user + "AND t.Name='" + name + "';";
-             SqlCommand com = new SqlCommand(sqlString, con);
-             SqlDataReader rdr = com.ExecuteReader();
-             string mail = "";
-             while (rdr.Read())
-             {
-                 mail = (string)rdr[0];
-
-             }
-             con.Close();
-             return mail;
-
-         }
->>>>>>> origin/master
          public LinkedList<Events> getAllEvents()
          {//get user name and returns events of user name
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "Select * from EventsTable t ;";
+             string sqlString = "Select *  from EventsTable t ;";
              SqlCommand com = new SqlCommand(sqlString, con);
              SqlDataReader rdr = com.ExecuteReader();
 
@@ -271,7 +236,7 @@ namespace finalProject
              Events temp;
              while (rdr.Read())
              {
-                 temp = new Events((string)rdr[0], (DateTime)rdr[1], (string)rdr[2], (string)rdr[3], (string)rdr[4]);
+                 temp = new Events((string)rdr[0], (DateTime)rdr[2], (string)rdr[1], (string)rdr[3], (string)rdr[4]);
 
                  events.AddLast(temp);
              }
