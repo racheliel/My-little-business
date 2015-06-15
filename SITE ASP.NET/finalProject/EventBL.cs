@@ -78,8 +78,9 @@ namespace finalProject
             eventD.addFavorit(f);
         }
 
-        public void createUser(Users u)
+        public void addUser(string userN, string pass, string email, string first, string last)
         {
+            Users u = new Users(userN, pass, email, first, last);
             eventD.createUser(u);
         }
 
@@ -93,8 +94,9 @@ namespace finalProject
             eventD.deleteFavorit(f);
         }
 
-        public void createEvent(Events e)
+        public void createEvent(string userName, DateTime date_time, string place,string name,string cat)
         {
+            Events e = new Events(userName, date_time, place,name,cat);
             eventD.createEvent(e);
         }
 

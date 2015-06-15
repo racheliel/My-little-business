@@ -219,7 +219,7 @@ namespace finalProject
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO UsersTable (UserName,Password,Email,FirstName,LastName)" + "VALUES ('" + u.UserName + "','" + u.Pass + "','" + u.EMail + "','" + u.FirstName + "','" + u.LastName +");";
+             string sqlString = "INSERT INTO UsersTable (UserName,Password,Email,FirstName,LastName)" + "VALUES ('" + u.UserName + "','" + u.Pass + "','" + u.EMail + "','" + u.FirstName + "','" + u.LastName +"');";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {

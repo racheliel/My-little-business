@@ -9,14 +9,14 @@ using System.Web.UI.WebControls;
 
 namespace finalProject
 {
-    public partial class salesE : System.Web.UI.Page
+    public partial class WebForm5 : System.Web.UI.Page
     {
         EventBL eBL = new EventBL();
-        int colName = 1, colDate = 3, colPlace = 4 , colCat=2;
+        int colName = 3, colDate = 5, colPlace = 6 , colCat=4;
         protected void Page_Load(object sender, EventArgs e)
         {
             userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
-            LinkedList<Events> userEvents = eBL.getAllEvents();
+            LinkedList<Events> userEvents = eBL.getEvents((string)(Session["user"]));
             DataTable dt = new DataTable();
             dt.Columns.Add("event's name", typeof(string));
             dt.Columns.Add("event's category", typeof(string)); 
@@ -52,6 +52,43 @@ namespace finalProject
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+
+            if (e.CommandName.CompareTo("deleterow") == 0)
+            {
+                int row = int.Parse(e.CommandArgument.ToString());
+                string name = table.Rows[row].Cells[colName].Text.Trim();
+                string cat = table.Rows[row].Cells[colCat].Text.Trim();
+                string place = table.Rows[row].Cells[colPlace].Text.Trim();
+                string dateString = table.Rows[row].Cells[colDate].Text.Trim();
+                DateTime d = Convert.ToDateTime(dateString);
+
+                eBL.deleteEvent( d, (string)(Session["user"]), place,name,cat);
+                Response.Redirect("~/connect.aspx");
+
+            }
+            if (e.CommandName.CompareTo("edit") == 0)
+            {
+                int row = int.Parse(e.CommandArgument.ToString());
+                string name = table.Rows[row].Cells[colName].Text.Trim();
+                string cat = table.Rows[row].Cells[colCat].Text.Trim();
+                string place = table.Rows[row].Cells[colPlace].Text.Trim();
+                string dateString = table.Rows[row].Cells[colDate].Text.Trim();
+                DateTime d = Convert.ToDateTime(dateString);
+
+                Session.Add("date", d);
+                Session.Add("type", name);
+                Session.Add("cat", cat);
+                Session.Add("place",place);
+                Session.Add("day", dateString.Substring(0, 2));
+                Session.Add("mounth", dateString.Substring(3, 2));
+                Session.Add("year", dateString.Substring(6, 4));
+                Session.Add("hour", dateString.Substring(11, 2));
+                Session.Add("minutes", dateString.Substring(14, 2));
+                Session.Add("firstTime", "y");
+
+                Response.Redirect("~/editEvent.aspx");
+
+            }
             if (e.CommandName.CompareTo("Invitation") == 0)
             {
                 Response.Redirect("~/Invitation.aspx");
@@ -72,7 +109,19 @@ namespace finalProject
 
         protected void addE_Click1(object sender, ImageClickEventArgs e)
         {
+            try
+            {
+          //      if ((string)(Session["first"]) != "Guest" && (string)(Session["connect"]) != "false")
+                {
+                    Session.Add("addError", "0");
+                    Response.Redirect("~/addEvent.aspx");
+                }
+            }
+            catch
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('You most login')</script>");
 
+            }
         }
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)

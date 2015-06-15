@@ -73,6 +73,7 @@
     <Content Include="forgot_pass.jpg" />
     <Content Include="logo.jpg" />
     <Content Include="Red-Mail-Icon.png" />
+    <Content Include="myEvent.aspx" />
     <Content Include="serch.png" />
     <Content Include="Site1.Master" />
     <Content Include="home.aspx" />
@@ -102,6 +103,13 @@
   <ItemGroup>
     <Compile Include="Business.cs" />
     <Compile Include="Favorit.cs" />
+    <Compile Include="myEvent.aspx.cs">
+      <DependentUpon>myEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myEvent.aspx.designer.cs">
+      <DependentUpon>myEvent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

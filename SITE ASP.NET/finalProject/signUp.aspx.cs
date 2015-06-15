@@ -30,15 +30,17 @@ namespace finalProject
             {
                 try
                 {
-                    eBL.addNewUser(username.Text, password.Text, email.Text, firstname.Text, lastname.Text);
+                    eBL.addUser(username.Text, password.Text, email.Text, firstname.Text, lastname.Text);
                     Session.Add("user", username.Text);
                     Session.Add("first", firstname.Text);
                     Session.Add("last", lastname.Text);
 
+                    Response.Redirect("~/homeC.aspx");
+
                 }
                 catch
                 {
-                    error.Text = "the date isn't correct";
+                    error.Text = "the details isn't correct";
 
                 }
 

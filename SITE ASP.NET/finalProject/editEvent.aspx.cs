@@ -39,11 +39,11 @@ namespace finalProject
                     minutes.Items.Add("0" + num);
                 num++;
             }
-            LinkedList<string> typeE = eBL.getAllEventType();
-            foreach (string j in typeE)
-            {
-                type.Items.Add(j);
-            }
+           // LinkedList<string> typeE = eBL.getAllEvent();
+          //  foreach (string j in typeE)
+         //   {
+         //       type.Items.Add(j);
+        //    }
 
                 type.Text = (string)(Session["type"]);
                 place.Text = (string)(Session["place"]);
@@ -79,7 +79,7 @@ namespace finalProject
         {
             try
             {
-                eBL.deleteUserEvent((int)(Session["typeID"]), (DateTime)(Session["date"]), (string)(Session["user"]), (string)(Session["place"]));
+                //eBL.deleteEvent( (DateTime)(Session["date"]), (string)(Session["user"]), (string)(Session["place"]));
 
                 int y = Convert.ToInt32(year.Text), m = Convert.ToInt32(month.Text), d = Convert.ToInt32(day.Text);
                 int h = Convert.ToInt32(hour.Text), mi = Convert.ToInt32(minutes.Text);
@@ -88,7 +88,7 @@ namespace finalProject
                 {
                     place.Text = " ";
                 }
-                eBL.createUserEvent((string)(Session["user"]), eBL.getIDEvent(type.Text), time, place.Text);
+               // eBL.createEvent((string)(Session["user"]), time, place.Text);
                 Response.Redirect("~/connect.aspx");
             }
             catch
