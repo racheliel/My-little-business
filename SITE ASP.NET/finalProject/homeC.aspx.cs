@@ -9,6 +9,8 @@ namespace finalProject
 {
     public partial class WebForm9 : System.Web.UI.Page
     {
+        EventBL eBL = new EventBL();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Image1.ImageUrl = "4.png";
@@ -86,7 +88,12 @@ namespace finalProject
 
         protected void myBus_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/myBusiness.aspx");
+            Business b = eBL.getBusinessForUser((string)(Session["user"]));
+            if(b!=null)
+                Response.Redirect("~/businessShow.aspx");
+            else
+                Response.Redirect("~/myBusiness.aspx");
+
 
         }
 
