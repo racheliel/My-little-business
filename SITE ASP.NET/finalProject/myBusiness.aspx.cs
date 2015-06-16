@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 namespace finalProject
 {
-    public partial class myBusiness : System.Web.UI.Page
+    public partial class WebForm11 : System.Web.UI.Page
     {
         EventBL eBL = new EventBL();
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\GitHub\\My-little-business\\SITE ASP.NET\\MLBDB.mdf;Integrated Security=True;Connect Timeout=30");
@@ -65,10 +65,7 @@ namespace finalProject
             }
         }
 
-        protected void busName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         protected void chackBusName_Click(object sender, EventArgs e)
         {

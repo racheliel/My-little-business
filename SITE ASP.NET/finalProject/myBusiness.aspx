@@ -15,9 +15,9 @@
                 <br />
                 <asp:Label ID="Label1" runat="server" Text="Business Name:"></asp:Label>
 &nbsp;&nbsp;
-                <asp:TextBox ID="busName" runat="server" Width="249px" OnTextChanged="busName_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="busName" runat="server" Width="249px"></asp:TextBox>
                 &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="chackBusName" runat="server" OnClick="chackBusName_Click" Text="Add Business Name" />
+                <asp:Button ID="chackBusName" runat="server" OnClick="chackBusName_Click" Text="Add Business Name" > </asp:Button>
 &nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="errorName" runat="server"></asp:Label>
                 <br />
@@ -52,7 +52,7 @@
 &nbsp;&nbsp;
                 <asp:Label ID="errorImage" runat="server"></asp:Label>
                 <br />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" >
                     <Columns>
                         <asp:TemplateField HeaderText="image">
                             <ItemTemplate>

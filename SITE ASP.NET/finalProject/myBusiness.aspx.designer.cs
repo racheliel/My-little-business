@@ -10,7 +10,7 @@
 namespace finalProject {
 
 
-    public partial class myBusiness
+    public partial class WebForm11
     {
         
         /// <summary>
