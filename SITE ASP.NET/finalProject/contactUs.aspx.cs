@@ -10,7 +10,7 @@ using System.Net.Mime;
 
 namespace finalProject
 {
-    public partial class WebForm11 : System.Web.UI.Page
+    public partial class WebForm12 : System.Web.UI.Page
     {
         string user, mail;
         EventBL eBL = new EventBL();

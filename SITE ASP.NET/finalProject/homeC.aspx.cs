@@ -86,7 +86,7 @@ namespace finalProject
 
         protected void myBus_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/WebForm12.aspx");
+            Response.Redirect("~/myBusiness.aspx");
 
         }
 

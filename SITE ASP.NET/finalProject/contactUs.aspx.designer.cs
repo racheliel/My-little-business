@@ -10,7 +10,7 @@
 namespace finalProject {
     
     
-    public partial class WebForm11 {
+    public partial class WebForm12 {
         
         /// <summary>
         /// error control.

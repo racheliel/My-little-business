@@ -88,7 +88,6 @@
     <Content Include="homeC.aspx" />
     <Content Include="aboutUsC.aspx" />
     <Content Include="myBusiness.aspx" />
-    <Content Include="WebForm12.aspx" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -209,13 +208,6 @@
     </Compile>
     <Compile Include="myBusiness.aspx.designer.cs">
       <DependentUpon>myBusiness.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm12.aspx.cs">
-      <DependentUpon>WebForm12.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm12.aspx.designer.cs">
-      <DependentUpon>WebForm12.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
