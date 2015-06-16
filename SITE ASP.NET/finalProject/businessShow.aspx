@@ -68,6 +68,26 @@
                 </asp:GridView>
                 <br />
                 <br />
+            <asp:GridView ID="table1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="136px" OnRowCommand="GridView1_RowCommand" Width="535px" style="margin-left: 154px; margin-bottom: 0px" OnSelectedIndexChanged="table1_SelectedIndexChanged">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:ButtonField HeaderText="edit" Text="edit" CommandName="edit" />
+                    <asp:ButtonField HeaderText="delete" Text="delete" CommandName="deleterow" />
+                </Columns>
+                <EditRowStyle BackColor="#7C6F57" />
+                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                <SortedAscendingHeaderStyle BackColor="#246B61" />
+                <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                <SortedDescendingHeaderStyle BackColor="#15524A" />
+            </asp:GridView>
+                    <br />
+                <br />
+                <br />
                 <asp:Label ID="errorText" runat="server" ForeColor="Red"></asp:Label>
                 </td>
             <td class="auto-style19">&nbsp;</td>
