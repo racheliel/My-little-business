@@ -29,6 +29,7 @@
             </td>
             <td>
                 <asp:Button ID="edit" runat="server" OnClick="Button1_Click" Text="Edit" />
+                <asp:Button ID="home" runat="server" OnClick="home_Click" Text="Home" />
             </td>
         </tr>
         <tr>

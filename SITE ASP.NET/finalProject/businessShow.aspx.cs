@@ -40,5 +40,11 @@ namespace finalProject
         {
             Response.Redirect("~/myBusiness.aspx");
         }
+
+        protected void home_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/homeC.aspx");
+
+        }
     }
 }
