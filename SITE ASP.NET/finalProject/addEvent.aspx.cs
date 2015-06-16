@@ -62,7 +62,7 @@ namespace finalProject
                     place.Text = " ";
                 }
                 eBL.createEvent((string)(Session["user"]), time, place.Text,name.Text,category.Text);
-                Response.Redirect("~/connect.aspx");
+                Response.Redirect("~/myEvent.aspx");
             }
             catch
             {

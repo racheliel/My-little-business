@@ -12,7 +12,7 @@ namespace finalProject
     public partial class salesE : System.Web.UI.Page
     {
         EventBL eBL = new EventBL();
-        int colName = 1, colDate = 3, colPlace = 4 , colCat=2;
+        int colUser=5;
         protected void Page_Load(object sender, EventArgs e)
         {
             userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
@@ -22,7 +22,7 @@ namespace finalProject
             dt.Columns.Add("event's category", typeof(string)); 
             dt.Columns.Add("event's date", typeof(DateTime));
             dt.Columns.Add("event's place", typeof(string));
-            //dt.Columns.Add("event's nameuser", typeof(string)); 
+            dt.Columns.Add("event's Admin", typeof(string)); 
             int count = -1;//check if exist event
             foreach (Events i in userEvents)
             {
@@ -32,6 +32,7 @@ namespace finalProject
             row1["event's category"] = i.Catgory;
             row1["event's date"] = i.Date_time;
             row1["event's place"] = i.Place;
+            row1["event's Admin"] = i.UserName;
             dt.Rows.Add(row1);
             }
             if (count== -1)
@@ -54,6 +55,11 @@ namespace finalProject
         {
             if (e.CommandName.CompareTo("Invitation") == 0)
             {
+                int row = int.Parse(e.CommandArgument.ToString());
+                string user = table.Rows[row].Cells[colUser].Text.Trim();
+                string mail = eBL.getMail(user);
+
+                Session.Add("mail", mail);
                 Response.Redirect("~/Invitation.aspx");
 
             }
@@ -79,12 +85,14 @@ namespace finalProject
         {
             if ((string)(Session["first"]) != "Guest")
                 Response.Redirect("~/homeC.aspx");
+            else
+                Response.Redirect("~/home.aspx");
 
         }
 
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/salesE.aspx");
         }
 
         protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
@@ -94,13 +102,15 @@ namespace finalProject
 
         protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
         {
-            if ((string)(Session["first"]) != "Guest")
                 Response.Redirect("~/aboutUsC.aspx");
         }
 
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
-
+            if ((string)(Session["first"]) != "Guest")
+            {
+                Response.Redirect("~/contactUs.aspx");
+            }
         }
 
 

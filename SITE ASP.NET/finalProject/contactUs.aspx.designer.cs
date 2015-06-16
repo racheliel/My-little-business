@@ -10,16 +10,7 @@
 namespace finalProject {
     
     
-    public partial class WebForm8 {
-        
-        /// <summary>
-        /// Image control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image;
+    public partial class WebForm11 {
         
         /// <summary>
         /// error control.
@@ -31,84 +22,75 @@ namespace finalProject {
         protected global::System.Web.UI.WebControls.Label error;
         
         /// <summary>
-        /// name control.
+        /// back control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox name;
+        protected global::System.Web.UI.WebControls.Button back;
         
         /// <summary>
-        /// category control.
+        /// to control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox category;
+        protected global::System.Web.UI.WebControls.Label to;
         
         /// <summary>
-        /// place control.
+        /// from control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox place;
+        protected global::System.Web.UI.WebControls.Label from;
         
         /// <summary>
-        /// month control.
+        /// head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList month;
+        protected global::System.Web.UI.WebControls.TextBox head;
         
         /// <summary>
-        /// day control.
+        /// attachment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList day;
+        protected global::System.Web.UI.WebControls.FileUpload attachment;
         
         /// <summary>
-        /// year control.
+        /// body control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList year;
+        protected global::System.Web.UI.WebControls.TextBox body;
         
         /// <summary>
-        /// hour control.
+        /// send control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList hour;
+        protected global::System.Web.UI.WebControls.Button send;
         
         /// <summary>
-        /// minutes control.
+        /// Image2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList minutes;
-        
-        /// <summary>
-        /// edit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton edit;
+        protected global::System.Web.UI.WebControls.Image Image2;
     }
 }

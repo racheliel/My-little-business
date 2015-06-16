@@ -52,7 +52,10 @@ namespace finalProject
             return eventD.getBusinessForUser(str);
 
         }
-
+        public string getMail(string user)
+        {
+            return eventD.getMail(user);
+        }
 
         public Users signIn(string pass, string userN)
         {

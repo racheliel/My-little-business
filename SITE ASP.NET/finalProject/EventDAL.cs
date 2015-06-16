@@ -184,7 +184,21 @@ namespace finalProject
           
         }
 
+        public string getMail(string user)
+        {
+            con.Open();
+            string sqlString = "Select Email from UsersTable where UserName='" + user + "';";
+            SqlCommand com = new SqlCommand(sqlString, con);
+            SqlDataReader rdr = com.ExecuteReader();
+            string e = "";
+            if (rdr.Read())
+            {
+                e = (string)rdr[0];
 
+            }
+            con.Close();
+            return e;
+        }
 
 
          public LinkedList<Events> getEvents(string userName)
@@ -199,7 +213,7 @@ namespace finalProject
              Events temp;
              while (rdr.Read())
              {
-                 temp = new Events((string)rdr[0],(DateTime)rdr[2] , (string)rdr[1], (string)rdr[3], (string)rdr[4]);
+                 temp = new Events((string)rdr[0],(DateTime)rdr[1] , (string)rdr[2], (string)rdr[3], (string)rdr[4]);
 
                  events.AddLast(temp);
              }

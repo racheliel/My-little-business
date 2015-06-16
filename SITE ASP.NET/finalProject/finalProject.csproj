@@ -69,6 +69,7 @@
     <Content Include="boxM.png" />
     <Content Include="boxS.png" />
     <Content Include="boxH.png" />
+    <Content Include="contactUs.aspx" />
     <Content Include="edit.jpg" />
     <Content Include="forgot_pass.jpg" />
     <Content Include="logo.jpg" />
@@ -103,6 +104,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business.cs" />
+    <Compile Include="contactUs.aspx.cs">
+      <DependentUpon>contactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contactUs.aspx.designer.cs">
+      <DependentUpon>contactUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Favorit.cs" />
     <Compile Include="myEvent.aspx.cs">
       <DependentUpon>myEvent.aspx</DependentUpon>
