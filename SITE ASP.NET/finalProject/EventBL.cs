@@ -42,6 +42,11 @@ namespace finalProject
         }
 
 
+        public LinkedList<Events> getAllEvents()
+        {
+            return eventD.getAllEvents();
+        }
+
         public Boolean chackUser(string userN)
         {
             return eventD.chackUser(userN);
@@ -81,12 +86,6 @@ namespace finalProject
         public LinkedList<Feedback> getFeedback(string buss)
         {
             return eventD.getFeedback(buss);
-        }
-
-
-        public LinkedList<Events> getAllEvents()
-        {
-           return eventD.getAllEvents();
         }
 
         public void addFavorit(Favorit f)
