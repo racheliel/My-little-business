@@ -34,11 +34,13 @@ namespace finalProject
                 logo.ImageUrl = eBL.getImageLogo(busName.Text);
                 string str = "";
                 LinkedList<Feedback> feedback = eBL.getFeedback(b.BusName);
-                foreach (Feedback i in feedback)
-                {
-                    str += i.Strfeedback + " from: " + i.UserName + '\n'; 
+                if (feedback.Count() != 0)
+                { 
+                     foreach (Feedback i in feedback)
+                     {
+                       str += i.Strfeedback + " from: " + i.UserName + '\n'; 
+                     }
                 }
-
 
 
 

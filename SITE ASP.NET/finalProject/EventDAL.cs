@@ -149,7 +149,7 @@ namespace finalProject
         public LinkedList<Feedback> getFeedback(string buss)
         {
             con.Open();
-            string sqlString = "Select * from FeedbackTable where BusName='" + buss + "';";
+            string sqlString = "Select * from FeedbacksTable where BusName='" + buss + "';";
             SqlCommand com = new SqlCommand(sqlString, con);
             SqlDataReader rdr = com.ExecuteReader();
             LinkedList<Feedback> feedbacks = new LinkedList<Feedback>();
