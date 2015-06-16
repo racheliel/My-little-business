@@ -8,9 +8,10 @@
 //------------------------------------------------------------------------------
 
 namespace finalProject {
-    
-    
-    public partial class WebForm11 {
+
+
+    public partial class myBusiness
+    {
         
         /// <summary>
         /// userName control.

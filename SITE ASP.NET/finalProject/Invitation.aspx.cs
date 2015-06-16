@@ -11,11 +11,18 @@ using System.Net.Mime;
 
 namespace finalProject
 {
+   
     public partial class WebForm1 : System.Web.UI.Page
     {
+        string user, fromMail,toMail;
+        EventBL eBL = new EventBL();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            user = (string)(Session["user"]);
+            fromMail = eBL.getMail(user);
+            toMail = (string)(Session["mail"]);
+            to.Text = toMail;
+            from.Text = fromMail;
         }
 
         protected void send_Click(object sender, EventArgs e)
@@ -23,8 +30,8 @@ namespace finalProject
             try
             {
                 MailMessage mailMessage = new MailMessage();
-                mailMessage.To.Add(to.Text);
-                mailMessage.From = new MailAddress("my.events.invitation@gmail.com");
+                mailMessage.To.Add(toMail);
+                mailMessage.From = new MailAddress(fromMail);
                 mailMessage.Subject = head.Text;
                 mailMessage.Body = body.Text;
                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com",587);
@@ -32,7 +39,7 @@ namespace finalProject
                smtpClient.Timeout = 10000;
                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                smtpClient.UseDefaultCredentials = false;
-               smtpClient.Credentials = new NetworkCredential("my.events.invitation@gmail.com", "hlamash1");
+               smtpClient.Credentials = new NetworkCredential("MyLittleBusinessSite@gmail.com", "RMHU100rmhu");
                string strFileName = System.IO.Path.GetFileName(attachment.PostedFile.FileName);
                Attachment attachFile = new Attachment(attachment.PostedFile.InputStream, strFileName);
                mailMessage.Attachments.Add(attachFile);
@@ -49,7 +56,7 @@ namespace finalProject
 
         protected void back_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/connect.aspx");
+            Response.Redirect("~/salesE.aspx");
 
         }
 

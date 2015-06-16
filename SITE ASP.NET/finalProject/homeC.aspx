@@ -46,8 +46,7 @@
             <asp:Label ID="userName" runat="server"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
-            <td class="auto-style27">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="myEve" runat="server" BackColor="#66FF66" ForeColor="Black" OnClick="myEve_Click" Text="My Events" Width="139px" />
+            <td class="auto-style27">&nbsp;<asp:Button ID="myEve" runat="server" BackColor="#66FF66" ForeColor="Black" OnClick="myEve_Click" Text="My Events" Width="139px" />
 &nbsp;&nbsp;&nbsp;
                 <asp:Button ID="myBus" runat="server" BackColor="#66FF66" Text="My Business" Width="131px" OnClick="myBus_Click" />
             </td>
