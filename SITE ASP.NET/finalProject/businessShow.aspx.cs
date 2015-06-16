@@ -59,9 +59,9 @@ namespace finalProject
 
         protected void getF_Click(object sender, EventArgs e)
         {
-            if (getF.Text != "")
-            {   
-                Feedback f = new Feedback((string)(Session["user"]),b.BusName,getF.Text)
+            if (getF.Text != "" && busName.Text!="")
+            {
+                Feedback f = new Feedback((string)(Session["user"]), busName.Text, getF.Text);
                eBL.addFeedback(f);
                Response.Redirect("~/businessShow.aspx");
             }

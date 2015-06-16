@@ -90,6 +90,7 @@
     <Content Include="myBusiness.aspx" />
     <Content Include="businessShow.aspx" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
+    <None Include="Properties\PublishProfiles\MLB.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
