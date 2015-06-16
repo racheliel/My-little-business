@@ -32,6 +32,16 @@ namespace finalProject
                 GridView1.DataSource = dt;
                 DataBind();
                 logo.ImageUrl = eBL.getImageLogo(busName.Text);
+                string str = "";
+                LinkedList<Feedback> feedback = eBL.getFeedback(b.BusName);
+                foreach (Feedback i in feedback)
+                {
+                    str += i.Strfeedback + " from: " + i.UserName + '\n'; 
+                }
+
+
+
+
             }
     
         }
@@ -45,6 +55,20 @@ namespace finalProject
         {
             Response.Redirect("~/homeC.aspx");
 
+        }
+
+        protected void getF_Click(object sender, EventArgs e)
+        {
+            if (getF.Text != "")
+            {   
+                Feedback f = new Feedback((string)(Session["user"]),b.BusName,getF.Text)
+               eBL.addFeedback(f);
+               Response.Redirect("~/businessShow.aspx");
+            }
+            else
+            {
+                errorText.Text = "please fill the feedback";
+            }
         }
     }
 }

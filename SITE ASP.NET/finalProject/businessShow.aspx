@@ -66,9 +66,15 @@
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
+                <br />
+                <br />
+                <asp:Label ID="errorText" runat="server" ForeColor="Red"></asp:Label>
                 </td>
             <td class="auto-style19">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
     </table>
+    <asp:TextBox ID="TextBox1" runat="server" Height="66px" Width="418px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="getF" runat="server" OnClick="getF_Click" Text="send feedback" />
 </asp:Content>
