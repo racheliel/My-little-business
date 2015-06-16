@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace finalProject
 {
-    public partial class salesE : System.Web.UI.Page
+    public partial class WebForm15 : System.Web.UI.Page
     {
         EventBL eBL = new EventBL();
         int colUser=5;

@@ -45,6 +45,7 @@ namespace finalProject
 
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
+            Response.Redirect("~/contactUs.aspx");
 
         }
 
