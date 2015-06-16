@@ -250,7 +250,7 @@ namespace finalProject
              Events temp;
              while (rdr.Read())
              {
-                 temp = new Events((string)rdr[0], (DateTime)rdr[2], (string)rdr[1], (string)rdr[3], (string)rdr[4]);
+                 temp = new Events((string)rdr[0], (DateTime)rdr[1], (string)rdr[2], (string)rdr[3], (string)rdr[4]);
 
                  events.AddLast(temp);
              }
