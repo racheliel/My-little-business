@@ -108,7 +108,20 @@ namespace finalProject
             return b;
         }
 
-
+        public string getNameBusinessForUser(string str)
+        {
+            con.Open();
+            string sqlString = "Select BusName from BusinessTable where UserName='" + str + "';";
+            SqlCommand com = new SqlCommand(sqlString, con);
+            SqlDataReader rdr = com.ExecuteReader();
+            string b = "";
+            if (rdr.Read())
+            {
+                b =(string)rdr[0];
+            }
+            con.Close();
+            return b;
+        }
        
         public LinkedList<Business> getAllBusiness()
         {
@@ -299,6 +312,24 @@ namespace finalProject
              }
          }
 
+         public void updateUser(string user,string pass,string first,string last, string mail)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "UPDATE UsersTable SET Password='"+pass+"',Email ='"+mail+"',FirstName='"+first+"',LastName = '"+last+"' WHERE UserName = '"+user+"';";
+        
+             SqlCommand com = new SqlCommand(sqlString, con);
+        //     try
+             {
+                 com.ExecuteReader();
+             }
+        //     catch
+             {
+                 con.Close();
+             }
+         }
+
+
          public void addFeedback(Feedback f)
          {
              con = new SqlConnection(conString);
@@ -352,6 +383,23 @@ namespace finalProject
              }
          }
 
+         public void deleteEventByUser(string user)
+         {//get user event and delete this event
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM EventsTable WHERE UserName='" + user + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+        //     try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+            // catch
+             {
+                 con.Close();
+             }
+         }
          public void deleteImage(string p)
          {//get user event and delete this event
              con = new SqlConnection(conString);
@@ -404,6 +452,23 @@ namespace finalProject
                  con.Close();
              }
          }
+         public void deleteFavoritByUser(string name)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM FavoritTable WHERE UserName= '" + name + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+          //   try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+            // catch
+             {
+                 con.Close();
+             }
+         }
 
          public void deleteFeedbackByBuss(string name)
          {
@@ -423,6 +488,23 @@ namespace finalProject
              }
          }
 
+         public void deleteUser(string name)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM UsersTable WHERE UserName= '" + name + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+           //  try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             //catch
+             {
+                 con.Close();
+             }
+         }
          public void deleteLogosByBuss(string name)
          {
              con = new SqlConnection(conString);
