@@ -237,6 +237,8 @@ namespace finalProject
              return str;
          }
 
+    
+
 
          public LinkedList<Events> getAllEvents()
          {//get user name and returns events of user name
@@ -352,11 +354,11 @@ namespace finalProject
              }
          }
 
-         public void deleteImage(string p)
+         public void deleteImage(string b)
          {//get user event and delete this event
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "DELETE FROM uplodes WHERE image='" + p + "';";
+             string sqlString = "DELETE FROM uplodes WHERE BusName = '" + b +"';";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {

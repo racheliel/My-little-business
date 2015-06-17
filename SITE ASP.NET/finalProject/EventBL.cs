@@ -131,6 +131,8 @@ namespace finalProject
             eventD.addBusiness(b);
         }
 
+
+
         public void deleteImage(string p)
         {
             eventD.deleteImage(p);

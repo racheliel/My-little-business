@@ -53,9 +53,10 @@
 &nbsp;&nbsp;
                 <asp:Label ID="errorImage" runat="server"></asp:Label>
                 <br />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" >
+                <br />
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" >
                     <Columns>
-                        <asp:TemplateField HeaderText="image">
+                         <asp:TemplateField HeaderText="image">
                             <ItemTemplate>
                                 <asp:Image ID="img" runat="server" ImageUrl='<%#Eval("image") %>' Height="100" Width="100" />
                             </ItemTemplate>
