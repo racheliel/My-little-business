@@ -21,6 +21,7 @@ namespace finalProject
             if (b == null)
             {
                 edit.Visible = false;
+                del.Visible = false;
             }
             else
             {
@@ -101,6 +102,30 @@ namespace finalProject
         protected void table1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void del_Click(object sender, EventArgs e)
+        {
+           // Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>if(!window.confirm('Are you sure?')){window.location.href='businessShow.aspx'}else{eBL.deleteBusiness(busN)}</script>");
+            errorText.Text = "Are you sure?";
+            YES.Visible = true;
+            no.Visible = true;
+            
+        }
+
+        protected void no_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/businessShow.aspx");
+        }
+
+        protected void YES_Click(object sender, EventArgs e)
+        {
+            eBL.deleteFavoritByBuss(busN);
+            eBL.deleteFeedbackByBuss(busN);
+            eBL.deleteLogosByBuss(busN);
+            eBL.deleteUpdateByBuss(busN);
+            eBL.deleteBusiness(busN);
+            Response.Redirect("~/homeC.aspx");
         }
     }
 }

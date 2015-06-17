@@ -386,22 +386,94 @@ namespace finalProject
                  con.Close();
              }
          }
+
+         public void deleteFavoritByBuss(string name)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM FavoritTable WHERE BusName= '" + name + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
+
+         public void deleteFeedbackByBuss(string name)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM FeedbacksTable WHERE BusName= '" + name + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
+
+         public void deleteLogosByBuss(string name)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM logos WHERE busName= '" + name + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
+
+         public void deleteUpdateByBuss(string name)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM Uplodes WHERE BusName= '" + name + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
          public void deleteBusiness(string b)
          {//get  business and deleted
              con = new SqlConnection(conString);
              con.Open();
              string sqlString = "delete from BusinessTable where BusName = '" + b + "';";
              SqlCommand com = new SqlCommand(sqlString, con);
-     //        try
+             try
              {
                  com.ExecuteReader();
                  con.Close();
 
              }
-        /*     catch
+            catch
              {
                  con.Close();
-             }*/
+             }
          }
 
 
