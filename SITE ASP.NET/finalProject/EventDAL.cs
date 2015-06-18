@@ -385,9 +385,7 @@ namespace finalProject
              }
          }
 
-<<<<<<< HEAD
-         public void deleteImage(string b)
-=======
+
          public void deleteEventByUser(string user)
          {//get user event and delete this event
              con = new SqlConnection(conString);
@@ -406,11 +404,10 @@ namespace finalProject
              }
          }
          public void deleteImage(string p)
->>>>>>> origin/master
          {//get user event and delete this event
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "DELETE FROM uplodes WHERE BusName = '" + b +"';";
+             string sqlString = "DELETE FROM uplodes WHERE BusName = '" + p +"';";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {
