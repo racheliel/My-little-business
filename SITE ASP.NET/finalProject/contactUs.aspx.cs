@@ -40,12 +40,12 @@ namespace finalProject
                 Attachment attachFile = new Attachment(attachment.PostedFile.InputStream, strFileName);
                 mailMessage.Attachments.Add(attachFile);
                 smtpClient.Send(mailMessage);
-                error.Text = "E-mail sent!";
+                error.Text = "E-mail send!";
 
             }
             catch
             {
-                error.Text = "E-mail not sent!";
+                error.Text = "E-mail don't send!";
 
             }
         }

@@ -33,12 +33,11 @@
                 <asp:Image ID="ImgLogo" runat="server" Height="100px" Width="100px" />
                 <br />
                 <br />
-                New Place:&nbsp;
+                place:&nbsp;
                 <asp:TextBox ID="TextBox2" runat="server" Width="311px"></asp:TextBox>
                 <br />
                 <br />
                 <br />
-                New
                 Detailes:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="TextBox3" runat="server" Height="84px" Width="294px"></asp:TextBox>

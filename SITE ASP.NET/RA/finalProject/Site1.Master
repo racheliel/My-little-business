@@ -1,0 +1,100 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="finalProject.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #form1 {
+            height: 499px;
+            width: 1011px;
+        }
+        .auto-style1 {
+            height: 29px;
+        }
+        .auto-style5 {
+            height: 200px;
+        }
+        .auto-style7 {
+            width: 323px;
+        }
+        .auto-style12 {
+            height: 135px;
+        }
+        .auto-style13 {
+            width: 342px;
+            height: 187px;
+        }
+        </style>
+</head>
+<body style="height: 651px; width: 110%">
+    <form id="form1" runat="server">
+    <div style="width: 1130px">
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <table style="width: 102%; height: 446px; position: static;">
+                <tr>
+                    <td style="background-color: #FFFFFF; font-size: xx-large; font-weight: 900; font-style: italic; font-variant: normal; text-transform: none; color: #000000;" class="auto-style12">
+                        <table style="width: 114%; height: 136px;">
+                            <tr>
+                                <td class="auto-style7" style="color: #D47EE9; font-family: 'Berlin Sans FB'; font-weight: 900; font-size: 50px; font-style: italic">
+                                    <img class="auto-style13" src="logo.jpg" /></td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                            <p style="height: 16px; width: 977px">
+                            </p>
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1" style="color: #000000; font-style: oblique; font-size: x-large; background-color: #FFFFFF; font-weight: 900; font-variant: normal; text-transform: none; font-family: Harrington;">copyright to Michal Gisri, Racheli Elkaslasi, uriel shani and Hanni Gabai</td>
+                </tr>
+            </table>
+        
+    </div>
+    </form>
+</body>
+</html>
