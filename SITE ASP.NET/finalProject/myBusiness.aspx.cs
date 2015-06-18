@@ -14,6 +14,7 @@ namespace finalProject
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\GitHub\\My-little-business\\SITE ASP.NET\\MLBDB.mdf;Integrated Security=True;Connect Timeout=30");
         protected void Page_Load(object sender, EventArgs e)
         {
+          //  errorImage.Text = "";
             userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
             Business b = eBL.getBusinessForUser((string)(Session["user"]));
             if(b!=null)
@@ -39,29 +40,60 @@ namespace finalProject
 
         protected void upImage_Click(object sender, EventArgs e)
         {
-            if(FileUpload2.HasFile)
+            Boolean busN = eBL.chackBusinessName(busName.Text);
+            if (busN == true)
             {
-                //upload images into database
-                string str =busName.Text+ FileUpload2.FileName;
-                FileUpload2.PostedFile.SaveAs(Server.MapPath(".") + "//uploads//" + str);
-                string path = "~//uploads//" + str.ToString();
-                con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO uplodes (image,BusName) VALUES('" + path + "','" + busName.Text + "');",con);
-                cmd.ExecuteNonQuery();
-                con.Close();
 
-                //show images in table
-                SqlDataAdapter da = new SqlDataAdapter("select image from uplodes where BusName='" + busName.Text + "';", con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                GridView1.DataSource = dt;
-                DataBind();
+                if (FileUpload2.HasFile)
+                {
+                    //upload images into database
+                    string str = busName.Text + FileUpload2.FileName;
+                    FileUpload2.PostedFile.SaveAs(Server.MapPath(".") + "//uploads//" + str);
+                    string path = "~//uploads//" + str.ToString();
+                    try
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("INSERT INTO uplodes (image,BusName) VALUES('" + path + "','" + busName.Text + "');", con);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch
+                    {
+                        errorImage.Text = "the photo exist in the business page";
+                    }
+
+                    //show images in table
+                       SqlDataAdapter da = new SqlDataAdapter("select image from uplodes where BusName='" + busName.Text + "';", con);
+                      DataTable dt = new DataTable();
+                        da.Fill(dt);
+                         GridView1.DataSource = dt;
+                        DataBind();
 
 
+                }
+                else
+                {
+                    errorImage.Text = "upload faild";
+                }
             }
-            else 
+            else
             {
-                errorImage.Text = "upload faild";
+                Business b = new Business(busName.Text, (string)(Session["user"]), TextBox3.Text, TextBox2.Text);
+                eBL.addBusiness(b);
+                if (FileUpload2.HasFile)
+                {
+                    string str = busName.Text + FileUpload2.FileName;
+                    FileUpload2.PostedFile.SaveAs(Server.MapPath(".") + "//uploads//" + str);
+                    string path = "~//uploads//" + str.ToString();
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO uplodes (image,BusName) VALUES('" + path + "','" + busName.Text + "');", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                else
+                {
+                    errorImage.Text = "upload faild";
+                }
             }
         }
 
@@ -84,15 +116,32 @@ namespace finalProject
         protected void save_Click(object sender, EventArgs e)
         {
             Boolean busN = eBL.chackBusinessName(busName.Text);
-            Business b = new Business(busName.Text, (string)(Session["user"]), TextBox3.Text, TextBox2.Text);
             if (busN == true)
             {
-                eBL.deleteBusiness(busName.Text);
-
+                if (TextBox3.Text != "" && TextBox2.Text != "")
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE BusinessTable SET Detailes='" + TextBox3.Text + "', place='" + TextBox2.Text + "' where UserName='" + (string)(Session["user"]) + "';", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                else if(TextBox2.Text!="")
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE BusinessTable SET place='" + TextBox2.Text + "' where UserName='" + (string)(Session["user"]) + "';", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                else if(TextBox3.Text!="")
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE BusinessTable SET Detailes='" + TextBox3.Text + "' where UserName='" + (string)(Session["user"]) + "';", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
             }
-            eBL.addBusiness(b);
 
-            Response.Redirect("~/homeC.aspx");
+            Response.Redirect("~/businessShow.aspx");
 
         }
 
@@ -102,22 +151,48 @@ namespace finalProject
 
         protected void logoImage_Click(object sender, EventArgs e)
         {
+             Boolean busN = eBL.chackBusinessName(busName.Text);
+             if (busN == true)
+             {
 
-            if (FileUpload1.HasFile)
-            {
-                errorLogo.Text = "";
-                //upload logo into database
-                string str = busName.Text + FileUpload1.FileName;
-                FileUpload1.PostedFile.SaveAs(Server.MapPath(".") + "//logos//" + str);
-                string path = "~//logos//" + str.ToString();
-                con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO logos (busName,logo) VALUES('" + busName.Text + "','" + path + "');", con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                ImgLogo.ImageUrl = path;
-            }
-            else
-                errorLogo.Text = "error upload logo";
+                 if (FileUpload1.HasFile)
+                 {
+                     errorLogo.Text = "";
+                     //upload logo into database
+                     string str = busName.Text + FileUpload1.FileName;
+                     FileUpload1.PostedFile.SaveAs(Server.MapPath(".") + "//logos//" + str);
+                     string path = "~//logos//" + str.ToString();
+                     con.Open();
+                     SqlCommand cmd = new SqlCommand("UPDATE logos SET logo= '" + path + "' WHERE busName='"+busName.Text+"';", con);
+                     cmd.ExecuteNonQuery();
+                     con.Close();
+                     ImgLogo.ImageUrl = path;
+                 }
+                 else
+                     errorLogo.Text = "error upload logo";
+             }
+             else
+             {
+                 Business b = new Business(busName.Text, (string)(Session["user"]), TextBox3.Text, TextBox2.Text);
+                 eBL.addBusiness(b);
+                 if (FileUpload1.HasFile)
+                 {
+                     errorLogo.Text = "";
+                     //upload logo into database
+                     string str = busName.Text + FileUpload1.FileName;
+                     FileUpload1.PostedFile.SaveAs(Server.MapPath(".") + "//logos//" + str);
+                     string path = "~//logos//" + str.ToString();
+                     con.Open();
+                     SqlCommand cmd = new SqlCommand("INSERT INTO logos (busName,logo) VALUES('" + busName.Text + "','" + path + "');", con);
+                     cmd.ExecuteNonQuery();
+                     con.Close();
+                     ImgLogo.ImageUrl = path;
+                 }
+                 else
+                 {
+                     errorImage.Text = "upload faild";
+                 }
+             }
 
         }
 
@@ -126,21 +201,30 @@ namespace finalProject
             errorLogo.Text = TextBox3.Text;
         }
 
+
+        protected void GridView1_RowCommand1(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.CompareTo("deleterow") == 0)
+            {
+                int row = int.Parse(e.CommandArgument.ToString());
+                string path = (string)(GridView1.Rows[row].Cells[1].Text.Trim());
+                eBL.deleteImage(path);
+
+            }
+
+        }
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            string path = (string)(GridView1.Rows[e.RowIndex].Cells[1].Text.Trim());
+            eBL.deleteImage(path);
+
+        }
+
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            if (e.CommandName.CompareTo("deleterow") == 0)
-                 {
-                     int row = int.Parse(e.CommandArgument.ToString());
-                     string path =(string)(GridView1.Rows[row].Cells[0].Text.Trim());
-                     eBL.deleteImage(path);
-                 }
-
-
-        }
     }
 }
