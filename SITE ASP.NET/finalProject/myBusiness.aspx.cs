@@ -206,8 +206,6 @@ namespace finalProject
             {
                 int row = int.Parse(e.CommandArgument.ToString());
                 string path = (string)(GridView1.Rows[row].Cells[1].Text.Trim());
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert(path)</script>");
-
                 eBL.deleteImage(path);
 
             }
@@ -217,8 +215,6 @@ namespace finalProject
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string path = (string)(GridView1.Rows[e.RowIndex].Cells[1].Text.Trim());
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert(path)</script>");
-
             eBL.deleteImage(path);
 
         }
@@ -228,20 +224,5 @@ namespace finalProject
 
         }
 
- //       protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-  //      {
-
-   //         string path = (string)(GridView1.Rows[e.RowIndex].Cells[1].Text.Trim());
-     //       errorImage.Text = path;
-       //    eBL.deleteImage(path);
-      //      DataTable dt = new DataTable();
-        //    dt.Rows.RemoveAt(e.RowIndex);
-          //  GridView1.DataSource = dt;
-         //   GridView1.DataBind();
-
-         
-      //      GridView1.DeleteRow(e.RowIndex);
-        //    GridView1.DataBind();
-    //    }
     }
 }
