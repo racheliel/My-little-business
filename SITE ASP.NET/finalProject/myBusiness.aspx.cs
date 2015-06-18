@@ -14,7 +14,7 @@ namespace finalProject
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\GitHub\\My-little-business\\SITE ASP.NET\\MLBDB.mdf;Integrated Security=True;Connect Timeout=30");
         protected void Page_Load(object sender, EventArgs e)
         {
-            errorImage.Text = "";
+          //  errorImage.Text = "";
             userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
             Business b = eBL.getBusinessForUser((string)(Session["user"]));
             if(b!=null)
@@ -199,29 +199,44 @@ namespace finalProject
             errorLogo.Text = TextBox3.Text;
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void GridView1_RowCommand1(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName.CompareTo("deleterow") == 0)
-                 {
-                     int row = int.Parse(e.CommandArgument.ToString());
-                     string path =(string)(GridView1.Rows[row].Cells[1].Text.Trim());
-                     Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert(path)</script>");
+            {
+                int row = int.Parse(e.CommandArgument.ToString());
+                string path = (string)(GridView1.Rows[row].Cells[1].Text.Trim());
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert(path)</script>");
 
-                   //  eBL.deleteImage(path);
+                eBL.deleteImage(path);
 
-                 }
-
+            }
 
         }
 
-        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            string path = (string)(GridView1.Rows[e.RowIndex].Cells[1].Text.Trim());
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert(path)</script>");
+
+            eBL.deleteImage(path);
 
         }
+
+ //       protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+  //      {
+
+   //         string path = (string)(GridView1.Rows[e.RowIndex].Cells[1].Text.Trim());
+     //       errorImage.Text = path;
+       //    eBL.deleteImage(path);
+      //      DataTable dt = new DataTable();
+        //    dt.Rows.RemoveAt(e.RowIndex);
+          //  GridView1.DataSource = dt;
+         //   GridView1.DataBind();
+
+         
+      //      GridView1.DeleteRow(e.RowIndex);
+        //    GridView1.DataBind();
+    //    }
     }
 }

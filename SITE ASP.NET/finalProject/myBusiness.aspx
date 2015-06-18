@@ -54,14 +54,15 @@
                 <asp:Label ID="errorImage" runat="server"></asp:Label>
                 <br />
                 <br />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" >
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand1" OnRowDeleting="GridView1_RowDeleting">
                     <Columns>
-                         <asp:TemplateField HeaderText="image">
+                        <asp:ButtonField CommandName="delete" HeaderText="delete" Text="delete" />
+                        <asp:TemplateField HeaderText="image">
                             <ItemTemplate>
                                 <asp:Image ID="img" runat="server" ImageUrl='<%#Eval("image") %>' Height="100" Width="100" />
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:ButtonField CommandName="deleterow" HeaderText="delete" Text="delete" />
+
                     </Columns>
                 </asp:GridView>
                 <br />

@@ -407,17 +407,17 @@ namespace finalProject
          {//get user event and delete this event
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "DELETE FROM uplodes WHERE BusName = '" + p +"';";
+             string sqlString = "DELETE FROM uplodes WHERE image = '" + p + "';";
              SqlCommand com = new SqlCommand(sqlString, con);
-             try
+     //        try
              {
                  com.ExecuteReader();
                  con.Close();
 
              }
-             catch
+       //      catch
              {
-                 con.Close();
+       //          con.Close();
              }
          }
          public void deleteFavorit(Favorit f)
