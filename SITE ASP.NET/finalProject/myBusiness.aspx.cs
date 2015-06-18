@@ -223,6 +223,11 @@ namespace finalProject
 
         }
 
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
  //       protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
   //      {
 

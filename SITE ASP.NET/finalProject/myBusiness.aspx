@@ -54,7 +54,7 @@
                 <asp:Label ID="errorImage" runat="server"></asp:Label>
                 <br />
                 <br />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand1" OnRowDeleting="GridView1_RowDeleting">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand1" OnRowDeleting="GridView1_RowDeleting" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <Columns>
                         <asp:ButtonField CommandName="delete" HeaderText="delete" Text="delete" />
                         <asp:TemplateField HeaderText="image">
