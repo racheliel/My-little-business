@@ -58,6 +58,24 @@ namespace finalProject {
         protected global::System.Web.UI.WebControls.Label det;
         
         /// <summary>
+        /// favButt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button favButt;
+        
+        /// <summary>
+        /// favText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label favText;
+        
+        /// <summary>
         /// place control.
         /// </summary>
         /// <remarks>

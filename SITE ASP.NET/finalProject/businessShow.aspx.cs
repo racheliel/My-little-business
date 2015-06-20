@@ -86,7 +86,7 @@ namespace finalProject
             {
                 Feedback f = new Feedback(user, busN, getF.Text);
                eBL.addFeedback(f);
-               Response.Redirect("~/businessShow.aspx");
+            //   Response.Redirect("~/businessShow.aspx");
             }
             else
             {
@@ -126,6 +126,21 @@ namespace finalProject
             eBL.deleteUpdateByBuss(busN);
             eBL.deleteBusiness(busN);
             Response.Redirect("~/homeC.aspx");
+        }
+
+        protected void favButt_Click(object sender, EventArgs e)
+        {
+            
+            Favorit f = new Favorit(user,busN);
+            try
+            {
+                eBL.addFavorit(f);
+                favText.Text = "Added success!";
+            }
+            catch
+            {
+                favText.Text = "try again...";
+            }
         }
     }
 }

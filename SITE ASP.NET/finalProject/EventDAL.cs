@@ -250,6 +250,8 @@ namespace finalProject
              return str;
          }
 
+    
+
 
          public LinkedList<Events> getAllEvents()
          {//get user name and returns events of user name
@@ -336,11 +338,11 @@ namespace finalProject
              con.Open();
              string sqlString = "INSERT INTO FeedbacksTable (BusName,Feedback,UserName)" + "VALUES ('" + f.BusName + "','" + f.Strfeedback + "','" + f.UserName + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
-             try
+           //  try
              {
                  com.ExecuteReader();
              }
-             catch
+             //catch
              {
                  con.Close();
              }
@@ -383,6 +385,8 @@ namespace finalProject
              }
          }
 
+
+        
          public void deleteEventByUser(string user)
          {//get user event and delete this event
              con = new SqlConnection(conString);
@@ -401,10 +405,11 @@ namespace finalProject
              }
          }
          public void deleteImage(string p)
+
          {//get user event and delete this event
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "DELETE FROM uplodes WHERE image='" + p + "';";
+             string sqlString = "DELETE FROM uplodes WHERE BusName = '" + p +"';";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {
