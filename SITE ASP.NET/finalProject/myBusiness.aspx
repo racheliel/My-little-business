@@ -33,12 +33,11 @@
                 <asp:Image ID="ImgLogo" runat="server" Height="100px" Width="100px" />
                 <br />
                 <br />
-                New Place:&nbsp;
+                place:&nbsp;
                 <asp:TextBox ID="TextBox2" runat="server" Width="311px"></asp:TextBox>
                 <br />
                 <br />
                 <br />
-                New
                 Detailes:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="TextBox3" runat="server" Height="84px" Width="294px"></asp:TextBox>
@@ -53,10 +52,9 @@
 &nbsp;&nbsp;
                 <asp:Label ID="errorImage" runat="server"></asp:Label>
                 <br />
-                <br />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" >
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" >
                     <Columns>
-                         <asp:TemplateField HeaderText="image">
+                        <asp:TemplateField HeaderText="image">
                             <ItemTemplate>
                                 <asp:Image ID="img" runat="server" ImageUrl='<%#Eval("image") %>' Height="100" Width="100" />
                             </ItemTemplate>

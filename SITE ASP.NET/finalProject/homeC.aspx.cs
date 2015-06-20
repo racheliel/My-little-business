@@ -10,14 +10,11 @@ namespace finalProject
     public partial class WebForm9 : System.Web.UI.Page
     {
         EventBL eBL = new EventBL();
-        string user,first,last;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            user = (string)(Session["user"]);
-            first = (string)(Session["first"]);
-            last = (string)(Session["last"]);
             Image1.ImageUrl = "4.png";
-            userName.Text =  first+ " " +last ;
+            userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
             if(userName.Text == "")
                 Response.Redirect("~/home.aspx");
         }
@@ -48,7 +45,6 @@ namespace finalProject
 
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("~/contactUs.aspx");
 
         }
 
@@ -78,10 +74,9 @@ namespace finalProject
 
         protected void out_Click(object sender, EventArgs e)
         {
-            Session.Add("user", user);
-            Session.Add("first", first);
-            Session.Add("last", last);
-
+            Session.Add("user", "");
+            Session.Add("first", "Guest");
+            Session.Add("last", "");
             Response.Redirect("~/home.aspx");
         }
 
@@ -100,16 +95,6 @@ namespace finalProject
                 Response.Redirect("~/myBusiness.aspx");
 
 
-        }
-
-        protected void edit_Click(object sender, EventArgs e)
-        {
-            Session.Add("user", user);
-            Session.Add("first", first);
-            Session.Add("last", last);
-            string mail = eBL.getMail(user);
-            Session.Add("mail", mail);
-            Response.Redirect("~/editUser.aspx");
         }
 
 

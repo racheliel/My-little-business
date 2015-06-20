@@ -49,10 +49,8 @@
             <td class="auto-style27">&nbsp;<asp:Button ID="myEve" runat="server" BackColor="#66FF66" ForeColor="Black" OnClick="myEve_Click" Text="My Events" Width="139px" />
 &nbsp;&nbsp;&nbsp;
                 <asp:Button ID="myBus" runat="server" BackColor="#66FF66" Text="My Business" Width="131px" OnClick="myBus_Click" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
             <td>
-                <asp:Button ID="edit" runat="server" OnClick="edit_Click" Text="Edit my details" />
             <asp:Button ID="out" runat="server" OnClick="out_Click" Text="Sign Out" />
             </td>
         </tr>
