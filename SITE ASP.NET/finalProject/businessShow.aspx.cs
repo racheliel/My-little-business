@@ -12,16 +12,13 @@ namespace finalProject
     {
         EventBL eBL = new EventBL();
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\GitHub\\My-little-business\\SITE ASP.NET\\MLBDB.mdf;Integrated Security=True;Connect Timeout=30");
-        string user,busN;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            user = (string)(Session["user"]);
-            Business b = eBL.getBusinessForUser(user);
-            busN = b.BusName;
+            Business b = eBL.getBusinessForUser((string)(Session["user"]));
             if (b == null)
             {
                 edit.Visible = false;
-                del.Visible = false;
             }
             else
             {
@@ -35,36 +32,6 @@ namespace finalProject
                 GridView1.DataSource = dt;
                 DataBind();
                 logo.ImageUrl = eBL.getImageLogo(busName.Text);
-
-                LinkedList<Feedback> feedback = eBL.getFeedback(busName.Text);
-                DataTable dt1 = new DataTable();
-                dt1.Columns.Add("Feedback:", typeof(string));
-    //            dt1.Columns.Add("stars:", typeof(string));
-                dt1.Columns.Add("From:", typeof(string));
-                 int count = -1;//check if exist event
-                foreach (Feedback i in feedback)
-                  { 
-                    count = 0;
-                    DataRow row1 = dt1.NewRow();
-                    row1["Feedback:"] = i.Strfeedback;
-                    row1["From:"] = i.UserName;
-                    errorText.Text = "";  
-                   }
-
-                if (count == -1)
-                {
-                    errorText.Text = "There are no planned events";
-                }
-                else
-                {
-                    errorText.Text = "";
-
-                }
-
-                table1.DataSource = dt1;
-                table1.DataBind();
-
-
             }
     
         }
@@ -73,6 +40,7 @@ namespace finalProject
         {
             Response.Redirect("~/myBusiness.aspx");
         }
+<<<<<<< HEAD
 
         protected void home_Click(object sender, EventArgs e)
         {
@@ -142,5 +110,7 @@ namespace finalProject
                 favText.Text = "try again...";
             }
         }
+=======
+>>>>>>> origin/master
     }
 }
