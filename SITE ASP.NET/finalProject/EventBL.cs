@@ -42,6 +42,11 @@ namespace finalProject
         }
 
 
+        public LinkedList<Events> getAllEvents()
+        {
+            return eventD.getAllEvents();
+        }
+
         public Boolean chackUser(string userN)
         {
             return eventD.chackUser(userN);
@@ -83,12 +88,6 @@ namespace finalProject
             return eventD.getFeedback(buss);
         }
 
-
-        public LinkedList<Events> getAllEvents()
-        {
-           return eventD.getAllEvents();
-        }
-
         public void addFavorit(Favorit f)
         {
             eventD.addFavorit(f);
@@ -116,6 +115,25 @@ namespace finalProject
 
         }
 
+        public void deleteFavoritByBuss(string name)
+        {
+            eventD.deleteFavoritByBuss(name);
+        }
+
+        public void deleteFeedbackByBuss(string name)
+        {
+            eventD.deleteFeedbackByBuss(name);
+        }
+
+        public void deleteLogosByBuss(string name)
+        {
+            eventD.deleteLogosByBuss(name);
+        }
+
+        public void deleteUpdateByBuss(string name)
+        {
+            eventD.deleteUpdateByBuss(name);
+        }
         public void createEvent(string userName, DateTime date_time, string place,string name,string cat)
         {
             Events e = new Events(userName, date_time, place,name,cat);
@@ -138,5 +156,28 @@ namespace finalProject
 
         }
 
+        public void updateUser(string user, string pass, string first, string last, string mail)
+        {
+            eventD.updateUser(user, pass, first, last, mail);
+        }
+
+        public void deleteEventByUser(string user)
+        {
+            eventD.deleteEventByUser(user);
+        }
+
+        public void deleteFavoritByUser(string name)
+        {
+            eventD.deleteFavoritByUser(name);
+        }
+
+        public void deleteUser(string name) {
+            eventD.deleteUser(name);
+        }
+
+        public string getNameBusinessForUser(string str)
+        {
+            return eventD.getNameBusinessForUser(str);
+        }
     }
 }

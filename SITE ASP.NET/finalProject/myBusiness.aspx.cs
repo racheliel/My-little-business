@@ -20,8 +20,6 @@ namespace finalProject
             {
                 busName.Text = b.BusName;
                 chackBusName.Visible = false;
-                TextBox2.Text = b.Place;
-                TextBox3.Text = b.Detailes;
                 SqlDataAdapter da = new SqlDataAdapter("select image from uplodes where BusName='"+busName.Text+"';", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
