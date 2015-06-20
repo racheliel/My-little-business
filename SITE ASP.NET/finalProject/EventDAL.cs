@@ -108,7 +108,20 @@ namespace finalProject
             return b;
         }
 
-
+        public string getNameBusinessForUser(string str)
+        {
+            con.Open();
+            string sqlString = "Select BusName from BusinessTable where UserName='" + str + "';";
+            SqlCommand com = new SqlCommand(sqlString, con);
+            SqlDataReader rdr = com.ExecuteReader();
+            string b = "";
+            if (rdr.Read())
+            {
+                b =(string)rdr[0];
+            }
+            con.Close();
+            return b;
+        }
        
         public LinkedList<Business> getAllBusiness()
         {
@@ -149,7 +162,7 @@ namespace finalProject
         public LinkedList<Feedback> getFeedback(string buss)
         {
             con.Open();
-            string sqlString = "Select * from FeedbackTable where BusName='" + buss + "';";
+            string sqlString = "Select * from FeedbacksTable where BusName='" + buss + "';";
             SqlCommand com = new SqlCommand(sqlString, con);
             SqlDataReader rdr = com.ExecuteReader();
             LinkedList<Feedback> feedbacks = new LinkedList<Feedback>();
@@ -237,6 +250,8 @@ namespace finalProject
              return str;
          }
 
+    
+
 
          public LinkedList<Events> getAllEvents()
          {//get user name and returns events of user name
@@ -250,7 +265,7 @@ namespace finalProject
              Events temp;
              while (rdr.Read())
              {
-                 temp = new Events((string)rdr[0], (DateTime)rdr[2], (string)rdr[1], (string)rdr[3], (string)rdr[4]);
+                 temp = new Events((string)rdr[0], (DateTime)rdr[1], (string)rdr[2], (string)rdr[3], (string)rdr[4]);
 
                  events.AddLast(temp);
              }
@@ -299,11 +314,29 @@ namespace finalProject
              }
          }
 
+         public void updateUser(string user,string pass,string first,string last, string mail)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "UPDATE UsersTable SET Password='"+pass+"',Email ='"+mail+"',FirstName='"+first+"',LastName = '"+last+"' WHERE UserName = '"+user+"';";
+        
+             SqlCommand com = new SqlCommand(sqlString, con);
+        //     try
+             {
+                 com.ExecuteReader();
+             }
+        //     catch
+             {
+                 con.Close();
+             }
+         }
+
+
          public void addFeedback(Feedback f)
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO FeedbacksTable (BusName,Feedback,UserName)" + "VALUES ('" + f.BusName + "','" + f.Strfeedback + "','" + f.UserName + ");";
+             string sqlString = "INSERT INTO FeedbacksTable (BusName,Feedback,UserName)" + "VALUES ('" + f.BusName + "','" + f.Strfeedback + "','" + f.UserName + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
            //  try
              {
@@ -352,7 +385,6 @@ namespace finalProject
              }
          }
 
-<<<<<<< HEAD
 
         
          public void deleteEventByUser(string user)
@@ -378,13 +410,6 @@ namespace finalProject
              con = new SqlConnection(conString);
              con.Open();
              string sqlString = "DELETE FROM uplodes WHERE BusName = '" + p +"';";
-=======
-         public void deleteImage(string p)
-         {//get user event and delete this event
-             con = new SqlConnection(conString);
-             con.Open();
-             string sqlString = "DELETE FROM uplodes WHERE image='" + p + "';";
->>>>>>> origin/master
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {
@@ -414,22 +439,128 @@ namespace finalProject
                  con.Close();
              }
          }
+
+         public void deleteFavoritByBuss(string name)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM FavoritTable WHERE BusName= '" + name + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
+         public void deleteFavoritByUser(string name)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM FavoritTable WHERE UserName= '" + name + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+          //   try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+            // catch
+             {
+                 con.Close();
+             }
+         }
+
+         public void deleteFeedbackByBuss(string name)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM FeedbacksTable WHERE BusName= '" + name + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
+
+         public void deleteUser(string name)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM UsersTable WHERE UserName= '" + name + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+           //  try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             //catch
+             {
+                 con.Close();
+             }
+         }
+         public void deleteLogosByBuss(string name)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM logos WHERE busName= '" + name + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
+
+         public void deleteUpdateByBuss(string name)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "DELETE FROM Uplodes WHERE BusName= '" + name + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             try
+             {
+                 com.ExecuteReader();
+                 con.Close();
+
+             }
+             catch
+             {
+                 con.Close();
+             }
+         }
          public void deleteBusiness(string b)
          {//get  business and deleted
              con = new SqlConnection(conString);
              con.Open();
              string sqlString = "delete from BusinessTable where BusName = '" + b + "';";
              SqlCommand com = new SqlCommand(sqlString, con);
-     //        try
+             try
              {
                  com.ExecuteReader();
                  con.Close();
 
              }
-        /*     catch
+            catch
              {
                  con.Close();
-             }*/
+             }
          }
 
 

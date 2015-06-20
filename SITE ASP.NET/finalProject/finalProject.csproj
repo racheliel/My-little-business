@@ -89,12 +89,10 @@
     <Content Include="aboutUsC.aspx" />
     <Content Include="myBusiness.aspx" />
     <Content Include="businessShow.aspx" />
-<<<<<<< HEAD
     <Content Include="editUser.aspx" />
     <Content Include="myFavorits.aspx" />
-=======
->>>>>>> origin/master
     <None Include="Properties\PublishProfiles\local.pubxml" />
+    <None Include="Properties\PublishProfiles\MLB.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -223,7 +221,6 @@
     <Compile Include="businessShow.aspx.designer.cs">
       <DependentUpon>businessShow.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="editUser.aspx.cs">
       <DependentUpon>editUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,8 +235,6 @@
     <Compile Include="myFavorits.aspx.designer.cs">
       <DependentUpon>myFavorits.aspx</DependentUpon>
     </Compile>
-=======
->>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <Folder Include="logos\" />
