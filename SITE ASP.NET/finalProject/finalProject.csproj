@@ -89,7 +89,9 @@
     <Content Include="aboutUsC.aspx" />
     <Content Include="myBusiness.aspx" />
     <Content Include="businessShow.aspx" />
+    <Content Include="editUser.aspx" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
+    <None Include="Properties\PublishProfiles\MLB.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -216,6 +218,13 @@
     </Compile>
     <Compile Include="businessShow.aspx.designer.cs">
       <DependentUpon>businessShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editUser.aspx.cs">
+      <DependentUpon>editUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editUser.aspx.designer.cs">
+      <DependentUpon>editUser.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
