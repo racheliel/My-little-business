@@ -45,7 +45,7 @@
                 </tr>
                 <tr>
                     <td>
-            <asp:GridView ID="table" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="136px" OnRowCommand="GridView1_RowCommand" Width="732px" style="margin-left: 154px; margin-bottom: 0px" OnSelectedIndexChanged="table_SelectedIndexChanged">
+            <asp:GridView ID="table" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="136px" OnRowCommand="GridView1_RowCommand" Width="732px" style="margin-left: 154px; margin-bottom: 0px">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:ButtonField HeaderText="edit" Text="edit" CommandName="edit" />

@@ -250,8 +250,6 @@ namespace finalProject
              return str;
          }
 
-    
-
 
          public LinkedList<Events> getAllEvents()
          {//get user name and returns events of user name
@@ -385,7 +383,6 @@ namespace finalProject
              }
          }
 
-
          public void deleteEventByUser(string user)
          {//get user event and delete this event
              con = new SqlConnection(conString);
@@ -403,40 +400,21 @@ namespace finalProject
                  con.Close();
              }
          }
-
-        public LinkedList<string> allImageForBusiness(string b)
-         {
-             con = new SqlConnection(conString);
-             con.Open();
-             string sqlString = "select image from uplodes where BusName='" + b + "';";
-             SqlCommand com = new SqlCommand(sqlString, con);
-             SqlDataReader rdr = com.ExecuteReader();
-
-             LinkedList<string> img = new LinkedList<string>();
-             string temp;
-             while (rdr.Read())
-             {
-                 temp = (string)rdr[0];
-                 img.AddLast(temp);
-             }
-             con.Close();
-             return img;
-         }
          public void deleteImage(string p)
          {//get user event and delete this event
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "DELETE FROM uplodes WHERE image = '" + p + "';";
+             string sqlString = "DELETE FROM uplodes WHERE image='" + p + "';";
              SqlCommand com = new SqlCommand(sqlString, con);
-     //        try
+             try
              {
                  com.ExecuteReader();
                  con.Close();
 
              }
-       //      catch
+             catch
              {
-       //          con.Close();
+                 con.Close();
              }
          }
          public void deleteFavorit(Favorit f)
