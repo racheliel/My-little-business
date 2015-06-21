@@ -148,11 +148,6 @@ namespace finalProject
 
         }
 
-        protected void table_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
     }   
 }

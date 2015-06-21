@@ -12,7 +12,7 @@ namespace finalProject
     {
         EventBL eBL = new EventBL();
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\GitHub\\My-little-business\\SITE ASP.NET\\MLBDB.mdf;Integrated Security=True;Connect Timeout=30");
-        string user,busN;
+        string user, busN;
         protected void Page_Load(object sender, EventArgs e)
         {
             user = (string)(Session["user"]);
@@ -41,11 +41,11 @@ namespace finalProject
                 LinkedList<Feedback> feedback = eBL.getFeedback(busName.Text);
                 DataTable dt1 = new DataTable();
                 dt1.Columns.Add("Feedback:", typeof(string));
-    //            dt1.Columns.Add("stars:", typeof(string));
+                //            dt1.Columns.Add("stars:", typeof(string));
                 dt1.Columns.Add("From:", typeof(string));
-                 int count = -1;//check if exist event
+                int count = -1;//check if exist event
                 foreach (Feedback i in feedback)
-                  { 
+                {
                     count = 0;
                     DataRow row1 = dt1.NewRow();
                     row1["Feedback:"] = i.Strfeedback;
@@ -53,7 +53,7 @@ namespace finalProject
                     errorText.Text = "";
                     dt1.Rows.Add(row1);
 
-                   }
+                }
 
                 if (count == -1)
                 {
@@ -70,7 +70,7 @@ namespace finalProject
 
 
             }
-    
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -86,11 +86,11 @@ namespace finalProject
 
         protected void getF_Click(object sender, EventArgs e)
         {
-            if (getF.Text != "" && busName.Text!="")
+            if (getF.Text != "" && busName.Text != "")
             {
                 Feedback f = new Feedback(user, busN, getF.Text);
-               eBL.addFeedback(f);
-               Response.Redirect("~/businessShow.aspx");
+                eBL.addFeedback(f);
+                Response.Redirect("~/businessShow.aspx");
             }
             else
             {
@@ -99,9 +99,9 @@ namespace finalProject
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        { 
-        
-        
+        {
+
+
         }
         protected void table1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -110,11 +110,11 @@ namespace finalProject
 
         protected void del_Click(object sender, EventArgs e)
         {
-           // Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>if(!window.confirm('Are you sure?')){window.location.href='businessShow.aspx'}else{eBL.deleteBusiness(busN)}</script>");
+            // Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>if(!window.confirm('Are you sure?')){window.location.href='businessShow.aspx'}else{eBL.deleteBusiness(busN)}</script>");
             errorText.Text = "Are you sure that you want delete this page?";
             YES.Visible = true;
             no.Visible = true;
-            
+
         }
 
         protected void no_Click(object sender, EventArgs e)
