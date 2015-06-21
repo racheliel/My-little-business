@@ -68,11 +68,11 @@ namespace finalProject
             {
                 if (place.Text.Equals("") || year.Text.Equals("year") || month.Text.Equals("month") || day.Text.Equals("day") || hour.Text.Equals("hour") || minutes.Text.Equals("minutes") || name.Text.Equals("") || category.Text.Equals(""))
                 {
-                    error.Text = "Event don't created, please fill in all tabs";
+                    error.Text = "Please fill all tabs.";
                 }
                 else
                 {
-                    error.Text = "Event don't created, please chack if all fields are correct";
+                    error.Text = "Please insert correct values";
 
                 }
             }
@@ -81,24 +81,24 @@ namespace finalProject
 
         protected void Timer1_Tick1(object sender, EventArgs e)
         {
-            if (ViewState["imageDisploy"] == null)
+            if (ViewState["imageDisplay"] == null)
             {
                 Image1.ImageUrl = "1.jpg";
-                ViewState["imageDisploy"] = 1;
+                ViewState["imageDisplay"] = 1;
             }
             else
             {
-                int i = (int)ViewState["imageDisploy"];
+                int i = (int)ViewState["imageDisplay"];
                 if (i == 7)
                 {
                     Image1.ImageUrl = "1.jpg";
-                    ViewState["imageDisploy"] = 1;
+                    ViewState["imageDisplay"] = 1;
                 }
                 else
                 {
                     i++;
                     Image1.ImageUrl = i.ToString() + ".jpg";
-                    ViewState["imageDisploy"] = i;
+                    ViewState["imageDisplay"] = i;
                 }
             }
         }

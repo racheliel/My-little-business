@@ -16,12 +16,12 @@ namespace finalProject
 
         protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
         {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('You most login')</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Please login')</script>");
         }
 
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('You most login')</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Please login')</script>");
         }
 
 
