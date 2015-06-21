@@ -36,7 +36,7 @@ namespace finalProject
 
         protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/myFavorit.aspx");
         }
 
         protected void ImageButton4_Click(object sender, ImageClickEventArgs e)

@@ -17,14 +17,16 @@ namespace finalProject
         {
             user = (string)(Session["user"]);
             Business b = eBL.getBusinessForUser(user);
-            busN = b.BusName;
+
             if (b == null)
             {
                 edit.Visible = false;
                 del.Visible = false;
+                busN = (string)(Session["nameBuss"]);
             }
             else
             {
+                busN = b.BusName;
                 edit.Visible = true;
                 busName.Text = b.BusName;
                 place.Text = b.Place;
@@ -48,12 +50,14 @@ namespace finalProject
                     DataRow row1 = dt1.NewRow();
                     row1["Feedback:"] = i.Strfeedback;
                     row1["From:"] = i.UserName;
-                    errorText.Text = "";  
+                    errorText.Text = "";
+                    dt1.Rows.Add(row1);
+
                    }
 
                 if (count == -1)
                 {
-                    errorText.Text = "There are no planned events";
+                    errorText.Text = "";
                 }
                 else
                 {
@@ -107,7 +111,7 @@ namespace finalProject
         protected void del_Click(object sender, EventArgs e)
         {
            // Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>if(!window.confirm('Are you sure?')){window.location.href='businessShow.aspx'}else{eBL.deleteBusiness(busN)}</script>");
-            errorText.Text = "Are you sure?";
+            errorText.Text = "Are you sure that you want delete this page?";
             YES.Visible = true;
             no.Visible = true;
             
@@ -126,6 +130,13 @@ namespace finalProject
             eBL.deleteUpdateByBuss(busN);
             eBL.deleteBusiness(busN);
             Response.Redirect("~/homeC.aspx");
+        }
+
+        protected void addFav_Click(object sender, EventArgs e)
+        {
+            Favorit f = new Favorit(user, busN);
+            eBL.addFavorit(f);
+            favText.Text = "Adding succeeded favorites";
         }
     }
 }
