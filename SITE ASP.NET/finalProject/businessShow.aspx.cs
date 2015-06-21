@@ -48,7 +48,9 @@ namespace finalProject
                     DataRow row1 = dt1.NewRow();
                     row1["Feedback:"] = i.Strfeedback;
                     row1["From:"] = i.UserName;
-                    errorText.Text = "";  
+                    errorText.Text = "";
+                    dt1.Rows.Add(row1);
+
                    }
 
                 if (count == -1)
