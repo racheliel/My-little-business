@@ -40,7 +40,12 @@
             <td class="auto-style17">Detailes:
                 <asp:Label ID="det" runat="server"></asp:Label>
             </td>
-            <td class="auto-style18">&nbsp;</td>
+            <td class="auto-style18" id="favText">
+                <asp:Button ID="addFav" runat="server" OnClick="addFav_Click" Text="Add to faivorit" />
+                <br />
+                <br />
+                <asp:Label ID="favText" runat="server"></asp:Label>
+            </td>
         </tr>
         <tr>
             <td class="auto-style14">

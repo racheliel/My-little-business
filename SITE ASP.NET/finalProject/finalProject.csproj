@@ -90,6 +90,7 @@
     <Content Include="myBusiness.aspx" />
     <Content Include="businessShow.aspx" />
     <Content Include="editUser.aspx" />
+    <Content Include="myFavorit.aspx" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\MLB.pubxml" />
     <None Include="Web.Debug.config">
@@ -225,6 +226,13 @@
     </Compile>
     <Compile Include="editUser.aspx.designer.cs">
       <DependentUpon>editUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="myFavorit.aspx.cs">
+      <DependentUpon>myFavorit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myFavorit.aspx.designer.cs">
+      <DependentUpon>myFavorit.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -17,14 +17,16 @@ namespace finalProject
         {
             user = (string)(Session["user"]);
             Business b = eBL.getBusinessForUser(user);
-            busN = b.BusName;
+
             if (b == null)
             {
                 edit.Visible = false;
                 del.Visible = false;
+                busN = (string)(Session["nameBuss"]);
             }
             else
             {
+                busN = b.BusName;
                 edit.Visible = true;
                 busName.Text = b.BusName;
                 place.Text = b.Place;
@@ -128,6 +130,13 @@ namespace finalProject
             eBL.deleteUpdateByBuss(busN);
             eBL.deleteBusiness(busN);
             Response.Redirect("~/homeC.aspx");
+        }
+
+        protected void addFav_Click(object sender, EventArgs e)
+        {
+            Favorit f = new Favorit(user, busN);
+            eBL.addFavorit(f);
+            favText.Text = "Adding succeeded favorites";
         }
     }
 }
