@@ -38,11 +38,11 @@ namespace finalProject
                 }
                 else
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(),"scripts","<script>alert('The password is incorrect, please re-enter your password')</script>");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Please enter a valid password.')</script>");
                 }
             }
             else
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('The user name is incorrect, please re-enter your user name')</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Please enter a valid user name.')</script>");
 
         }
 
@@ -52,44 +52,39 @@ namespace finalProject
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/forgot.aspx");
-
-        }
 
         protected void Timer1_Tick1(object sender, EventArgs e)
         {
-            if (ViewState["imageDisploy"] == null)
+            if (ViewState["imageDisplay"] == null)
             {
                 Image1.ImageUrl = "1.png";
-                ViewState["imageDisploy"] = 1;
+                ViewState["imageDisplay"] = 1;
             }
             else
             {
-                int i = (int)ViewState["imageDisploy"];
+                int i = (int)ViewState["imageDisplay"];
                 if (i == 4)
                 {
                     Image1.ImageUrl = "1.png";
-                    ViewState["imageDisploy"] = 1;
+                    ViewState["imageDisplay"] = 1;
                 }
                 else
                 {
                     i++;
                     Image1.ImageUrl = i.ToString() + ".png";
-                    ViewState["imageDisploy"] = i;
+                    ViewState["imageDisplay"] = i;
                 }
             }
         }
 
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('You must login')</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Please login')</script>");
         }
 
         protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
         {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('You must login')</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Please login')</script>");
         }
 
         protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
