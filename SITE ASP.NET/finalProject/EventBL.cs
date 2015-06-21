@@ -150,7 +150,10 @@ namespace finalProject
             eventD.addBusiness(b);
         }
 
-
+        public LinkedList<string> allImageForBusiness(string b)
+        {
+            return eventD.allImageForBusiness(b);
+        }
 
         public void deleteImage(string p)
         {

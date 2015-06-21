@@ -19,14 +19,18 @@ namespace finalProject
             Business b = eBL.getBusinessForUser((string)(Session["user"]));
             if(b!=null)
             {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("image", typeof(string));
                 busName.Text = b.BusName;
                 chackBusName.Visible = false;
-                SqlDataAdapter da = new SqlDataAdapter("select image from uplodes where BusName='"+busName.Text+"';", con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                GridView1.DataSource = dt;
-                DataBind();
                 ImgLogo.ImageUrl = eBL.getImageLogo(busName.Text);
+                LinkedList<string> img = eBL.allImageForBusiness(b.BusName);
+                foreach (string i in img)
+                {
+                    DataRow row1 = dt.NewRow();
+                    row1["image"] = i;
+                    dt.Rows.Add(row1);
+                }
 
             }
         }
@@ -35,7 +39,23 @@ namespace finalProject
         {
 
         }
+            protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
 
+            if (e.CommandName.CompareTo("deleterow") == 0)
+            {
+                int row = int.Parse(e.CommandArgument.ToString());
+                string name = table.Rows[row].Cells[4].Text.Trim();
+                string cat = table.Rows[row].Cells[3].Text.Trim();
+                string place = table.Rows[row].Cells[5].Text.Trim();
+                string dateString = table.Rows[row].Cells[6].Text.Trim();
+                DateTime d = Convert.ToDateTime(dateString);
+
+                eBL.deleteEvent( d, (string)(Session["user"]), place,name,cat);
+                Response.Redirect("~/myEvent.aspx");
+
+            }
+         }
         protected void upImage_Click(object sender, EventArgs e)
         {
             Boolean busN = eBL.chackBusinessName(busName.Text);
@@ -207,6 +227,8 @@ namespace finalProject
                 int row = int.Parse(e.CommandArgument.ToString());
                 string path = (string)(GridView1.Rows[row].Cells[1].Text.Trim());
                 eBL.deleteImage(path);
+                Response.Redirect("~/myBusiness.aspx");
+
 
             }
 
@@ -220,6 +242,11 @@ namespace finalProject
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void table_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

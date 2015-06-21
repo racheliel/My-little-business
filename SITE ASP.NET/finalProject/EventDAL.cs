@@ -403,6 +403,25 @@ namespace finalProject
                  con.Close();
              }
          }
+
+        public LinkedList<string> allImageForBusiness(string b)
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "select image from uplodes where BusName='" + b + "';";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             SqlDataReader rdr = com.ExecuteReader();
+
+             LinkedList<string> img = new LinkedList<string>();
+             string temp;
+             while (rdr.Read())
+             {
+                 temp = (string)rdr[0];
+                 img.AddLast(temp);
+             }
+             con.Close();
+             return img;
+         }
          public void deleteImage(string p)
          {//get user event and delete this event
              con = new SqlConnection(conString);
