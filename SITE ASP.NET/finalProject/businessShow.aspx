@@ -23,7 +23,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width:100%;">
         <tr>
-            <td class="auto-style14">&nbsp;</td>
+            <td class="auto-style14">
+                <asp:Label ID="errorText" runat="server" ForeColor="Red"></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="YES" runat="server" Height="26px" OnClick="YES_Click" Text="yes" Visible="False" Width="44px" />
+    &nbsp;&nbsp;<asp:Button ID="no" runat="server" Height="25px" OnClick="no_Click" Text="NO" Visible="False" Width="53px" />
+    &nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="auto-style19">
                 <asp:Label ID="busName" runat="server"></asp:Label>
             </td>
@@ -109,9 +113,6 @@
     <br />
     <asp:Button ID="del" runat="server" BackColor="Red" OnClick="del_Click" Text="Delete my Business Page" />
 &nbsp;&nbsp;
-                <asp:Label ID="errorText" runat="server" ForeColor="Red"></asp:Label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="YES" runat="server" Height="26px" OnClick="YES_Click" Text="yes" Visible="False" Width="44px" />
-    &nbsp;&nbsp;<asp:Button ID="no" runat="server" Height="25px" OnClick="no_Click" Text="NO" Visible="False" Width="53px" />
-    &nbsp;&nbsp;&nbsp;<br />
+                <br />
     <br />
 </asp:Content>

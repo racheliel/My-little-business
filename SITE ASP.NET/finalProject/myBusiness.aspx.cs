@@ -200,22 +200,27 @@ namespace finalProject
         }
 
 
-        protected void GridView1_RowCommand1(object sender, GridViewCommandEventArgs e)
+   /*     protected void GridView1_RowCommand1(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.CompareTo("deleterow") == 0)
+            //if (e.CommandName.CompareTo("delete") == 0)
             {
-                int row = int.Parse(e.CommandArgument.ToString());
-                string path = (string)(GridView1.Rows[row].Cells[1].Text.Trim());
-                eBL.deleteImage(path);
+             //   int row = int.Parse(e.CommandArgument.ToString());
+        //        string path = (string)(GridView1.Rows[row].Cells[1].Text.Trim());
+          ///      er.Text = "ddd";
+        //        eBL.deleteImage(path);
 
             }
 
-        }
+        }*/
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            string path = (string)(GridView1.Rows[e.RowIndex].Cells[1].Text.Trim());
+            int row = int.Parse(e.RowIndex.ToString());
+            string path = (string)(GridView1.Rows[row].Cells[2].Text.Trim());
+            er.Text = path;
             eBL.deleteImage(path);
+            Response.Redirect("~/myBusiness.aspx");
+
 
         }
 

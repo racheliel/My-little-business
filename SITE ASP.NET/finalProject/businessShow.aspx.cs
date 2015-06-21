@@ -57,7 +57,7 @@ namespace finalProject
 
                 if (count == -1)
                 {
-                    errorText.Text = "There are no planned events";
+                    errorText.Text = "";
                 }
                 else
                 {
@@ -111,7 +111,7 @@ namespace finalProject
         protected void del_Click(object sender, EventArgs e)
         {
            // Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>if(!window.confirm('Are you sure?')){window.location.href='businessShow.aspx'}else{eBL.deleteBusiness(busN)}</script>");
-            errorText.Text = "Are you sure?";
+            errorText.Text = "Are you sure that you want delete this page?";
             YES.Visible = true;
             no.Visible = true;
             
