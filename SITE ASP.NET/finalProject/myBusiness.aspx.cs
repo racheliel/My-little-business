@@ -82,7 +82,7 @@ namespace finalProject
         protected void save_Click(object sender, EventArgs e)
         {
             Boolean busN = eBL.chackBusinessName(busName.Text);
-            Business b = new Business(busName.Text, (string)(Session["user"]), TextBox3.Text, TextBox2.Text);
+            Business b = new Business(busName.Text, (string)(Session["user"]), TextBox3.Text, place.Text,category.Text);
             if (busN == true)
             {
                 eBL.deleteBusiness(busName.Text);

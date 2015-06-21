@@ -112,6 +112,35 @@ namespace finalProject
             Response.Redirect("~/editUser.aspx");
         }
 
+        protected void ImageButton6_Click(object sender, ImageClickEventArgs e)
+        {
+            Session.Add("placeS", "");
+            Session.Add("categoryS", "");
+            Boolean p = false, c = false;
+            if (placeD.Text != "choose place")
+            {
+                p = true;
+                Session.Add("placeS", placeD.Text);
+            }
+            if (categoryD.Text != "choose category")
+            {
+                c = true;
+                Session.Add("categoryS", categoryD.Text);
+            }
+            if (c && p)
+                Session.Add("defS", "p&c");
+            else if (!c && p)
+                Session.Add("defS", "p");
+            else if (c && !p)
+                Session.Add("defS", "c");            
+            else if(!c && !p)
+                Session.Add("defS", "none");
+
+            Response.Redirect("~/searchResult.aspx");
+
+
+        }
+
 
 
 

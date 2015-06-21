@@ -91,8 +91,19 @@
                     <tr>
                         <td class="auto-style24"></td>
                         <td class="auto-style25">
-                            <asp:TextBox ID="TextBox1" runat="server" Height="27px" TextMode="Search" Width="240px">find a business</asp:TextBox>
-                            <asp:ImageButton ID="ImageButton6" runat="server" Height="27px" ImageUrl="serch.png" />
+                            find business:<br />
+&nbsp;
+                            <asp:DropDownList ID="placeD" runat="server" AppendDataBoundItems="True" DataSourceID="PLACE" DataTextField="place" DataValueField="place">
+                                <asp:ListItem>choose place</asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:SqlDataSource ID="PLACE" runat="server" ConnectionString="<%$ ConnectionStrings:MLBDBConnectionString %>" SelectCommand="SELECT * FROM [Place]"></asp:SqlDataSource>
+&nbsp;&nbsp;
+                            <asp:DropDownList ID="categoryD" runat="server" AppendDataBoundItems="True" DataSourceID="CATEGORY" DataTextField="category" DataValueField="category">
+                                <asp:ListItem>choose category</asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:SqlDataSource ID="CATEGORY" runat="server" ConnectionString="<%$ ConnectionStrings:MLBDBConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
+&nbsp;&nbsp;
+                            <asp:ImageButton ID="ImageButton6" runat="server" Height="35px" ImageUrl="serch.png" OnClick="ImageButton6_Click" Width="42px" />
                         </td>
                         <td class="auto-style26"></td>
                     </tr>

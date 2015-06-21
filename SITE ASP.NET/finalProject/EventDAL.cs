@@ -87,7 +87,7 @@ namespace finalProject
             Business b=null;
             if (rdr.Read())
             {
-                b = new Business((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3]);
+                b = new Business((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3],(string)rdr[4]);
             }
             con.Close();
             return b;
@@ -102,7 +102,7 @@ namespace finalProject
             Business b = null;
             if (rdr.Read())
             {
-                b = new Business((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3]);
+                b = new Business((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3], (string)rdr[4]);
             }
             con.Close();
             return b;
@@ -134,7 +134,7 @@ namespace finalProject
             
             if (rdr.Read())
             {
-                b = new Business((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3]);
+                b = new Business((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3], (string)rdr[4]);
                 buss.AddFirst(b);
             }
             con.Close();
@@ -350,7 +350,7 @@ namespace finalProject
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO BusinessTable (BusName,UserName,Detailes,Place)" + " VALUES ('" + b.BusName + "','" + b.UserName +"','"+b.Detailes+"','"+b.Place+ "');";
+             string sqlString = "INSERT INTO BusinessTable (BusName,UserName,Detailes,Place,Category)" + " VALUES ('" + b.BusName + "','" + b.UserName +"','"+b.Detailes+"','"+b.Place+ "','"+b.Category+"');";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {

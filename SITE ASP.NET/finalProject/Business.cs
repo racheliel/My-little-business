@@ -8,14 +8,15 @@ namespace finalProject
 {
     public class Business
     {
-        private string busName, userName, detailes, place;
+        private string busName, userName, detailes, place,category;
 
-        public Business(string busName, string userName, string detailes, string place)
+        public Business(string busName, string userName, string detailes, string place, string category)
         {
            this.busName = busName; 
             this.userName = userName;
             this.detailes = detailes;
             this.place = place;
+            this.category = category;
          
         }
 
@@ -43,6 +44,11 @@ namespace finalProject
             set { place = value; }
         }
 
+        public string Category
+        {
+            get { return category; }
+            set { category = value; }
+        }
 
     }
 }

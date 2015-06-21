@@ -8,10 +8,9 @@
 //------------------------------------------------------------------------------
 
 namespace finalProject {
-
-
-    public partial class WebForm11
-    {
+    
+    
+    public partial class WebForm11 {
         
         /// <summary>
         /// userName control.
@@ -95,13 +94,40 @@ namespace finalProject {
         protected global::System.Web.UI.WebControls.Image ImgLogo;
         
         /// <summary>
-        /// TextBox2 control.
+        /// place control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.DropDownList place;
+        
+        /// <summary>
+        /// placeE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource placeE;
+        
+        /// <summary>
+        /// category control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList category;
+        
+        /// <summary>
+        /// categoryE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource categoryE;
         
         /// <summary>
         /// TextBox3 control.

@@ -34,7 +34,14 @@
                 <br />
                 <br />
                 New Place:&nbsp;
-                <asp:TextBox ID="TextBox2" runat="server" Width="311px"></asp:TextBox>
+                <asp:DropDownList ID="place" runat="server" DataSourceID="placeE" DataTextField="place" DataValueField="place">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="placeE" runat="server" ConnectionString="<%$ ConnectionStrings:MLBDBConnectionString %>" SelectCommand="SELECT * FROM [Place]"></asp:SqlDataSource>
+                <br />
+                <br />
+                New Category:<asp:DropDownList ID="category" runat="server" DataSourceID="categoryE" DataTextField="category" DataValueField="category">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="categoryE" runat="server" ConnectionString="<%$ ConnectionStrings:MLBDBConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
                 <br />
                 <br />
                 <br />
