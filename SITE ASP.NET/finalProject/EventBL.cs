@@ -62,6 +62,23 @@ namespace finalProject
             return eventD.getMail(user);
         }
 
+        public int checkMail(string mail)
+        {
+            int flog = 0;
+            foreach (char i in mail)
+            {
+                if (i == '@')
+                    flog = 1;
+
+                if (flog == 1)
+                {
+                    if (i == '.')
+                        flog = 2;
+                }
+            }
+            return flog;
+        }
+
         public Users signIn(string pass, string userN)
         {
             return eventD.signIn(pass,userN);
