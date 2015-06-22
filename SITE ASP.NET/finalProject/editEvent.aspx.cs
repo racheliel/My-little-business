@@ -41,8 +41,8 @@ namespace finalProject
             }
 
             name.Text = (string)(Session["name"]);
-            category.Text = (string)(Session["cat"]);
-                place.Text = (string)(Session["place"]);
+            categoryD.Text = (string)(Session["cat"]);
+                placeD.Text = (string)(Session["place"]);
                 month.Text = (string)(Session["mounth"]);
                 day.Text = (string)(Session["day"]);
                 year.Text = (string)(Session["year"]);
@@ -80,16 +80,13 @@ namespace finalProject
                 int y = Convert.ToInt32(year.Text), m = Convert.ToInt32(month.Text), d = Convert.ToInt32(day.Text);
                 int h = Convert.ToInt32(hour.Text), mi = Convert.ToInt32(minutes.Text);
                 DateTime time = new DateTime(y, m, d, h, mi, 0);
-                if(place.Text.CompareTo("")==0)
-                {
-                    place.Text = " ";
-                }
-                eBL.createEvent((string)(Session["user"]), time, place.Text,name.Text,category.Text);
+
+                eBL.createEvent((string)(Session["user"]), time, placeD.Text,name.Text,categoryD.Text);
                 Response.Redirect("~/myEvent.aspx");
             }
             catch
             {
-                if (year.Text.Equals("year") || month.Text.Equals("month") || day.Text.Equals("day") || hour.Text.Equals("hour") || minutes.Text.Equals("minutes") || name.Text.Equals("") || category.Text.Equals(""))
+                if (year.Text.Equals("year") || month.Text.Equals("month") || day.Text.Equals("day") || hour.Text.Equals("hour") || minutes.Text.Equals("minutes") || name.Text.Equals("") || categoryD.Text.Equals("choose category") || placeD.Text.Equals("choose place"))
                 {
                     error.Text = "Event not edited, please fill in all tabs";
 

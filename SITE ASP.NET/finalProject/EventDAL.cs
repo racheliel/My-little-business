@@ -274,7 +274,7 @@ namespace finalProject
          {//get user event and insert the event to the event table
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO EventsTable (UserName,Date,Place,Name,Catgory)" + "VALUES ('" + e.UserName + "',CONVERT(datetime,'" + e.Date_time + "',103),'" + e.Place + "','" + e.Name + "','" + e.Catgory + "');";
+             string sqlString = "INSERT INTO EventsTable (UserName,Date,Place,Name,Category)" + "VALUES ('" + e.UserName + "',CONVERT(datetime,'" + e.Date_time + "',103),'" + e.Place + "','" + e.Name + "','" + e.Catgory + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
 
                  com.ExecuteReader();

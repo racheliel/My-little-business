@@ -22,22 +22,40 @@ namespace finalProject {
         protected global::System.Web.UI.WebControls.TextBox name;
         
         /// <summary>
-        /// category control.
+        /// categoryD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox category;
+        protected global::System.Web.UI.WebControls.DropDownList categoryD;
         
         /// <summary>
-        /// place control.
+        /// category1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox place;
+        protected global::System.Web.UI.WebControls.SqlDataSource category1;
+        
+        /// <summary>
+        /// placeD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList placeD;
+        
+        /// <summary>
+        /// place1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource place1;
         
         /// <summary>
         /// month control.

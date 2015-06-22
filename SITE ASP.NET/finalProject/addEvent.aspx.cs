@@ -52,21 +52,19 @@ namespace finalProject
 
         protected void add_Click(object sender, EventArgs e)
         {
-            try
+          //  try
             {
                 int y = Convert.ToInt32(year.Text), m = Convert.ToInt32(month.Text), d = Convert.ToInt32(day.Text);
                 int h = Convert.ToInt32(hour.Text), mi = Convert.ToInt32(minutes.Text);
                 DateTime time = new DateTime(y, m, d, h, mi, 0);
-                if (place.Text.CompareTo("") == 0)
-                {
-                    place.Text = " ";
-                }
-                eBL.createEvent((string)(Session["user"]), time, place.Text,name.Text,category.Text);
+            
+
+                eBL.createEvent((string)(Session["user"]), time, placeD.Text,name.Text,categoryD.Text);
                 Response.Redirect("~/myEvent.aspx");
             }
-            catch
-            {
-                if (place.Text.Equals("") || year.Text.Equals("year") || month.Text.Equals("month") || day.Text.Equals("day") || hour.Text.Equals("hour") || minutes.Text.Equals("minutes") || name.Text.Equals("") || category.Text.Equals(""))
+           // catch
+           /* {
+                if (placeD.Text.Equals("choose place") || year.Text.Equals("year") || month.Text.Equals("month") || day.Text.Equals("day") || hour.Text.Equals("hour") || minutes.Text.Equals("minutes") || name.Text.Equals("") || categoryD.Text.Equals("choose category"))
                 {
                     error.Text = "Please fill all tabs.";
                 }
@@ -75,7 +73,7 @@ namespace finalProject
                     error.Text = "Please insert correct values";
 
                 }
-            }
+            }*/
  
         }
 
