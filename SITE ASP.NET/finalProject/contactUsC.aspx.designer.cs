@@ -10,7 +10,7 @@
 namespace finalProject {
     
     
-    public partial class WebForm12 {
+    public partial class WebForm14 {
         
         /// <summary>
         /// error control.
@@ -46,7 +46,7 @@ namespace finalProject {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox from;
+        protected global::System.Web.UI.WebControls.Label from;
         
         /// <summary>
         /// head control.

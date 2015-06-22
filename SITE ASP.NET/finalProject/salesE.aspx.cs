@@ -97,7 +97,7 @@ namespace finalProject
 
         protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/myFavorit.aspx");
         }
 
         protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
@@ -109,7 +109,7 @@ namespace finalProject
         {
             if ((string)(Session["first"]) != "Guest")
             {
-                Response.Redirect("~/contactUs.aspx");
+                Response.Redirect("~/contactUsC.aspx");
             }
         }
 

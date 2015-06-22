@@ -28,15 +28,15 @@ namespace finalProject
             {
                 MailMessage mailMessage = new MailMessage();
                 mailMessage.To.Add(user.EMail);
-                mailMessage.From = new MailAddress("my.events.invitation@gmail.com");
-                mailMessage.Subject = "your password to My-Events site";
+                mailMessage.From = new MailAddress("MyLittleBusinessSite@gmail.com");
+                mailMessage.Subject = "your password to My Little Business site";
                 mailMessage.Body = "your password is: "+ user.Pass;
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
                 smtpClient.EnableSsl = true;
                 smtpClient.Timeout = 10000;
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential("my.events.invitation@gmail.com", "hlamash1");
+                smtpClient.Credentials = new NetworkCredential("MyLittleBusinessSite@gmail.com", "RMHU100rmhu");
                 smtpClient.Send(mailMessage);
                 error.Text = "E-mail send!";
             }

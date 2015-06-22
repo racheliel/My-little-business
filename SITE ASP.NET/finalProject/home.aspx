@@ -29,9 +29,6 @@
         width: 1018px;
         height: 62px;
     }
-    .auto-style26 {
-        height: 62px;
-    }
         .auto-style27 {
             height: 24px;
         }
@@ -94,11 +91,62 @@
             </tr>
             <tr>
                 <td class="auto-style24"></td>
-                <td class="auto-style25">
-                    <asp:TextBox ID="TextBox1" runat="server" Height="27px" TextMode="Search" Width="240px">find a business</asp:TextBox>
-                    <asp:ImageButton ID="ImageButton6" runat="server" Height="27px" ImageUrl="serch.png" />
+                        <td class="auto-style24">find business:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:DropDownList ID="placeD" runat="server" AppendDataBoundItems="True" DataSourceID="PLACE" DataTextField="place" DataValueField="place">
+                                <asp:ListItem>choose place</asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:SqlDataSource ID="PLACE" runat="server" ConnectionString="<%$ ConnectionStrings:MLBDBConnectionString %>" SelectCommand="SELECT * FROM [Place]"></asp:SqlDataSource>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                            <asp:DropDownList ID="categoryD" runat="server" AppendDataBoundItems="True" DataSourceID="CATEGORY" DataTextField="category" DataValueField="category">
+                                <asp:ListItem>choose category</asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:SqlDataSource ID="CATEGORY" runat="server" ConnectionString="<%$ ConnectionStrings:MLBDBConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:ImageButton ID="ImageButton6" runat="server" Height="35px" ImageUrl="serch.png" OnClick="ImageButton6_Click" Width="42px" />
+                            <br />
+                            <br />
+&nbsp;&nbsp;&nbsp;
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="BusName" DataSourceID="result0" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" Width="987px">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:BoundField DataField="BusName" HeaderText="BusName" ReadOnly="True" SortExpression="BusName" />
+                <asp:BoundField DataField="Place" HeaderText="Place" SortExpression="Place" />
+                <asp:BoundField DataField="Category" HeaderText="Category" SortExpression="Category" />
+            </Columns>
+            <EditRowStyle BackColor="#7C6F57" />
+            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#E3EAEB" />
+            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+            <SortedAscendingHeaderStyle BackColor="#246B61" />
+            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+            <SortedDescendingHeaderStyle BackColor="#15524A" />
+        </asp:GridView>
+        &nbsp;&nbsp;
+        <asp:SqlDataSource ID="result0" runat="server" ConnectionString="<%$ ConnectionStrings:MLBDBConnectionString %>" SelectCommand="SELECT [BusName], [Place], [Category] FROM [BusinessTable]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="result1" runat="server" ConnectionString="<%$ ConnectionStrings:MLBDBConnectionString %>" SelectCommand="SELECT [BusName], [Place], [Category] FROM [BusinessTable] WHERE ([Place] = @Place)">
+            <SelectParameters>
+                <asp:SessionParameter DefaultValue="choose place" Name="Place" SessionField="placeS" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="result2" runat="server" ConnectionString="<%$ ConnectionStrings:MLBDBConnectionString %>" SelectCommand="SELECT [BusName], [Place], [Category] FROM [BusinessTable] WHERE ([Category] = @Category)">
+            <SelectParameters>
+                <asp:SessionParameter DefaultValue="choose category" Name="Category" SessionField="categoryS" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="result3" runat="server" ConnectionString="<%$ ConnectionStrings:MLBDBConnectionString %>" SelectCommand="SELECT [BusName], [Place], [Category] FROM [BusinessTable] WHERE (([Place] = @Place) AND ([Category] = @Category))">
+            <SelectParameters>
+                <asp:SessionParameter DefaultValue="choose place" Name="Place" SessionField="placeS" Type="String" />
+                <asp:SessionParameter DefaultValue="choose category" Name="Category" SessionField="categoryS" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+                            <asp:Label ID="Label1" runat="server" BackColor="Red" BorderColor="Red" Text="To get into the business you need to log in"></asp:Label>
                 </td>
-                <td class="auto-style26"></td>
+                        <td class="auto-style25">
+                            &nbsp;</td>
             </tr>
         </table>
     </p>

@@ -95,6 +95,51 @@ namespace finalProject
 
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
+            Response.Redirect("~/contactUs.aspx");
+        }
+
+        protected void ImageButton6_Click(object sender, ImageClickEventArgs e)
+        {
+            Session.Add("placeS", "");
+            Session.Add("categoryS", "");
+            Boolean p = false, c = false;
+            if (placeD.Text != "choose place")
+            {
+                p = true;
+                Session.Add("placeS", placeD.Text);
+            }
+            if (categoryD.Text != "choose category")
+            {
+                c = true;
+                Session.Add("categoryS", categoryD.Text);
+            }
+            if (c && p)
+                Session.Add("defS", "p&c");
+            else if (!c && p)
+                Session.Add("defS", "p");
+            else if (c && !p)
+                Session.Add("defS", "c");
+            else if (!c && !p)
+                Session.Add("defS", "none");
+
+            //Response.Redirect("~/searchResult.aspx");
+            if (((string)(Session["defS"])) == "p&c")
+                GridView1.DataSourceID = result3.ID;
+
+            else if (((string)(Session["defS"])) == "p")
+                GridView1.DataSourceID = result1.ID;
+
+            else if (((string)(Session["defS"])) == "c")
+                GridView1.DataSourceID = result2.ID;
+
+            else if (((string)(Session["defS"])) == "none")
+                GridView1.DataSourceID = result0.ID;
+
+            GridView1.DataBind();
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
 

@@ -27,7 +27,7 @@ namespace finalProject
 
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/contactUs.aspx");
         }
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
@@ -37,6 +37,7 @@ namespace finalProject
 
         protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
         {
+            Response.Redirect("~/aboutUs.aspx");
 
         }
     }

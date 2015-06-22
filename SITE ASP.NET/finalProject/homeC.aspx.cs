@@ -11,6 +11,7 @@ namespace finalProject
     {
         EventBL eBL = new EventBL();
         string user,first,last;
+        int colName =1;
         protected void Page_Load(object sender, EventArgs e)
         {
             user = (string)(Session["user"]);
@@ -24,7 +25,7 @@ namespace finalProject
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/homeC.aspx");
         }
 
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
@@ -48,7 +49,7 @@ namespace finalProject
 
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("~/contactUs.aspx");
+            Response.Redirect("~/contactUsC.aspx");
 
         }
 
@@ -136,12 +137,42 @@ namespace finalProject
             else if(!c && !p)
                 Session.Add("defS", "none");
 
-            Response.Redirect("~/searchResult.aspx");
+            //Response.Redirect("~/searchResult.aspx");
+            if (((string)(Session["defS"])) == "p&c")
+                GridView1.DataSourceID = result3.ID;
 
+            else if (((string)(Session["defS"])) == "p")
+                GridView1.DataSourceID = result1.ID;
+
+            else if (((string)(Session["defS"])) == "c")
+                GridView1.DataSourceID = result2.ID;
+
+            else if (((string)(Session["defS"])) == "none")
+                GridView1.DataSourceID = result0.ID;
+
+            GridView1.DataBind();
 
         }
 
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+            if (e.CommandName.CompareTo("linkRow") == 0)
+            {
+                int row = int.Parse(e.CommandArgument.ToString());
+                string name = GridView1.Rows[row].Cells[colName].Text.Trim();
+       
+                Session.Add("nameBuss", name);
+
+                Response.Redirect("~/businessShow.aspx");
+
+            }
+        }
 
 
 

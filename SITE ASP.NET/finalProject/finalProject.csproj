@@ -73,6 +73,7 @@
     <Content Include="edit.jpg" />
     <Content Include="forgot_pass.jpg" />
     <Content Include="logo.jpg" />
+    <Content Include="myFavorit.aspx" />
     <Content Include="Red-Mail-Icon.png" />
     <Content Include="myEvent.aspx" />
     <Content Include="serch.png" />
@@ -90,7 +91,7 @@
     <Content Include="myBusiness.aspx" />
     <Content Include="businessShow.aspx" />
     <Content Include="editUser.aspx" />
-    <Content Include="searchResult.aspx" />
+    <Content Include="contactUsC.aspx" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\MLB.pubxml" />
     <None Include="Web.Debug.config">
@@ -122,6 +123,13 @@
     </Compile>
     <Compile Include="myEvent.aspx.designer.cs">
       <DependentUpon>myEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="myFavorit.aspx.cs">
+      <DependentUpon>myFavorit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myFavorit.aspx.designer.cs">
+      <DependentUpon>myFavorit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -227,12 +235,12 @@
     <Compile Include="editUser.aspx.designer.cs">
       <DependentUpon>editUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="searchResult.aspx.cs">
-      <DependentUpon>searchResult.aspx</DependentUpon>
+    <Compile Include="contactUsC.aspx.cs">
+      <DependentUpon>contactUsC.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="searchResult.aspx.designer.cs">
-      <DependentUpon>searchResult.aspx</DependentUpon>
+    <Compile Include="contactUsC.aspx.designer.cs">
+      <DependentUpon>contactUsC.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

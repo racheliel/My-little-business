@@ -10,14 +10,15 @@ using System.Net.Mime;
 
 namespace finalProject
 {
-    public partial class WebForm12 : System.Web.UI.Page
+    public partial class WebForm14 : System.Web.UI.Page
     {
-        string user;
+        string user, mail;
         EventBL eBL = new EventBL();
         protected void Page_Load(object sender, EventArgs e)
         {
             user = (string)(Session["user"]);
-
+            mail = eBL.getMail(user);
+            from.Text = mail;
         }
 
         protected void send_Click(object sender, EventArgs e)
@@ -26,7 +27,7 @@ namespace finalProject
             {//MyLittleBusinessSite@gmail.com
                 MailMessage mailMessage = new MailMessage();
                 mailMessage.To.Add(to.Text);
-                mailMessage.From = new MailAddress(from.Text);
+                mailMessage.From = new MailAddress(mail);
                 mailMessage.Subject = head.Text;
                 mailMessage.Body = body.Text + "\n from:" + from.Text;
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
@@ -51,7 +52,7 @@ namespace finalProject
 
         protected void back_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/home.aspx");
+            Response.Redirect("~/homeC.aspx");
 
         }
 

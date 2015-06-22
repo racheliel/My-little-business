@@ -88,7 +88,7 @@ namespace finalProject
         {
             if (getF.Text != "" && busName.Text != "")
             {
-                Feedback f = new Feedback(user, busN, getF.Text);
+                Feedback f = new Feedback(user, busN, TextBox1.Text);
                 eBL.addFeedback(f);
                 Response.Redirect("~/businessShow.aspx");
             }

@@ -80,27 +80,30 @@ namespace finalProject
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/homeC.aspx");
         }
 
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
 
+                Response.Redirect("~/salesE.aspx");
+
         }
 
         protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/myFavorit.aspx");
         }
 
         protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
         {
+                Response.Redirect("~/aboutUsC.aspx");
 
         }
 
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/contactUsC.aspx");
         }
     }
 }

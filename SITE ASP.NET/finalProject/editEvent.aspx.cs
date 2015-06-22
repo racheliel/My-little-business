@@ -48,21 +48,7 @@ namespace finalProject
                 year.Text = (string)(Session["year"]);
                 hour.Text = (string)(Session["hour"]);
                 minutes.Text = (string)(Session["minutes"]);
-                if ((string)(Session["type"]) == "Brit")
-                    Image.ImageUrl = "4.jpg";
-                if ((string)(Session["type"]) == ("Brita"))
-                    Image.ImageUrl = "6.jpg";
-                if ((string)(Session["type"]) == ("Bar Mitzvah"))
-                    Image.ImageUrl = "3.jpg";
-                if ((string)(Session["type"]) == ("Bat Mitzvah"))
-                    Image.ImageUrl = "5.jpg";
-                if ((string)(Session["type"]) == ("Birthday"))
-                    Image.ImageUrl = "2.jpg";
-                if ((string)(Session["type"]) == ("Wedding"))
-                    Image.ImageUrl = "1.jpg";
-                if ((string)(Session["type"]) == ("Other"))
-                    Image.ImageUrl = "7.jpg";
-                Session.Add("firstTime", "Ny");
+
           }
            
       
