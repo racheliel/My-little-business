@@ -8,14 +8,14 @@
             width: 70px;
         }
         .auto-style20 {
-            width: 1018px;
+            width: 1146px;
         }
         .auto-style21 {
             width: 70px;
             height: 30px;
         }
         .auto-style22 {
-            width: 1018px;
+            width: 1146px;
             height: 30px;
         }
         .auto-style23 {
@@ -34,6 +34,10 @@
         }
         .auto-style28 {
             height: 27px;
+        }
+        .auto-style29 {
+            width: 1146px;
+            height: 62px;
         }
     </style>
 </asp:Content>
@@ -91,7 +95,7 @@
             </tr>
             <tr>
                 <td class="auto-style24"></td>
-                        <td class="auto-style24">find business:<br />
+                        <td class="auto-style29">find business:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:DropDownList ID="placeD" runat="server" AppendDataBoundItems="True" DataSourceID="PLACE" DataTextField="place" DataValueField="place">
                                 <asp:ListItem>choose place</asp:ListItem>
