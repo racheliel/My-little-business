@@ -13,6 +13,15 @@ namespace finalProject {
     public partial class myFavorit {
         
         /// <summary>
+        /// out control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button @out;
+        
+        /// <summary>
         /// userName control.
         /// </summary>
         /// <remarks>

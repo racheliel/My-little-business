@@ -14,9 +14,12 @@ namespace finalProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
+            if (userName.Text == " " || (string)(Session["first"]) == "Guest")
+                Response.Redirect("~/home.aspx");
+
             if ((string)(Session["addError"])=="0")//eddError-check if this the first time that we enter the page
             {
-                Image1.ImageUrl = "4.png";
                 error.Text = "";
                 int i, num = 2015;
                 for (i = 0; i <= 110; i++)
@@ -52,54 +55,39 @@ namespace finalProject
 
         protected void add_Click(object sender, EventArgs e)
         {
-          //  try
+            LinkedList<Events> getEvents = eBL.getEvents((string)(Session["user"]));
+            if (eBL.ifEventNameExsist(getEvents, name.Text) == true)
             {
-                int y = Convert.ToInt32(year.Text), m = Convert.ToInt32(month.Text), d = Convert.ToInt32(day.Text);
-                int h = Convert.ToInt32(hour.Text), mi = Convert.ToInt32(minutes.Text);
-                DateTime time = new DateTime(y, m, d, h, mi, 0);
-            
-
-                eBL.createEvent((string)(Session["user"]), time, placeD.Text,name.Text,categoryD.Text);
-                Response.Redirect("~/myEvent.aspx");
+                error.Text = "You've already created this event named";
             }
-           // catch
-           /* {
-                if (placeD.Text.Equals("choose place") || year.Text.Equals("year") || month.Text.Equals("month") || day.Text.Equals("day") || hour.Text.Equals("hour") || minutes.Text.Equals("minutes") || name.Text.Equals("") || categoryD.Text.Equals("choose category"))
-                {
-                    error.Text = "Please fill all tabs.";
-                }
-                else
-                {
-                    error.Text = "Please insert correct values";
+            else { 
+                 try
+                 {
+                       int y = Convert.ToInt32(year.Text), m = Convert.ToInt32(month.Text), d = Convert.ToInt32(day.Text);
+                      int h = Convert.ToInt32(hour.Text), mi = Convert.ToInt32(minutes.Text);
+                      DateTime time = new DateTime(y, m, d, h, mi, 0);
 
-                }
-            }*/
+                     eBL.createEvent((string)(Session["user"]), time, placeD.Text,name.Text,categoryD.Text);
+                    Response.Redirect("~/myEvent.aspx");
+              
+                 }
+                catch
+                 {
+                  if (placeD.Text.Equals("choose place") || year.Text.Equals("year") || month.Text.Equals("month") || day.Text.Equals("day") || hour.Text.Equals("hour") || minutes.Text.Equals("minutes") || name.Text.Equals("") || categoryD.Text.Equals("choose category"))
+                   {
+                      error.Text = "Please fill all tabs.";
+                   }
+                     else
+                    {
+                     error.Text = "Please insert correct values";
+    
+                      }
+                  }
+            }
  
         }
 
-        protected void Timer1_Tick1(object sender, EventArgs e)
-        {
-            if (ViewState["imageDisplay"] == null)
-            {
-                Image1.ImageUrl = "1.jpg";
-                ViewState["imageDisplay"] = 1;
-            }
-            else
-            {
-                int i = (int)ViewState["imageDisplay"];
-                if (i == 7)
-                {
-                    Image1.ImageUrl = "1.jpg";
-                    ViewState["imageDisplay"] = 1;
-                }
-                else
-                {
-                    i++;
-                    Image1.ImageUrl = i.ToString() + ".jpg";
-                    ViewState["imageDisplay"] = i;
-                }
-            }
-        }
+      
 
     }
 }

@@ -10,7 +10,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width:100%;">
         <tr>
-            <td style="background-color: #FFFFFF; color: #000000; font-size: 25px; font-weight: 700;">welcome
+            <td style="background-color: #FFFFFF; color: #000000; font-size: 20px; font-weight: 700;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="out" runat="server" OnClick="out_Click" Text="Sign Out" BorderColor="#DADADA" Font-Bold="True" Font-Names="adobe hebrew" Font-Size="Large" ForeColor="#7B9E46" Height="30px" Width="113px" style="margin-left: 5px" />
+                <br />
+                <br />
+                welcome
             <asp:Label ID="userName" runat="server"></asp:Label>
             </td>
         </tr>
@@ -30,15 +34,17 @@
                     </tr>
                     <tr>
                         <td class="auto-style14">&nbsp;</td>
-                        <td>
+                        <td style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 27px">
                 </li>
-            &nbsp;summary:<br />
-                            <br />Our project is made for small business owners who wants to publish their business, For fairs organizers who wants to find potential business that are interested in participating in the fair, and for costumers who are interested in buying/ordering a product or a service. The project &quot;my little business&quot; is a web application that contains all the little businesses and fairs in one place, such that small businesses can be found easily by new costumers, it can be contacted and compared with other small businesses, in addition, the business can find and register itself to future fairs all over the country. Unlike the yellow pages, our project can group all the fairs in one place, and it is possible to register to it easily and comfortably. The costumers can contact the business directly from the system in order to get price suggestions and details and don&#39;t have to call in order to get them.</td>
+                            <br />Our project is made for small business owners who wants to publish their business, For fairs organizers who wants to find potential business that are interested in participating in the fair, and for costumers who are interested in buying/ordering a product or a service. 
+                            <br />
+                            The project &quot;my little business&quot; is a web application that contains all the little businesses and fairs in one place, such that small businesses can be found easily by new costumers, it can be contacted and compared with other small businesses, in addition, the business can find and register itself to future fairs all over the country. Unlike the yellow pages, our project can group all the fairs in one place, and it is possible to register to it easily and comfortably.<br />
+&nbsp;The costumers can contact the business directly from the system in order to get price suggestions and details and don&#39;t have to call in order to get them.</td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style14">&nbsp;</td>
-                        <td><a  href="https://github.com/racheliel/My-little-business/wiki">WIKI link</a></td>
+                        <td><a  href="https://github.com/racheliel/My-little-business/wiki" style="font-size: 26px; font-weight: 900">WIKI link</a></td>
                         <td>&nbsp;</td>
                     </tr>
                 </table>

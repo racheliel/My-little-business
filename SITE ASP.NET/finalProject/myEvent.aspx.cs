@@ -16,6 +16,8 @@ namespace finalProject
         protected void Page_Load(object sender, EventArgs e)
         {
             userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
+            if (userName.Text == " " || (string)(Session["first"]) == "Guest")
+                Response.Redirect("~/home.aspx");
             LinkedList<Events> userEvents = eBL.getEvents((string)(Session["user"]));
             DataTable dt = new DataTable();
             dt.Columns.Add("event's name", typeof(string));
@@ -122,30 +124,28 @@ namespace finalProject
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            if ((string)(Session["first"]) != "Guest")
                 Response.Redirect("~/homeC.aspx");
 
         }
 
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/salesE.aspx");
         }
 
         protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/myFavorit.aspx");
         }
 
         protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
         {
-            if ((string)(Session["first"]) != "Guest")
                 Response.Redirect("~/aboutUsC.aspx");
         }
 
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/contactUsC.aspx");
         }
 
 

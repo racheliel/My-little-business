@@ -17,79 +17,54 @@ namespace finalProject
             user = (string)(Session["user"]);
             first = (string)(Session["first"]);
             last = (string)(Session["last"]);
-            Image1.ImageUrl = "4.png";
+            
             userName.Text =  first+ " " +last ;
-            if(userName.Text == "")
+            if (userName.Text == " " || (string)(Session["first"]) == "Guest")
                 Response.Redirect("~/home.aspx");
+            Image1.ImageUrl = "4.png";
         }
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("~/homeC.aspx");
+                Response.Redirect("~/homeC.aspx");
         }
 
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
-            if ((string)(Session["first"]) != "Guest")
-                Response.Redirect("~/salesE.aspx");
+
+            Response.Redirect("~/salesE.aspx");
 
         }
 
         protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
         {
+
             Response.Redirect("~/myFavorit.aspx");
         }
 
         protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
         {
-            if ((string)(Session["first"]) != "Guest")  
-                Response.Redirect("~/aboutUsC.aspx");
+
+            Response.Redirect("~/aboutUsC.aspx");
 
         }
 
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
+
             Response.Redirect("~/contactUsC.aspx");
 
         }
 
-        protected void Timer1_Tick1(object sender, EventArgs e)
-        {
-            if (ViewState["imageDisploy"] == null)
-            {
-                Image1.ImageUrl = "1.png";
-                ViewState["imageDisploy"] = 1;
-            }
-            else
-            {
-                int i = (int)ViewState["imageDisploy"];
-                if (i == 4)
-                {
-                    Image1.ImageUrl = "1.png";
-                    ViewState["imageDisploy"] = 1;
-                }
-                else
-                {
-                    i++;
-                    Image1.ImageUrl = i.ToString() + ".png";
-                    ViewState["imageDisploy"] = i;
-                }
-            }
-        }
-
         protected void out_Click(object sender, EventArgs e)
         {
-            Session.Add("user", user);
-            Session.Add("first", first);
-            Session.Add("last", last);
-
             Response.Redirect("~/home.aspx");
         }
 
         protected void myEve_Click(object sender, EventArgs e)
         {
-            if ((string)(Session["first"]) != "Guest")
-                Response.Redirect("~/myEvent.aspx");
+
+            Response.Redirect("~/myEvent.aspx");
         }
 
         protected void myBus_Click(object sender, EventArgs e)
@@ -105,16 +80,18 @@ namespace finalProject
 
         protected void edit_Click(object sender, EventArgs e)
         {
-            Session.Add("user", user);
-            Session.Add("first", first);
-            Session.Add("last", last);
-            string mail = eBL.getMail(user);
-            Session.Add("mail", mail);
-            Response.Redirect("~/editUser.aspx");
+                Session.Add("user", user);
+                Session.Add("first", first);
+                Session.Add("last", last);
+                string mail = eBL.getMail(user);
+                Session.Add("mail", mail);
+                Response.Redirect("~/editUser.aspx");
+            
         }
 
         protected void ImageButton6_Click(object sender, ImageClickEventArgs e)
         {
+
             Session.Add("placeS", "");
             Session.Add("categoryS", "");
             Boolean p = false, c = false;
@@ -137,7 +114,6 @@ namespace finalProject
             else if(!c && !p)
                 Session.Add("defS", "none");
 
-            //Response.Redirect("~/searchResult.aspx");
             if (((string)(Session["defS"])) == "p&c")
                 GridView1.DataSourceID = result3.ID;
 
@@ -166,10 +142,12 @@ namespace finalProject
             {
                 int row = int.Parse(e.CommandArgument.ToString());
                 string name = GridView1.Rows[row].Cells[colName].Text.Trim();
-       
-                Session.Add("nameBuss", name);
 
-                Response.Redirect("~/businessShow.aspx");
+             
+                    Session.Add("nameBuss", name);
+
+                    Response.Redirect("~/business.aspx");
+                
 
             }
         }

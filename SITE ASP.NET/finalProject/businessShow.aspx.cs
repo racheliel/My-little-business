@@ -6,16 +6,21 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
+
 namespace finalProject
 {
     public partial class WebForm13 : System.Web.UI.Page
     {
         EventBL eBL = new EventBL();
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\GitHub\\My-little-business\\SITE ASP.NET\\MLBDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MLBDBConnectionString"].ConnectionString);
         string user, busN;
         protected void Page_Load(object sender, EventArgs e)
         {
             user = (string)(Session["user"]);
+            userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
+            if (userName.Text == " " || (string)(Session["first"]) == "Guest")
+                Response.Redirect("~/home.aspx");
             Business b = eBL.getBusinessForUser(user);
 
             if (b == null)
@@ -30,6 +35,7 @@ namespace finalProject
                 edit.Visible = true;
                 busName.Text = b.BusName;
                 place.Text = b.Place;
+                category.Text = b.Category;
                 det.Text = b.Detailes;
                 SqlDataAdapter da = new SqlDataAdapter("select image from uplodes where BusName='" + busName.Text + "';", con);
                 DataTable dt = new DataTable();
@@ -84,20 +90,7 @@ namespace finalProject
 
         }
 
-        protected void getF_Click(object sender, EventArgs e)
-        {
-            if (getF.Text != "" && busName.Text != "")
-            {
-                Feedback f = new Feedback(user, busN, TextBox1.Text);
-                eBL.addFeedback(f);
-                Response.Redirect("~/businessShow.aspx");
-            }
-            else
-            {
-                errorText.Text = "please fill the feedback";
-            }
-        }
-
+       
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
@@ -110,7 +103,7 @@ namespace finalProject
 
         protected void del_Click(object sender, EventArgs e)
         {
-            // Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>if(!window.confirm('Are you sure?')){window.location.href='businessShow.aspx'}else{eBL.deleteBusiness(busN)}</script>");
+        
             errorText.Text = "Are you sure that you want delete this page?";
             YES.Visible = true;
             no.Visible = true;
@@ -134,9 +127,17 @@ namespace finalProject
 
         protected void addFav_Click(object sender, EventArgs e)
         {
+         
             Favorit f = new Favorit(user, busN);
-            eBL.addFavorit(f);
-            favText.Text = "Adding succeeded favorites";
+            try
+            {
+                eBL.addFavorit(f);
+                favText.Text = "Adding succeeded favorites";
+            }
+            catch
+            {
+                favText.Text = "This page exists in favorites";
+            }
         }
     }
 }

@@ -13,6 +13,9 @@ namespace finalProject
         EventBL eBL = new EventBL();
         protected void Page_Load(object sender, EventArgs e)
         {
+            userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
+            if (userName.Text == " " || (string)(Session["first"]) == "Guest")
+                Response.Redirect("~/home.aspx");
           if ((string)(Session["firstTime"]) == "y")
           {
             int i, num = 2015;
@@ -41,8 +44,6 @@ namespace finalProject
             }
 
             name.Text = (string)(Session["name"]);
-            categoryD.Text = (string)(Session["cat"]);
-                placeD.Text = (string)(Session["place"]);
                 month.Text = (string)(Session["mounth"]);
                 day.Text = (string)(Session["day"]);
                 year.Text = (string)(Session["year"]);
@@ -57,7 +58,9 @@ namespace finalProject
         }
 
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+
+
+        protected void signUp_Click(object sender, EventArgs e)
         {
             try
             {
@@ -67,7 +70,7 @@ namespace finalProject
                 int h = Convert.ToInt32(hour.Text), mi = Convert.ToInt32(minutes.Text);
                 DateTime time = new DateTime(y, m, d, h, mi, 0);
 
-                eBL.createEvent((string)(Session["user"]), time, placeD.Text,name.Text,categoryD.Text);
+                eBL.createEvent((string)(Session["user"]), time, placeD.Text, name.Text, categoryD.Text);
                 Response.Redirect("~/myEvent.aspx");
             }
             catch

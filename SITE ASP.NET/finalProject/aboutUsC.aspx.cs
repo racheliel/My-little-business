@@ -12,6 +12,8 @@ namespace finalProject
         protected void Page_Load(object sender, EventArgs e)
         {
             userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
+            if (userName.Text == " " || (string)(Session["first"]) == "Guest")
+                Response.Redirect("~/home.aspx");
         }
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
@@ -40,6 +42,11 @@ namespace finalProject
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("~/contactUsC.aspx");
+        }
+
+        protected void out_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/home.aspx");
         }
     }
 }
