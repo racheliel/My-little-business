@@ -75,19 +75,19 @@ namespace finalProject
 
         public int checkMail(string mail)
         {
-            int flog = 0;
+            int flag = 0;
             foreach (char i in mail)
             {
                 if (i == '@')
-                    flog = 1;
+                    flag = 1;
 
-                if (flog == 1)
+                if (flag == 1)
                 {
                     if (i == '.')
-                        flog = 2;
+                        flag = 2;
                 }
             }
-            return flog;
+            return flag;
         }
 
         public Users signIn(string pass, string userN)

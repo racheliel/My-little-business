@@ -20,11 +20,11 @@ namespace finalProject
         {
             if (username.Text.Equals("") || password.Text.Equals("") || email.Text.Equals("") || firstname.Text.Equals("") || lastname.Text.Equals(""))
             {
-                error.Text = "you most fill all the tabs";
+                error.Text = "Please fill in all the tabs";
             }
             else if(eBL.chackUser(username.Text))
             {
-                error.Text = "this user name allready exist";
+                error.Text = "This user name allready exist";
             }
             else if (eBL.checkMail(email.Text) != 2)
             {
@@ -44,7 +44,7 @@ namespace finalProject
                 }
                 catch
                 {
-                    error.Text = "the details isn't correct";
+                    error.Text = "Details isn't correct";
 
                 }
 
