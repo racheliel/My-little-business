@@ -79,7 +79,20 @@ namespace finalProject
 
             bool success = Regex.IsMatch(mail, @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)
                                               |(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
-            return success;
+            return success&&!(mail.Equals(""));
+        }
+
+        public bool checkPassword(string password)
+        {
+            bool success = Regex.IsMatch(password, @"^(?![0-9]{6})[0-9a-zA-Z]{8}$");
+            return success && !(password.Equals(""));
+        }
+
+        public bool isNumerical(string input)
+        {
+            double num;
+            var success = double.TryParse(input, out num);
+            return success&&!(input.Equals(""));
         }
 
         public Users signIn(string pass, string userN)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -59,9 +60,9 @@ namespace finalProject
 
         protected void signUp_Click(object sender, EventArgs e)
         {
-            if (password.Text.Equals("") || email.Text.Equals("") || firstname.Text.Equals("") || lastname.Text.Equals(""))
+            if (eBL.checkPassword(password.Text) || eBL.checkMail(email.Text) || !eBL.isNumerical(firstname.Text) || !eBL.isNumerical(lastname.Text)
             {
-                error.Text = "you most fill all the tabs";
+                error.Text = "Please fill in all the tabs";
             }
             else
             {
