@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace finalProject
@@ -73,21 +74,12 @@ namespace finalProject
             return eventD.getMail(user);
         }
 
-        public int checkMail(string mail)
+        public bool checkMail(string mail)
         {
-            int flag = 0;
-            foreach (char i in mail)
-            {
-                if (i == '@')
-                    flag = 1;
 
-                if (flag == 1)
-                {
-                    if (i == '.')
-                        flag = 2;
-                }
-            }
-            return flag;
+            bool success = Regex.IsMatch(mail, @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)
+                                              |(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+            return success;
         }
 
         public Users signIn(string pass, string userN)

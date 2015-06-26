@@ -26,7 +26,7 @@ namespace finalProject
             {
                 error.Text = "This user name allready exist";
             }
-            else if (eBL.checkMail(email.Text) != 2)
+            else if (eBL.checkMail(email.Text))
             {
                 error.Text = "Please enter a correct email";
             }
