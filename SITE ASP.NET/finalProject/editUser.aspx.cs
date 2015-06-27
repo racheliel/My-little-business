@@ -60,7 +60,7 @@ namespace finalProject
 
         protected void signUp_Click(object sender, EventArgs e)
         {
-            if (eBL.checkPassword(password.Text) || eBL.checkMail(email.Text) || !eBL.isNumerical(firstname.Text) || !eBL.isNumerical(lastname.Text)
+            if (eBL.checkPassword(password.Text) || eBL.checkMail(email.Text) || !eBL.isNumerical(firstname.Text) || !eBL.isNumerical(lastname.Text))
             {
                 error.Text = "Please fill in all the tabs";
             }
