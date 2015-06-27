@@ -57,7 +57,7 @@
             <asp:TextBox ID="username" runat="server" Width="192px"></asp:TextBox>
         </td>
         <td class="auto-style18" style="background-color: #FFFFFF; color: #000000; font-size: 20px; font-weight: 700;">Password:&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="password" runat="server" Width="191px"></asp:TextBox>
+            <asp:TextBox ID="password" runat="server" TextMode="Password" Width="191px"></asp:TextBox>
         </td>
     </tr>
     <tr>

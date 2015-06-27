@@ -18,9 +18,9 @@ namespace finalProject
 
         }
 
-        public Boolean chackBusinessName(string busN)
+        public Boolean checkBusinessName(string busN)
         {
-            return eventD.chackBusinessName(busN);
+            return eventD.checkBusinessName(busN);
         }
 
 
@@ -59,9 +59,9 @@ namespace finalProject
             return eventD.getAllEvents();
         }
 
-        public Boolean chackUser(string userN)
+        public Boolean checkUser(string userN)
         {
-            return eventD.chackUser(userN);
+            return eventD.checkUser(userN);
         }
 
         public Business getBusinessForUser(string str)
@@ -81,7 +81,7 @@ namespace finalProject
                                               |(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
             return success&&!(mail.Equals(""));
         }
-
+     
         public bool checkPassword(string password)
         {
             bool success = Regex.IsMatch(password, @"^(?![0-9]{6})[0-9a-zA-Z]{8}$");

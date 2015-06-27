@@ -49,13 +49,13 @@ namespace finalProject {
         protected global::System.Web.UI.WebControls.TextBox busName;
         
         /// <summary>
-        /// chackBusName control.
+        /// checkBusName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button chackBusName;
+        protected global::System.Web.UI.WebControls.Button checkBusName;
         
         /// <summary>
         /// errorName control.

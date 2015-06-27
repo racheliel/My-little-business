@@ -83,7 +83,7 @@ namespace finalProject
                 }
                 else
                 {
-                    error.Text = "Event not edited, please chack if all fields are correct";
+                    error.Text = "Event not edited, please check if all fields are correct";
 
                 }
             }

@@ -19,7 +19,7 @@
                 &nbsp;&nbsp;
                 <asp:TextBox ID="busName" runat="server" Width="249px"></asp:TextBox>
                 &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="chackBusName" runat="server" OnClick="chackBusName_Click" Text="Add Business Name" BorderColor="#DADADA" Font-Bold="True" Font-Names="adobe hebrew" Font-Size="Large" ForeColor="#7B9E46" Width="218px" />
+                <asp:Button ID="checkBusName" runat="server" OnClick="checkBusName_Click" Text="Add Business Name" BorderColor="#DADADA" Font-Bold="True" Font-Names="adobe hebrew" Font-Size="Large" ForeColor="#7B9E46" Width="218px" />
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="errorName" runat="server"></asp:Label>
                 <br />
