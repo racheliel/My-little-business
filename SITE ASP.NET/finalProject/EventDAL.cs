@@ -21,7 +21,7 @@ namespace finalProject
             con = new SqlConnection(conString);
         }
 
-        public Boolean checkUser(string userN)
+        public Boolean chackUser(string userN)
         {//get user name and return true if exist
             con.Open();
             string sqlString = "Select * from UsersTable where UserName='" + userN + "';";
@@ -40,7 +40,7 @@ namespace finalProject
             }
         }
 
-        public Boolean checkBusinessName(string busN)
+        public Boolean chackBusinessName(string busN)
         {//get bussines name and return true if exist
             con.Open();
             string sqlString = "Select * from BusinessTable where BusName='" + busN + "';";

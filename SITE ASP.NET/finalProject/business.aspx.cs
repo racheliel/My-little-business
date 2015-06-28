@@ -33,6 +33,7 @@ namespace finalProject
 
             if (b == null)
             {
+
                 busName.Text = "error";
             }
             else
