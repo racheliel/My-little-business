@@ -24,7 +24,7 @@ namespace finalProject
             if (b != null)
             {
                 busName.Text = b.BusName;
-                chackBusName.Visible = false;
+                checkBusName.Visible = false;
                 SqlDataAdapter da = new SqlDataAdapter("select image from uplodes where BusName='" + busName.Text + "';", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -44,7 +44,7 @@ namespace finalProject
 
         protected void upImage_Click(object sender, EventArgs e)
         {
-            Boolean busN = eBL.chackBusinessName(busName.Text);
+            Boolean busN = eBL.checkBusinessName(busName.Text);
             if (busN == true)
             {
 
@@ -105,9 +105,9 @@ namespace finalProject
 
       
 
-        protected void chackBusName_Click(object sender, EventArgs e)
+        protected void checkBusName_Click(object sender, EventArgs e)
         {
-            Boolean busN = eBL.chackBusinessName(busName.Text);
+            Boolean busN = eBL.checkBusinessName(busName.Text);
             if (busN == true)
                 errorName.Text = "Business name already exists in the system";
             else
@@ -140,7 +140,7 @@ namespace finalProject
 
         protected void logoImage_Click(object sender, EventArgs e)
         {
-            Boolean busN = eBL.chackBusinessName(busName.Text);
+            Boolean busN = eBL.checkBusinessName(busName.Text);
              if (busN == true)
              {
 
@@ -236,7 +236,7 @@ namespace finalProject
 
         protected void save_Click(object sender, EventArgs e)
         {
-            Boolean busN = eBL.chackBusinessName(busName.Text);
+            Boolean busN = eBL.checkBusinessName(busName.Text);
             if ((busName.Text == "" || place.Text == "choose place" || category.Text == "choose category") && busN == false)
             {
                 er.Text = "please fill business name,place and category";

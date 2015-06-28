@@ -58,7 +58,7 @@ namespace finalProject
             LinkedList<Events> getEvents = eBL.getEvents((string)(Session["user"]));
             if (eBL.ifEventNameExsist(getEvents, name.Text) == true)
             {
-                error.Text = "You've already created this event named";
+                error.Text = "Name is occupied, pick a different one.";
             }
             else { 
                  try

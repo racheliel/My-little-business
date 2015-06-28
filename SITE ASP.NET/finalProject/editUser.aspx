@@ -50,7 +50,7 @@
                 <asp:Label ID="userName" runat="server"></asp:Label>
             </td>
             <td class="auto-style21" style="font-size: 26px;">Password:&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="password" runat="server" Width="191px"></asp:TextBox>
+                <asp:TextBox ID="password" runat="server" TextMode="Password" Width="191px"></asp:TextBox>
             </td>
         </tr>
         <tr>
