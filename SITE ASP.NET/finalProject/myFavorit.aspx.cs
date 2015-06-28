@@ -15,6 +15,8 @@ namespace finalProject
         protected void Page_Load(object sender, EventArgs e)
         {
             userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
+            if (userName.Text == " " || (string)(Session["first"]) == "Guest")
+                Response.Redirect("~/home.aspx");
             LinkedList<Favorit> allBuss = eBL.getFavorit((string)(Session["user"]));
             DataTable dt = new DataTable();
             dt.Columns.Add("business's name", typeof(string));
@@ -73,7 +75,7 @@ namespace finalProject
 
                 Session.Add("nameBuss", name);
 
-                Response.Redirect("~/businessShow.aspx");
+                Response.Redirect("~/business.aspx");
 
             }
         }
@@ -104,6 +106,12 @@ namespace finalProject
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("~/contactUsC.aspx");
+        }
+
+        protected void out_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("~/home.aspx");
         }
     }
 }

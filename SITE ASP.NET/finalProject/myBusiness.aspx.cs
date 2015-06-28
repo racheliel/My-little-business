@@ -6,20 +6,25 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
+
 namespace finalProject
 {
     public partial class WebForm11 : System.Web.UI.Page
     {
         EventBL eBL = new EventBL();
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\GitHub\\My-little-business\\SITE ASP.NET\\MLBDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MLBDBConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
             userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
+            if (userName.Text == " " || (string)(Session["first"]) == "Guest")
+                Response.Redirect("~/home.aspx");
+
             Business b = eBL.getBusinessForUser((string)(Session["user"]));
             if (b != null)
             {
                 busName.Text = b.BusName;
-                chackBusName.Visible = false;
+                checkBusName.Visible = false;
                 SqlDataAdapter da = new SqlDataAdapter("select image from uplodes where BusName='" + busName.Text + "';", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -28,6 +33,9 @@ namespace finalProject
                 ImgLogo.ImageUrl = eBL.getImageLogo(busName.Text);
 
             }
+            else 
+                ImgLogo.ImageUrl = "logoBus.jpg";
+            
         }
 
         protected void ImageMap1_Click(object sender, ImageMapEventArgs e)
@@ -37,7 +45,7 @@ namespace finalProject
 
         protected void upImage_Click(object sender, EventArgs e)
         {
-            Boolean busN = eBL.chackBusinessName(busName.Text);
+            Boolean busN = eBL.checkBusinessName(busName.Text);
             if (busN == true)
             {
 
@@ -47,15 +55,16 @@ namespace finalProject
                     string str = busName.Text + FileUpload2.FileName;
                     FileUpload2.PostedFile.SaveAs(Server.MapPath(".") + "//uploads//" + str);
                     string path = "~//uploads//" + str.ToString();
-                    try
-                    {
+                    
                         con.Open();
                         SqlCommand cmd = new SqlCommand("INSERT INTO uplodes (image,BusName) VALUES('" + path + "','" + busName.Text + "');", con);
-                        cmd.ExecuteNonQuery();
-                        con.Close();
+                     try
+                    {   cmd.ExecuteNonQuery();
+                        
                     }
                     catch
-                    {
+                    {   
+                        con.Close();
                         errorImage.Text = "the photo exist in the business page";
                     }
 
@@ -97,13 +106,27 @@ namespace finalProject
 
       
 
-        protected void chackBusName_Click(object sender, EventArgs e)
+        protected void checkBusName_Click(object sender, EventArgs e)
         {
-            Boolean busN = eBL.chackBusinessName(busName.Text);
+            Boolean busN = eBL.checkBusinessName(busName.Text);
             if (busN == true)
                 errorName.Text = "Business name already exists in the system";
             else
+            {
                 errorName.Text = "This illegal business name";
+        /*        Business b = new Business(busName.Text, (string)(Session["user"]), TextBox3.Text, place.Text, category.Text);
+                eBL.addBusiness(b);
+                string l = eBL.getImageLogo(busName.Text);
+                if (l == "")
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO logos (logo,busName) VALUES('logoBus.jpg','" + busName.Text + "');", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                */
+
+            }
         }
 
         protected void addLogo_Click(object sender, EventArgs e)
@@ -111,40 +134,6 @@ namespace finalProject
       
         }
 
-        protected void save_Click(object sender, EventArgs e)
-        {
- 
-            Business b = new Business(busName.Text, (string)(Session["user"]), TextBox3.Text, place.Text,category.Text);
-            Boolean busN = eBL.chackBusinessName(busName.Text);
-            if (busN == true)
-            {
-                if (TextBox3.Text != "" )
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE BusinessTable SET Detailes='" + TextBox3.Text + "', place='" + place.Text + "' where UserName='" + (string)(Session["user"]) + "';", con);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                }
-              //  else if (TextBox2.Text != "")
-                //{
-                  //  con.Open();
-                    //SqlCommand cmd = new SqlCommand("UPDATE BusinessTable SET place='" + TextBox2.Text + "' where UserName='" + (string)(Session["user"]) + "';", con);
-                    //cmd.ExecuteNonQuery();
-                    //con.Close();
-                //}
-                else if (TextBox3.Text != "")
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE BusinessTable SET Detailes='" + TextBox3.Text + "' where UserName='" + (string)(Session["user"]) + "';", con);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                }
-            }
-
-            Response.Redirect("~/businessShow.aspx");
-
-
-        }
 
         protected void addLogo_Click1(object sender, EventArgs e)
         {
@@ -152,7 +141,7 @@ namespace finalProject
 
         protected void logoImage_Click(object sender, EventArgs e)
         {
-            Boolean busN = eBL.chackBusinessName(busName.Text);
+            Boolean busN = eBL.checkBusinessName(busName.Text);
              if (busN == true)
              {
 
@@ -164,7 +153,7 @@ namespace finalProject
                      FileUpload1.PostedFile.SaveAs(Server.MapPath(".") + "//logos//" + str);
                      string path = "~//logos//" + str.ToString();
                      con.Open();
-                     SqlCommand cmd = new SqlCommand("UPDATE logos SET logo= '" + path + "' WHERE busName='"+busName.Text+"';", con);
+                     SqlCommand cmd = new SqlCommand("UPDATE logos SET logo= '" + path + "' WHERE busName='" + busName.Text + "';", con);
                      cmd.ExecuteNonQuery();
                      con.Close();
                      ImgLogo.ImageUrl = path;
@@ -176,6 +165,7 @@ namespace finalProject
              {
                  Business b = new Business(busName.Text, (string)(Session["user"]), TextBox3.Text, place.Text, category.Text);
                  eBL.addBusiness(b);
+                 ImgLogo.ImageUrl = "logoBus.jpg";
                  if (FileUpload1.HasFile)
                  {
                      errorLogo.Text = "";
@@ -184,8 +174,17 @@ namespace finalProject
                      FileUpload1.PostedFile.SaveAs(Server.MapPath(".") + "//logos//" + str);
                      string path = "~//logos//" + str.ToString();
                      con.Open();
-                     SqlCommand cmd = new SqlCommand("INSERT INTO logos (busName,logo) VALUES('" + busName.Text + "','" + path + "');", con);
-                     cmd.ExecuteNonQuery();
+                    
+                         SqlCommand cmd = new SqlCommand("INSERT INTO logos (logo,busName) VALUES('" + path + "','" + busName.Text + "');", con);
+                    try
+                     {  
+                            cmd.ExecuteNonQuery();
+                         er.Text = "";
+                     }
+                     catch
+                     {
+                         er.Text = "this photo name exist";
+                     }
                      con.Close();
                      ImgLogo.ImageUrl = path;
                  }
@@ -234,6 +233,60 @@ namespace finalProject
         protected void category_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void save_Click(object sender, EventArgs e)
+        {
+            Boolean busN = eBL.checkBusinessName(busName.Text);
+            if ((busName.Text == "" || place.Text == "choose place" || category.Text == "choose category") && busN == false)
+            {
+                er.Text = "please fill business name,place and category";
+
+            }
+            else
+            {
+                Business b = new Business(busName.Text, (string)(Session["user"]), TextBox3.Text, place.Text, category.Text);
+                if (busN == true)
+                {
+                    if (TextBox3.Text != "")
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("UPDATE BusinessTable SET Detailes='" + TextBox3.Text + "' where UserName='" + (string)(Session["user"]) + "';", con);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    if (place.Text != "choose place")
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("UPDATE BusinessTable SET Place='" + place.Text + "' where UserName='" + (string)(Session["user"]) + "';", con);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    if (category.Text != "choose category")
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("UPDATE BusinessTable SET Category='" + category.Text + "' where UserName='" + (string)(Session["user"]) + "';", con);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+
+                    string l = eBL.getImageLogo(busName.Text);
+                    if (l == "")
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("INSERT INTO logos (logo,busName) VALUES('logoBus.jpg','" + busName.Text + "');", con);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+                else
+                {
+                    eBL.addBusiness(b);
+                }
+
+                Response.Redirect("~/businessShow.aspx");
+
+            }
         }
     }
 }

@@ -7,25 +7,26 @@
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <p style="background-color: #FFFFCC; color: #C27DD2; font-size: 40px; font-weight: 900; width: 1158px; margin-top: 0px; margin-bottom: 30px;">
-        <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Edit event</p>
+    <p style="font-size: 25px; font-weight: 600; margin-top: 19px; margin-bottom: 3px; margin-left: 0px;">
+        welcome
+            <asp:Label ID="userName" runat="server"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p style="color: #5E6F3A; font-size: 50px; font-weight: 900; width: 1154px; margin-top: 0px; margin-bottom: 9px; height: 61px; font-family: 'Berlin Sans FB Demi';">
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Edit event</p>
 <p style="width: 1158px; margin-top: 0px; margin-bottom: 30px;">
         <table style="width: 100%; margin-top: 0px;">
             <tr>
-                <td class="auto-style14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Image ID="Image" runat="server" Height="188px" Width="403px" />
-                </td>
+                <td class="auto-style14">&nbsp;</td>
                 <td>
                     <div style="height: 251px">
     <p style="margin-top: 0px; margin-bottom: 5px">
                             <asp:Label ID="error" runat="server"></asp:Label>
                         </p>
-<p style="width: 318px; margin-left: 276px; margin-top: 19px; margin-bottom: 3px; height: 27px;">
+<p style="font-size: 26px;">
         Name of event:&nbsp;
 &nbsp;<asp:TextBox ID="name" runat="server" style="margin-left: 0px"></asp:TextBox>
     </p>
-    <p style="width: 318px; margin-left: 276px; margin-top: 0px; margin-bottom: 3px; height: 168px;">
+    <p style="font-size: 26px;">
         Category of event:<asp:DropDownList ID="categoryD" runat="server" AppendDataBoundItems="True" DataSourceID="category2" DataTextField="category" DataValueField="category">
             <asp:ListItem>choose category</asp:ListItem>
         </asp:DropDownList>
@@ -103,11 +104,14 @@
             </tr>
         </table>
 </p>
-<div style="color: #CC0099; font-weight: 600; font-size: 24px">
+<div style="color: #CC0099; font-weight: 600; font-size: 24px" id="edit">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;
     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:ImageButton ID="edit" runat="server" Height="40px" ImageUrl="edit.jpg" OnClick="ImageButton1_Click" Width="132px" />
+    <br />
+    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Save" runat="server" OnClick="signUp_Click" Text="Save" BackColor="#DADADA" Font-Bold="True" Font-Names="Adobe Hebrew" Font-Size="X-Large" ForeColor="#7B9E46" Height="41px" Width="96px" />
 </div>
 </asp:Content>

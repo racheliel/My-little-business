@@ -13,13 +13,13 @@ namespace finalProject {
     public partial class WebForm8 {
         
         /// <summary>
-        /// Image control.
+        /// userName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image;
+        protected global::System.Web.UI.WebControls.Label userName;
         
         /// <summary>
         /// error control.
@@ -121,12 +121,12 @@ namespace finalProject {
         protected global::System.Web.UI.WebControls.DropDownList minutes;
         
         /// <summary>
-        /// edit control.
+        /// Save control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton edit;
+        protected global::System.Web.UI.WebControls.Button Save;
     }
 }

@@ -13,15 +13,6 @@ namespace finalProject {
     public partial class WebForm15 {
         
         /// <summary>
-        /// userName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label userName;
-        
-        /// <summary>
         /// out control.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace finalProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button @out;
+        
+        /// <summary>
+        /// userName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label userName;
         
         /// <summary>
         /// noEvents control.

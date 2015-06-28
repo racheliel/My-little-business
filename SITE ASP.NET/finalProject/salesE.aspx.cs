@@ -16,6 +16,8 @@ namespace finalProject
         protected void Page_Load(object sender, EventArgs e)
         {
             userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
+            if (userName.Text == " " || (string)(Session["first"]) == "Guest")
+                Response.Redirect("~/home.aspx");
             LinkedList<Events> userEvents = eBL.getAllEvents();
             DataTable dt = new DataTable();
             dt.Columns.Add("event's name", typeof(string));

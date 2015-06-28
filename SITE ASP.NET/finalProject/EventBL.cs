@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace finalProject
@@ -17,9 +18,9 @@ namespace finalProject
 
         }
 
-        public Boolean chackBusinessName(string busN)
+        public Boolean checkBusinessName(string busN)
         {
-            return eventD.chackBusinessName(busN);
+            return eventD.checkBusinessName(busN);
         }
 
 
@@ -34,7 +35,18 @@ namespace finalProject
             Events e = new Events(user, date, place,name,cat);
             eventD.deleteEvent(e);
         }
+        public Boolean ifEventNameExsist(LinkedList<Events> getEvents,string name)
+        {
+            foreach(Events i in getEvents)
+            {
+                if (i.Name == name)
+                {
+                    return true;
+                }
 
+            }
+            return false;
+        }
 
         public LinkedList<Events> getEvents(string username)
         {
@@ -47,9 +59,9 @@ namespace finalProject
             return eventD.getAllEvents();
         }
 
-        public Boolean chackUser(string userN)
+        public Boolean checkUser(string userN)
         {
-            return eventD.chackUser(userN);
+            return eventD.checkUser(userN);
         }
 
         public Business getBusinessForUser(string str)
@@ -62,21 +74,25 @@ namespace finalProject
             return eventD.getMail(user);
         }
 
-        public int checkMail(string mail)
+        public bool checkMail(string mail)
         {
-            int flog = 0;
-            foreach (char i in mail)
-            {
-                if (i == '@')
-                    flog = 1;
 
-                if (flog == 1)
-                {
-                    if (i == '.')
-                        flog = 2;
-                }
-            }
-            return flog;
+            bool success = Regex.IsMatch(mail, @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)
+                                              |(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+            return success&&!(mail.Equals(""));
+        }
+     
+        public bool checkPassword(string password)
+        {
+            bool success = Regex.IsMatch(password, @"^(?![0-9]{6})[0-9a-zA-Z]{8}$");
+            return success && !(password.Equals(""));
+        }
+
+        public bool isNumerical(string input)
+        {
+            double num;
+            var success = double.TryParse(input, out num);
+            return success&&!(input.Equals(""));
         }
 
         public Users signIn(string pass, string userN)

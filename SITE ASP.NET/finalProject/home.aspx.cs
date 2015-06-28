@@ -18,13 +18,14 @@ namespace finalProject
             Image1.ImageUrl = "4.png";
 
 
+
         }
 
 
         protected void in_Click(object sender, EventArgs e)
         {
             string user = UserName.Text, password = Password.Text;
-            Boolean bU = eBL.chackUser(user);
+            Boolean bU = eBL.checkUser(user);
             if (bU)
             {
                 Users u = eBL.signIn(password, user);

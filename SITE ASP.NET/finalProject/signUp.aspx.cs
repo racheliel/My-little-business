@@ -18,38 +18,24 @@ namespace finalProject
 
         protected void signUp_Click(object sender, EventArgs e)
         {
-            if (username.Text.Equals("") || password.Text.Equals("") || email.Text.Equals("") || firstname.Text.Equals("") || lastname.Text.Equals(""))
+            if (eBL.checkUser(username.Text) && eBL.checkPassword(password.Text) && eBL.checkMail(email.Text) && !eBL.isNumerical(firstname.Text) && !eBL.isNumerical(lastname.Text))
             {
-                error.Text = "you most fill all the tabs";
-            }
-            else if(eBL.chackUser(username.Text))
-            {
-                error.Text = "this user name allready exist";
-            }
-            else if (eBL.checkMail(email.Text) != 2)
-            {
-                error.Text = "Please enter a correct email";
+                eBL.updateUser(username.Text, password.Text,email.Text , firstname.Text, lastname.Text);
+                Session.Add("user", username.Text);
+                Session.Add("first", firstname.Text);
+                Session.Add("last", lastname.Text);
+
+                Response.Redirect("~/homeC.aspx");
+               
             }
             else
             {
-                try
-                {
-                    eBL.addUser(username.Text, password.Text, email.Text, firstname.Text, lastname.Text);
-                    Session.Add("user", username.Text);
-                    Session.Add("first", firstname.Text);
-                    Session.Add("last", lastname.Text);
-
-                    Response.Redirect("~/homeC.aspx");
-
-                }
-                catch
-                {
-                    error.Text = "the details isn't correct";
-
-                }
+                if (!eBL.checkPassword(password.Text))   { error.Text = "invalid password.";     }
+                if (!eBL.checkMail(email.Text))          { error.Text = "invalid email.";        }
+                if (eBL.isNumerical(firstname.Text))     { error.Text = "first name not valid."; }
+                if (eBL.isNumerical(lastname.Text))      { error.Text = "last name not valid.";  }
 
             }
-          
-        }
+            }
     }
 }

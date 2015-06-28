@@ -42,10 +42,10 @@
         </td>
     </tr>
     <tr>
-        <td class="auto-style19">First Name:&nbsp;&nbsp;&nbsp;
+        <td class="auto-style19" style="background-color: #FFFFFF; color: #000000; font-size: 20px; font-weight: 700;">First Name:&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="firstname" runat="server" Width="196px"></asp:TextBox>
         </td>
-        <td class="auto-style20">Last Name:&nbsp;&nbsp;
+        <td class="auto-style20" style="background-color: #FFFFFF; color: #000000; font-size: 20px; font-weight: 700;">Last Name:&nbsp;&nbsp;
             <asp:TextBox ID="lastname" runat="server" Width="184px"></asp:TextBox>
         </td>
         <td class="auto-style16" rowspan="3">
@@ -53,15 +53,15 @@
         </td>
     </tr>
     <tr>
-        <td class="auto-style17">User Name:&nbsp;&nbsp;
+        <td class="auto-style17" style="background-color: #FFFFFF; color: #000000; font-size: 20px; font-weight: 700;">User Name:&nbsp;&nbsp;
             <asp:TextBox ID="username" runat="server" Width="192px"></asp:TextBox>
         </td>
-        <td class="auto-style18">Password:&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="password" runat="server" Width="191px"></asp:TextBox>
+        <td class="auto-style18" style="background-color: #FFFFFF; color: #000000; font-size: 20px; font-weight: 700;">Password:&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="password" runat="server" TextMode="Password" Width="191px"></asp:TextBox>
         </td>
     </tr>
     <tr>
-        <td class="auto-style10">Email:&nbsp;&nbsp;
+        <td class="auto-style10" style="background-color: #FFFFFF; color: #000000; font-size: 20px; font-weight: 700;">Email:&nbsp;&nbsp;
             <asp:TextBox ID="email" runat="server" Width="219px"></asp:TextBox>
         </td>
         <td class="auto-style15">&nbsp;</td>
@@ -69,11 +69,11 @@
     <tr>
         <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="height: 49px">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="error" runat="server"></asp:Label>
+            <asp:Label ID="error" runat="server" ForeColor="Red"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="signUp" runat="server" OnClick="signUp_Click" Text="Sign Up" />
+            <asp:Button ID="signUp" runat="server" OnClick="signUp_Click" Text="Sign Up" BorderColor="#DADADA" Font-Bold="True" Font-Names="adobe hebrew" Font-Size="Large" ForeColor="#7B9E46" />
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
