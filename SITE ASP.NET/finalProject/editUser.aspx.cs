@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -60,22 +59,27 @@ namespace finalProject
 
         protected void signUp_Click(object sender, EventArgs e)
         {
-            if (eBL.checkPassword(password.Text) && eBL.checkMail(email.Text) && !eBL.isNumerical(firstname.Text) && !eBL.isNumerical(lastname.Text))
+            if (password.Text.Equals("") || email.Text.Equals("") || firstname.Text.Equals("") || lastname.Text.Equals(""))
             {
-                eBL.updateUser(userName.Text, password.Text, firstname.Text, lastname.Text, email.Text);
-                Session.Add("user", userName.Text);
-                Session.Add("first", firstname.Text);
-                Session.Add("last", lastname.Text);
-
-                Response.Redirect("~/homeC.aspx");
-               
+                error.Text = "you most fill all the tabs";
             }
             else
             {
-                if (!eBL.checkPassword(password.Text))   { error.Text = "invalid password.";     }
-                if (!eBL.checkMail(email.Text))          { error.Text = "invalid email.";        }
-                if (eBL.isNumerical(firstname.Text))     { error.Text = "first name not valid."; }
-                if (eBL.isNumerical(lastname.Text))      { error.Text = "last name not valid.";  }
+                try
+                {
+                    eBL.updateUser(userName.Text, password.Text, firstname.Text, lastname.Text, email.Text);
+                    Session.Add("user", userName.Text);
+                    Session.Add("first", firstname.Text);
+                    Session.Add("last", lastname.Text);
+
+                    Response.Redirect("~/homeC.aspx");
+
+                }
+                catch
+                {
+                    error.Text = "the details isn't correct";
+
+                }
 
             }
         }

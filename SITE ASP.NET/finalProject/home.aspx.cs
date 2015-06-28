@@ -25,7 +25,7 @@ namespace finalProject
         protected void in_Click(object sender, EventArgs e)
         {
             string user = UserName.Text, password = Password.Text;
-            Boolean bU = eBL.checkUser(user);
+            Boolean bU = eBL.chackUser(user);
             if (bU)
             {
                 Users u = eBL.signIn(password, user);
@@ -123,7 +123,6 @@ namespace finalProject
             else if (!c && !p)
                 Session.Add("defS", "none");
 
-            //Response.Redirect("~/searchResult.aspx");
             if (((string)(Session["defS"])) == "p&c")
                 GridView1.DataSourceID = result3.ID;
 
@@ -140,6 +139,11 @@ namespace finalProject
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void placeD_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

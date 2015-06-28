@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace finalProject
@@ -18,9 +17,9 @@ namespace finalProject
 
         }
 
-        public Boolean checkBusinessName(string busN)
+        public Boolean chackBusinessName(string busN)
         {
-            return eventD.checkBusinessName(busN);
+            return eventD.chackBusinessName(busN);
         }
 
 
@@ -28,7 +27,12 @@ namespace finalProject
         {
             return eventD.getPassword(userN);
         }
-
+        public Boolean checkStr(string str)
+        {
+            if (str.Contains("'"))
+                return false;
+            return true;
+        }
 
         public void deleteEvent(DateTime date, string user, string place, string name, string cat)
         {
@@ -59,9 +63,9 @@ namespace finalProject
             return eventD.getAllEvents();
         }
 
-        public Boolean checkUser(string userN)
+        public Boolean chackUser(string userN)
         {
-            return eventD.checkUser(userN);
+            return eventD.chackUser(userN);
         }
 
         public Business getBusinessForUser(string str)
@@ -74,25 +78,21 @@ namespace finalProject
             return eventD.getMail(user);
         }
 
-        public bool checkMail(string mail)
+        public int checkMail(string mail)
         {
+            int flog = 0;
+            foreach (char i in mail)
+            {
+                if (i == '@')
+                    flog = 1;
 
-            bool success = Regex.IsMatch(mail, @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)
-                                              |(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
-            return success&&!(mail.Equals(""));
-        }
-     
-        public bool checkPassword(string password)
-        {
-            bool success = Regex.IsMatch(password, @"^(?![0-9]{6})[0-9a-zA-Z]{8}$");
-            return success && !(password.Equals(""));
-        }
-
-        public bool isNumerical(string input)
-        {
-            double num;
-            var success = double.TryParse(input, out num);
-            return success&&!(input.Equals(""));
+                if (flog == 1)
+                {
+                    if (i == '.')
+                        flog = 2;
+                }
+            }
+            return flog;
         }
 
         public Users signIn(string pass, string userN)

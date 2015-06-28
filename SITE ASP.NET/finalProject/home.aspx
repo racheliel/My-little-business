@@ -99,7 +99,7 @@
                 <td class="auto-style24"></td>
                         <td class="auto-style30" style="width: 382px; margin-left: 408px; margin-top: 19px; margin-bottom: 3px; height: 27px; font-size: 20px; font-weight: 600;">find business:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:DropDownList ID="placeD" runat="server" AppendDataBoundItems="True" DataSourceID="PLACE" DataTextField="place" DataValueField="place" Height="55px" Width="121px">
+                            <asp:DropDownList ID="placeD" runat="server" AppendDataBoundItems="True" DataSourceID="PLACE" DataTextField="place" DataValueField="place" Height="55px" Width="121px" OnSelectedIndexChanged="placeD_SelectedIndexChanged">
                                 <asp:ListItem>choose place</asp:ListItem>
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="PLACE" runat="server" ConnectionString="<%$ ConnectionStrings:MLBDBConnectionString %>" SelectCommand="SELECT * FROM [Place]"></asp:SqlDataSource>
