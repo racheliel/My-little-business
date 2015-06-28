@@ -9,8 +9,10 @@ using System.Configuration;
 
 namespace finalProject
 {
+
     class EventDAL
-    {
+    {//"Data Source=mgdzsouv9h.database.windows.net;Initial Catalog=mylittleBusiness;Integrated Security=False;User ID=barteroom;Password=NatiGabay1;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False"
+     
         public string conString = ConfigurationManager.ConnectionStrings["MLBDBConnectionString"].ConnectionString;
         public SqlConnection con;
 
@@ -107,6 +109,26 @@ namespace finalProject
             }
             con.Close();
             return b;
+        }
+
+        public LinkedList<Users> getAllUsers()
+        {//get user name and returns events of user name
+            con = new SqlConnection(conString);
+            con.Open();
+            string sqlString = "Select *  from UsersTable t ;";
+            SqlCommand com = new SqlCommand(sqlString, con);
+            SqlDataReader rdr = com.ExecuteReader();
+
+            LinkedList<Users> users = new LinkedList<Users>();
+            Users temp;
+            while (rdr.Read())
+            {
+                temp = new Users((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3], (string)rdr[4]);
+
+                users.AddLast(temp);
+            }
+            con.Close();
+            return users;
         }
 
         public string getNameBusinessForUser(string str)
