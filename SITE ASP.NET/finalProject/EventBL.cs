@@ -27,7 +27,12 @@ namespace finalProject
         {
             return eventD.getPassword(userN);
         }
-
+        public Boolean checkStr(string str)
+        {
+            if (str.Contains("'"))
+                return false;
+            return true;
+        }
 
         public void deleteEvent(DateTime date, string user, string place, string name, string cat)
         {

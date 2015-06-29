@@ -33,9 +33,12 @@ namespace finalProject
                 ImgLogo.ImageUrl = eBL.getImageLogo(busName.Text);
 
             }
+<<<<<<< HEAD
             else {
                 busName.Text = "error";
             }
+=======
+>>>>>>> origin/master
                 ImgLogo.ImageUrl = "logoBus.jpg";
             
         }

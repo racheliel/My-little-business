@@ -23,10 +23,6 @@
         .auto-style12 {
             height: 135px;
         }
-        .auto-style13 {
-            width: 342px;
-            height: 187px;
-        }
         </style>
 </head>
 <body style="height: 827px; width: 93%">
@@ -39,7 +35,12 @@
                         <table style="width: 91%; height: 136px;">
                             <tr>
                                 <td class="auto-style7" style="color: #D47EE9; font-family: 'Berlin Sans FB'; font-weight: 900; font-size: 50px; font-style: italic">
+<<<<<<< HEAD
                                     <img class="auto-style13" src="logo.jpg" /></td>
+=======
+                                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/logo.jpg" OnClick="ImageButton1_Click" />
+                                </td>
+>>>>>>> origin/master
                             </tr>
                         </table>
                     </td>
@@ -54,10 +55,13 @@
                             <p style="height: 16px; width: 977px">
                             </p>
                             <p style="height: 16px; width: 978px">
+<<<<<<< HEAD
                             </p>
                             <p style="height: 16px; width: 977px">
                             </p>
                             <p style="height: 16px; width: 977px">
+=======
+>>>>>>> origin/master
                             </p>
                             <p style="height: 16px; width: 977px">
                             </p>

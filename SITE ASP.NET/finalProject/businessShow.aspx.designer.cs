@@ -67,15 +67,6 @@ namespace finalProject {
         protected global::System.Web.UI.WebControls.Button edit;
         
         /// <summary>
-        /// home control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button home;
-        
-        /// <summary>
         /// addFav control.
         /// </summary>
         /// <remarks>
@@ -85,40 +76,69 @@ namespace finalProject {
         protected global::System.Web.UI.WebControls.Button addFav;
         
         /// <summary>
+<<<<<<< HEAD
+        /// addFav control.
+=======
         /// favText control.
+>>>>>>> origin/master
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+<<<<<<< HEAD
+        protected global::System.Web.UI.WebControls.Button addFav;
+        
+        /// <summary>
+        /// favText control.
+=======
         protected global::System.Web.UI.WebControls.Label favText;
         
         /// <summary>
         /// logo control.
+>>>>>>> origin/master
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+<<<<<<< HEAD
+        protected global::System.Web.UI.WebControls.Label favText;
+        
+        /// <summary>
+        /// logo control.
+=======
         protected global::System.Web.UI.WebControls.Image logo;
         
         /// <summary>
         /// category control.
+>>>>>>> origin/master
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+<<<<<<< HEAD
+        protected global::System.Web.UI.WebControls.Image logo;
+        
+        /// <summary>
+        /// category control.
+=======
         protected global::System.Web.UI.WebControls.Label category;
         
         /// <summary>
         /// place control.
+>>>>>>> origin/master
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+<<<<<<< HEAD
+        protected global::System.Web.UI.WebControls.Label category;
+=======
         protected global::System.Web.UI.WebControls.Label place;
+>>>>>>> origin/master
         
         /// <summary>
         /// det control.
@@ -130,6 +150,16 @@ namespace finalProject {
         protected global::System.Web.UI.WebControls.Label det;
         
         /// <summary>
+        /// det control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label det;
+        
+        /// <summary>
+<<<<<<< HEAD
         /// GridView1 control.
         /// </summary>
         /// <remarks>
@@ -148,6 +178,8 @@ namespace finalProject {
         protected global::System.Web.UI.WebControls.GridView table1;
         
         /// <summary>
+=======
+>>>>>>> origin/master
         /// del control.
         /// </summary>
         /// <remarks>

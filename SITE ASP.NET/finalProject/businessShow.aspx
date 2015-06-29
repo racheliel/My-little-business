@@ -11,9 +11,6 @@
             width: 464px;
             height: 20px;
         }
-        .auto-style18 {
-            height: 20px;
-        }
         .auto-style19 {
             width: 464px;
         }
@@ -44,8 +41,12 @@
             </td>
             <td rowspan="2">
                 <asp:Button ID="edit" runat="server" BackColor="#DADADA" Height="47px" OnClick="Button1_Click" Text="Edit" Width="161px" Font-Bold="True" Font-Names="Adobe Hebrew" Font-Size="X-Large" ForeColor="#7B9E46" style="margin-bottom: 0px" />
+<<<<<<< HEAD
                 &nbsp;<asp:Button ID="home" runat="server" BackColor="#DADADA" Height="47px" OnClick="home_Click" style="margin-top: 0px; margin-bottom: 16px;" Text="Home" Width="161px" Font-Bold="True" Font-Names="Adobe Hebrew" Font-Size="X-Large" ForeColor="#7B9E46" />
                 <asp:Button ID="addFav" runat="server" OnClick="addFav_Click" Text="Add to faivorit" BackColor="#DADADA" Font-Names="Adobe Hebrew" Font-Size="X-Large" ForeColor="#7B9E46" Height="47px" Width="161px" />
+=======
+                &nbsp;<asp:Button ID="addFav" runat="server" OnClick="addFav_Click" Text="Add to faivorit" BackColor="#DADADA" Font-Names="Adobe Hebrew" Font-Size="X-Large" ForeColor="#7B9E46" Height="47px" Width="161px" />
+>>>>>>> origin/master
                 <br />
                 <br />
                 <asp:Label ID="favText" runat="server" ForeColor="Red"></asp:Label>

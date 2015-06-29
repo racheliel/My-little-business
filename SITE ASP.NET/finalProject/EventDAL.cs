@@ -111,6 +111,26 @@ namespace finalProject
             return b;
         }
 
+        public LinkedList<Users> getAllUsers()
+        {//get user name and returns events of user name
+            con = new SqlConnection(conString);
+            con.Open();
+            string sqlString = "Select *  from UsersTable t ;";
+            SqlCommand com = new SqlCommand(sqlString, con);
+            SqlDataReader rdr = com.ExecuteReader();
+
+            LinkedList<Users> users = new LinkedList<Users>();
+            Users temp;
+            while (rdr.Read())
+            {
+                temp = new Users((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3], (string)rdr[4]);
+
+                users.AddLast(temp);
+            }
+            con.Close();
+            return users;
+        }
+
         public string getNameBusinessForUser(string str)
         {
             con.Open();
