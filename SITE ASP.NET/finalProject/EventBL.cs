@@ -27,12 +27,7 @@ namespace finalProject
         {
             return eventD.getPassword(userN);
         }
-        public Boolean checkStr(string str)
-        {
-            if (str.Contains("'"))
-                return false;
-            return true;
-        }
+
 
         public void deleteEvent(DateTime date, string user, string place, string name, string cat)
         {
@@ -207,7 +202,15 @@ namespace finalProject
         public void deleteUser(string name) {
             eventD.deleteUser(name);
         }
+        public void addPhoto(string path, string bus)
+        {
+             eventD.addPhoto(path, bus);
+        }
 
+         public string getAllImageLogo()
+        {
+            return eventD.getAllImageLogo();
+        }
         public string getNameBusinessForUser(string str)
         {
             return eventD.getNameBusinessForUser(str);

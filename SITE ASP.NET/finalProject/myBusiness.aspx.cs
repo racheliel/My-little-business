@@ -90,10 +90,7 @@ namespace finalProject
                     string str = busName.Text + FileUpload2.FileName;
                     FileUpload2.PostedFile.SaveAs(Server.MapPath(".") + "//uploads//" + str);
                     string path = "~//uploads//" + str.ToString();
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO uplodes (image,BusName) VALUES('" + path + "','" + busName.Text + "');", con);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
+                    eBL.addPhoto(path, busName.Text);
                 }
                 else
                 {

@@ -19,11 +19,7 @@ namespace finalProject
 
         protected void signUp_Click(object sender, EventArgs e)
         {
-            if (eBL.checkStr(username.Text) == false)
-            {
-                error.Text = "Please write letters and numbers";
-            }
-            else if (username.Text.Equals("") || password.Text.Equals("") || email.Text.Equals("") || firstname.Text.Equals("") || lastname.Text.Equals(""))
+            if (username.Text.Equals("") || password.Text.Equals("") || email.Text.Equals("") || firstname.Text.Equals("") || lastname.Text.Equals(""))
             {
                 error.Text = "you most fill all the tabs";
             }

@@ -11,8 +11,7 @@ namespace finalProject
 {
 
     class EventDAL
-    {//"Data Source=mgdzsouv9h.database.windows.net;Initial Catalog=mylittleBusiness;Integrated Security=False;User ID=barteroom;Password=NatiGabay1;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False"
-     
+    {
         public string conString = ConfigurationManager.ConnectionStrings["MLBDBConnectionString"].ConnectionString;
         public SqlConnection con;
 
@@ -272,7 +271,21 @@ namespace finalProject
              con.Close();
              return str;
          }
-
+         public string getAllImageLogo()
+         {
+             con = new SqlConnection(conString);
+             con.Open();
+             string sqlString = "Select logo  from logos;";
+             SqlCommand com = new SqlCommand(sqlString, con);
+             SqlDataReader rdr = com.ExecuteReader();
+             string str = "";
+             while (rdr.Read())
+             {
+                 str = (string)rdr[0];
+             }
+             con.Close();
+             return str;
+         }
 
 
          public LinkedList<Events> getAllEvents()
@@ -354,7 +367,13 @@ namespace finalProject
                  con.Close();
              }
          }
-
+         public void addPhoto(string path,string bus)
+         {
+             con.Open();
+             SqlCommand cmd = new SqlCommand("INSERT INTO uplodes (image,BusName) VALUES('" + path + "','" + bus + "');", con);
+             cmd.ExecuteNonQuery();
+             con.Close();
+         }
 
          public void addFeedback(Feedback f)
          {
