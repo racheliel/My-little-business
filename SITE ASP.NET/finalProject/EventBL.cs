@@ -34,7 +34,18 @@ namespace finalProject
             Events e = new Events(user, date, place,name,cat);
             eventD.deleteEvent(e);
         }
+        public Boolean ifEventNameExsist(LinkedList<Events> getEvents,string name)
+        {
+            foreach(Events i in getEvents)
+            {
+                if (i.Name == name)
+                {
+                    return true;
+                }
 
+            }
+            return false;
+        }
 
         public LinkedList<Events> getEvents(string username)
         {

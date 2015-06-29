@@ -4,7 +4,11 @@
     .auto-style14 {
         width: 70px;
     }
-</style>
+        .auto-style15 {
+            width: 70px;
+            height: 29px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width:100%;">
@@ -21,18 +25,21 @@
         </tr>
         <tr>
             <td class="auto-style14">&nbsp;</td>
-            <td>
+            <td style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 27px">
                 </li>
-            &nbsp;summary:<br />
                 <br />
-                Our project is made for small business owners who wants to publish their business, For fairs organizers who wants to find potential business that are interested in participating in the fair, and for costumers who are interested in buying/ordering a product or a service. The project &quot;my little business&quot; is a web application that contains all the little businesses and fairs in one place, such that small businesses can be found easily by new costumers, it can be contacted and compared with other small businesses, in addition, the business can find and register itself to future fairs all over the country. Unlike the yellow pages, our project can group all the fairs in one place, and it is possible to register to it easily and comfortably. The costumers can contact the business directly from the system in order to get price suggestions and details and don&#39;t have to call in order to get them.</td>
+                Our project is made for small business owners who wants to publish their business, For fairs organizers who wants to find potential business that are interested in participating in the fair, and for costumers who are interested in buying/ordering a product or a service.<br />
+&nbsp;The project &quot;my little business&quot; is a web application that contains all the little businesses and fairs in one place, such that small businesses can be found easily by new costumers, it can be contacted and compared with other small businesses, in addition, the business can find and register itself to future fairs all over the country.
+                <br />
+                Unlike the yellow pages, our project can group all the fairs in one place, and it is possible to register to it easily and comfortably.<br />
+&nbsp;The costumers can contact the business directly from the system in order to get price suggestions and details and don&#39;t have to call in order to get them.</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style14">&nbsp;</td>
-            <td>
-                <a  href="https://github.com/racheliel/My-little-business/wiki">WIKI link</a></td>
-            <td>&nbsp;</td>
+            <td class="auto-style15"></td>
+            <td class="auto-style1">
+                <a  href="https://github.com/racheliel/My-little-business/wiki" style="font-size: 26px; font-weight: 900">WIKI link</a></td>
+            <td class="auto-style1"></td>
         </tr>
     </table>
 </asp:Content>

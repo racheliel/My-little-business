@@ -15,9 +15,10 @@
     <AssemblyName>finalProject</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -73,6 +74,7 @@
     <Content Include="edit.jpg" />
     <Content Include="forgot_pass.jpg" />
     <Content Include="logo.jpg" />
+    <Content Include="logoBus.jpg" />
     <Content Include="myFavorit.aspx" />
     <Content Include="Red-Mail-Icon.png" />
     <Content Include="myEvent.aspx" />
@@ -92,8 +94,11 @@
     <Content Include="businessShow.aspx" />
     <Content Include="editUser.aspx" />
     <Content Include="contactUsC.aspx" />
+    <Content Include="business.aspx" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\MLB.pubxml" />
+    <None Include="Properties\PublishProfiles\my-little-business.pubxml" />
+    <None Include="Properties\PublishProfiles\MyLittleBusiness.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -241,6 +246,13 @@
     </Compile>
     <Compile Include="contactUsC.aspx.designer.cs">
       <DependentUpon>contactUsC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="business.aspx.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="business.aspx.designer.cs">
+      <DependentUpon>business.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace finalProject
 {
+
     class EventDAL
-    {
-        public string conString= "Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\GitHub\\My-little-business\\SITE ASP.NET\\MLBDB.mdf;Integrated Security=True;Connect Timeout=30";
+    {//"Data Source=mgdzsouv9h.database.windows.net;Initial Catalog=mylittleBusiness;Integrated Security=False;User ID=barteroom;Password=NatiGabay1;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False"
+     
+        public string conString = ConfigurationManager.ConnectionStrings["MLBDBConnectionString"].ConnectionString;
         public SqlConnection con;
 
         public EventDAL()
@@ -132,7 +135,7 @@ namespace finalProject
             LinkedList<Business> buss = new LinkedList<Business>();
             Business b;
             
-            if (rdr.Read())
+            while (rdr.Read())
             {
                 b = new Business((string)rdr[0], (string)rdr[1], (string)rdr[2], (string)rdr[3], (string)rdr[4]);
                 buss.AddFirst(b);
@@ -150,7 +153,7 @@ namespace finalProject
             SqlDataReader rdr = com.ExecuteReader();
             LinkedList<Favorit> favorits = new LinkedList<Favorit>();
             Favorit f;
-            if (rdr.Read())
+            while (rdr.Read())
             {
                 f = new Favorit((string)rdr[0], (string)rdr[1]);
                 favorits.AddFirst(f);
@@ -167,7 +170,7 @@ namespace finalProject
             SqlDataReader rdr = com.ExecuteReader();
             LinkedList<Feedback> feedbacks = new LinkedList<Feedback>();
             Feedback f;
-            if (rdr.Read())
+            while (rdr.Read())
             {
                 f = new Feedback((string)rdr[2],(string)rdr[0],(string)rdr[1]);
                 feedbacks.AddFirst(f);
@@ -251,6 +254,7 @@ namespace finalProject
          }
 
 
+
          public LinkedList<Events> getAllEvents()
          {//get user name and returns events of user name
              con = new SqlConnection(conString);
@@ -276,11 +280,12 @@ namespace finalProject
              con.Open();
              string sqlString = "INSERT INTO EventsTable (UserName,Date,Place,Name,Category)" + "VALUES ('" + e.UserName + "',CONVERT(datetime,'" + e.Date_time + "',103),'" + e.Place + "','" + e.Name + "','" + e.Catgory + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
-
+             try { 
                  com.ExecuteReader();
-
+             }
+             catch { 
                  con.Close();
-
+            }
          }
 
          public void addFavorit(Favorit f)
@@ -289,11 +294,12 @@ namespace finalProject
              con.Open();
              string sqlString = "INSERT INTO FavoritTable (UserName,BusName)" + "VALUES ('" + f.UserName +  "','" + f.BusName + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
-
-             com.ExecuteReader();
-
+             try { 
+                     com.ExecuteReader();
+             } catch
+             {
              con.Close();
-
+                } 
          }
 
          public void createUser(Users u)
@@ -319,11 +325,11 @@ namespace finalProject
              string sqlString = "UPDATE UsersTable SET Password='"+pass+"',Email ='"+mail+"',FirstName='"+first+"',LastName = '"+last+"' WHERE UserName = '"+user+"';";
         
              SqlCommand com = new SqlCommand(sqlString, con);
-        //     try
+            try
              {
                  com.ExecuteReader();
              }
-        //     catch
+             catch
              {
                  con.Close();
              }
@@ -389,13 +395,13 @@ namespace finalProject
              con.Open();
              string sqlString = "DELETE FROM EventsTable WHERE UserName='" + user + "';";
              SqlCommand com = new SqlCommand(sqlString, con);
-        //     try
+             try
              {
                  com.ExecuteReader();
                  con.Close();
 
              }
-            // catch
+             catch
              {
                  con.Close();
              }
@@ -458,13 +464,13 @@ namespace finalProject
              con.Open();
              string sqlString = "DELETE FROM FavoritTable WHERE UserName= '" + name + "';";
              SqlCommand com = new SqlCommand(sqlString, con);
-          //   try
+             try
              {
                  com.ExecuteReader();
                  con.Close();
 
              }
-            // catch
+             catch
              {
                  con.Close();
              }
@@ -494,13 +500,13 @@ namespace finalProject
              con.Open();
              string sqlString = "DELETE FROM UsersTable WHERE UserName= '" + name + "';";
              SqlCommand com = new SqlCommand(sqlString, con);
-           //  try
+             try
              {
                  com.ExecuteReader();
                  con.Close();
 
              }
-             //catch
+             catch
              {
                  con.Close();
              }

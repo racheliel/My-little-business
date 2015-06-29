@@ -17,6 +17,10 @@ namespace finalProject
             lastname.Text = (string)(Session["last"]);
             email.Text = (string)(Session["mail"]);
 
+            name.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
+            if (userName.Text == " " || (string)(Session["first"]) == "Guest")
+                Response.Redirect("~/home.aspx");
+
         }
         protected void del_Click(object sender, EventArgs e)
         {

@@ -17,8 +17,12 @@ namespace finalProject
         protected void Page_Load(object sender, EventArgs e)
         {
             user = (string)(Session["user"]);
+            userName.Text = (string)(Session["first"]) + " " + (string)(Session["last"]);
+            if (userName.Text == " " || (string)(Session["first"]) == "Guest")
+                Response.Redirect("~/home.aspx");
             mail = eBL.getMail(user);
             from.Text = mail;
+            
         }
 
         protected void send_Click(object sender, EventArgs e)

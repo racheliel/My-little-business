@@ -22,24 +22,6 @@ namespace finalProject {
         protected global::System.Web.UI.WebControls.Label userName;
         
         /// <summary>
-        /// myEve control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button myEve;
-        
-        /// <summary>
-        /// myBus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button myBus;
-        
-        /// <summary>
         /// edit control.
         /// </summary>
         /// <remarks>
@@ -56,6 +38,24 @@ namespace finalProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button @out;
+        
+        /// <summary>
+        /// myEve control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button myEve;
+        
+        /// <summary>
+        /// myBus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button myBus;
         
         /// <summary>
         /// ImageButton1 control.
@@ -128,15 +128,6 @@ namespace finalProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image1;
-        
-        /// <summary>
-        /// Timer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.Timer Timer;
         
         /// <summary>
         /// placeD control.
