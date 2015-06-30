@@ -151,29 +151,6 @@ namespace finalProject
 
             }
         }
-        protected void Timer1_Tick1(object sender, EventArgs e)
-        {
-            if (ViewState["imageDisplay"] == null)
-            {
-                Image1.ImageUrl = "1.png";
-                ViewState["imageDisplay"] = 1;
-            }
-            else
-            {
-                int i = (int)ViewState["imageDisplay"];
-                if (i == 4)
-                {
-                    Image1.ImageUrl = "1.png";
-                    ViewState["imageDisplay"] = 1;
-                }
-                else
-                {
-                    i++;
-                    Image1.ImageUrl = eBL.getAllImageLogo();
-                    ViewState["imageDisplay"] = i;
-                }
-            }
-        }
 
 
 

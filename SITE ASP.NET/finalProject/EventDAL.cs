@@ -11,7 +11,8 @@ namespace finalProject
 {
 
     class EventDAL
-    {
+    {//"Data Source=mgdzsouv9h.database.windows.net;Initial Catalog=mylittleBusiness;Integrated Security=False;User ID=barteroom;Password=NatiGabay1;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False"
+     
         public string conString = ConfigurationManager.ConnectionStrings["MLBDBConnectionString"].ConnectionString;
         public SqlConnection con;
 
@@ -271,21 +272,7 @@ namespace finalProject
              con.Close();
              return str;
          }
-         public string getAllImageLogo()
-         {
-             con = new SqlConnection(conString);
-             con.Open();
-             string sqlString = "Select logo  from logos;";
-             SqlCommand com = new SqlCommand(sqlString, con);
-             SqlDataReader rdr = com.ExecuteReader();
-             string str = "";
-             while (rdr.Read())
-             {
-                 str = (string)rdr[0];
-             }
-             con.Close();
-             return str;
-         }
+
 
 
          public LinkedList<Events> getAllEvents()
@@ -311,7 +298,7 @@ namespace finalProject
          {//get user event and insert the event to the event table
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO EventsTable (UserName,Date,Place,Name,Category)" + "VALUES ('" + e.UserName + "',CONVERT(datetime,'" + e.Date_time + "',103),'" + e.Place + "','" + e.Name + "','" + e.Catgory + "');";
+             string sqlString = "INSERT INTO EventsTable (UserName,Date,Place,Name,Category)" + "VALUES ('" + e.UserName+ "',CONVERT(datetime,'" + e.Date_time + "',103),'" + e.Place + "','" + e.Name+ "','" + e.Catgory + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
              try { 
                  com.ExecuteReader();
@@ -325,7 +312,7 @@ namespace finalProject
          {//get user event and insert the event to the event table
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO FavoritTable (UserName,BusName)" + "VALUES ('" + f.UserName +  "','" + f.BusName + "');";
+             string sqlString = "INSERT INTO FavoritTable (UserName,BusName)" + "VALUES ('" + f.UserName + "','" + f.BusName + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
              try { 
                      com.ExecuteReader();
@@ -339,7 +326,7 @@ namespace finalProject
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO UsersTable (UserName,Password,Email,FirstName,LastName)" + "VALUES ('" + u.UserName + "','" + u.Pass + "','" + u.EMail + "','" + u.FirstName + "','" + u.LastName +"');";
+             string sqlString = "INSERT INTO UsersTable (UserName,Password,Email,FirstName,LastName)" + "VALUES ('" + u.UserName+ "','" + u.Pass + "','" + u.EMail + "','" + u.FirstName + "','" + u.LastName + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {
@@ -355,7 +342,7 @@ namespace finalProject
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "UPDATE UsersTable SET Password='"+pass+"',Email ='"+mail+"',FirstName='"+first+"',LastName = '"+last+"' WHERE UserName = '"+user+"';";
+             string sqlString = "UPDATE UsersTable SET Password='" + pass+ "',Email ='" + mail + "',FirstName='" + first + "',LastName = '" + last + "' WHERE UserName = '" + user + "';";
         
              SqlCommand com = new SqlCommand(sqlString, con);
             try
@@ -367,19 +354,13 @@ namespace finalProject
                  con.Close();
              }
          }
-         public void addPhoto(string path,string bus)
-         {
-             con.Open();
-             SqlCommand cmd = new SqlCommand("INSERT INTO uplodes (image,BusName) VALUES('" + path + "','" + bus + "');", con);
-             cmd.ExecuteNonQuery();
-             con.Close();
-         }
+
 
          public void addFeedback(Feedback f)
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO FeedbacksTable (BusName,Feedback,UserName)" + "VALUES ('" + f.BusName + "','" + f.Strfeedback + "','" + f.UserName + "');";
+             string sqlString = "INSERT INTO FeedbacksTable (BusName,Feedback,UserName)" + "VALUES ('" + f.BusName + "','" + f.Strfeedback + "','" + f.UserName+ "');";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {
@@ -395,7 +376,7 @@ namespace finalProject
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO BusinessTable (BusName,UserName,Detailes,Place,Category)" + " VALUES ('" + b.BusName + "','" + b.UserName +"','"+b.Detailes+"','"+b.Place+ "','"+b.Category+"');";
+             string sqlString = "INSERT INTO BusinessTable (BusName,UserName,Detailes,Place,Category)" + " VALUES ('" + b.BusName + "','" + b.UserName + "','" + b.Detailes + "','" + b.Place + "','" + b.Category + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {

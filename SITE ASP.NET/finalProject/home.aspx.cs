@@ -72,7 +72,7 @@ namespace finalProject
                 else
                 {
                     i++;
-                    Image1.ImageUrl = eBL.getAllImageLogo();
+                    Image1.ImageUrl = i.ToString() + ".png";
                     ViewState["imageDisplay"] = i;
                 }
             }
