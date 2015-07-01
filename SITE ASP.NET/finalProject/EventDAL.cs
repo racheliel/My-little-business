@@ -395,7 +395,7 @@ namespace finalProject
          {//get user event and delete this event
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "DELETE FROM EventsTable WHERE UserName='" + e.UserName + "' AND Date=CONVERT(datetime,'" + e.Date_time + "',103) AND Name= '"+ e.Name +"';";
+             string sqlString = "DELETE FROM EventsTable WHERE UserName='" + e.UserName + "' AND Date=CONVERT(datetime,'" + e.Date_time + "',103) AND Name= '" + e.Name.Replace("'", "''") + "';";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {
