@@ -298,7 +298,7 @@ namespace finalProject
          {//get user event and insert the event to the event table
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO EventsTable (UserName,Date,Place,Name,Category)" + "VALUES ('" + e.UserName+ "',CONVERT(datetime,'" + e.Date_time + "',103),'" + e.Place + "','" + e.Name+ "','" + e.Catgory + "');";
+             string sqlString = "INSERT INTO EventsTable (UserName,Date,Place,Name,Category)" + "VALUES ('" + e.UserName.Replace("'", "''") + "',CONVERT(datetime,'" + e.Date_time + "',103),'" + e.Place + "','" + e.Name.Replace("'", "''") + "','" + e.Catgory + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
              try { 
                  com.ExecuteReader();
@@ -326,7 +326,7 @@ namespace finalProject
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO UsersTable (UserName,Password,Email,FirstName,LastName)" + "VALUES ('" + u.UserName+ "','" + u.Pass + "','" + u.EMail + "','" + u.FirstName + "','" + u.LastName + "');";
+             string sqlString = "INSERT INTO UsersTable (UserName,Password,Email,FirstName,LastName)" + "VALUES ('" + u.UserName.Replace("'", "''") + "','" + u.Pass.Replace("'", "''") + "','" + u.EMail + "','" + u.FirstName.Replace("'", "''") + "','" + u.LastName.Replace("'", "''") + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {
@@ -342,7 +342,7 @@ namespace finalProject
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "UPDATE UsersTable SET Password='" + pass+ "',Email ='" + mail + "',FirstName='" + first + "',LastName = '" + last + "' WHERE UserName = '" + user + "';";
+             string sqlString = "UPDATE UsersTable SET Password='" + pass.Replace("'", "''") + "',Email ='" + mail + "',FirstName='" + first.Replace("'", "''") + "',LastName = '" + last.Replace("'", "''") + "' WHERE UserName = '" + user.Replace("'", "''") + "';";
         
              SqlCommand com = new SqlCommand(sqlString, con);
             try
@@ -360,7 +360,7 @@ namespace finalProject
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO FeedbacksTable (BusName,Feedback,UserName)" + "VALUES ('" + f.BusName + "','" + f.Strfeedback + "','" + f.UserName+ "');";
+             string sqlString = "INSERT INTO FeedbacksTable (BusName,Feedback,UserName)" + "VALUES ('" + f.BusName + "','" + f.Strfeedback.Replace("'", "''") + "','" + f.UserName + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {
@@ -376,7 +376,7 @@ namespace finalProject
          {
              con = new SqlConnection(conString);
              con.Open();
-             string sqlString = "INSERT INTO BusinessTable (BusName,UserName,Detailes,Place,Category)" + " VALUES ('" + b.BusName + "','" + b.UserName + "','" + b.Detailes + "','" + b.Place + "','" + b.Category + "');";
+             string sqlString = "INSERT INTO BusinessTable (BusName,UserName,Detailes,Place,Category)" + " VALUES ('" + b.BusName.Replace("'", "''") + "','" + b.UserName + "','" + b.Detailes.Replace("'", "''") + "','" + b.Place + "','" + b.Category + "');";
              SqlCommand com = new SqlCommand(sqlString, con);
              try
              {
