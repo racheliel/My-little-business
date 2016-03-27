@@ -1,0 +1,90 @@
+application: my-little-business
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+  
+- url: /static
+  static_dir: web/static
+  
+- url: /api/(.*)
+  script: api.\1.app
+
+- url: /
+  script: web.pages.home.app
+  
+- url: /home
+  script: web.pages.home.app
+  
+- url: /pages[\/]?(.*)
+  script: web.pages.page.app
+
+- url: /events[\/]?(.*)
+  script: web.pages.event.app
+  
+- url: /myPage
+  script: web.pages.myPage.app
+
+- url: /myPageEvent
+  script: web.pages.myPageEvent.app
+  
+- url: /logout
+  script: web.pages.homeUserIn.app  
+
+- url: /homeUserIn
+  script: web.pages.homeUserIn.app
+  
+- url: /salesEventsToUser
+  script: web.pages.salesEventsToUser.app
+  
+- url: /editMyPage
+  script: web.pages.editMyPage.app
+  
+- url: /myBusiness
+  script: web.pages.myBusiness.app
+
+- url: /loginGoogle
+  script: web.pages.loginGoogle.app
+  
+- url: /aboutUs
+  script: web.pages.aboutUs.app
+
+- url: /business
+  script: web.pages.business.app
+  
+- url: /contacts
+  script: web.pages.contacts.app
+  
+- url: /favorites
+  script: web.pages.favorites.app
+  
+- url: /sendEmail
+  script: web.pages.sendEmail.app
+  
+- url: /salesEvents
+  script: web.pages.salesEvents.app
+  
+- url: /Organizer1 
+  script: web.pages.Organizer1.app
+ 
+- url: /addEvent 
+  script: web.pages.addEvent.app
+  
+- url: /editEvent 
+  script: web.pages.editEvent.app
+
+- url: /editOrganizerPage 
+  script: web.pages.editOrganizerPage.app  
+
+- url: .*
+  script: main.app  
+  
+libraries:
+- name: webapp2
+  version: "2.5.2"

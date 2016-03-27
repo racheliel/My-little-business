@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="he">
+    <meta charset="UTF-8">
+    <title>Bussi</title>
+    
+	<link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="/static/css/layout.css" type="text/css" media="screen">
+	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="application/javascript" src="/static/js/page.js"></script>
+
+  </head>
+<body id="page1" dir="rtl">
+	<div class="bg">
+		<div class="main">
+		<header>
+			<h1> <a class="logo" href="home">My Little Business</a> <strong class="slog">The most creative ideas</strong> </h1>
+
+		<div class="row-1">             
+            <center><h7>ברוך הבא,<span id='emailUser'> {{email}}</span></h7> </center>            
+			<a href="logout"><img src="/static/img/out.png" alt="signout" /></a>       
+		</div>	
+
+</head>
+<body>
+    <input type="hidden" id="page_id" value="{{page_id}}">
+<div class="row-pages"><h7><br>
+
+   {% if no_access %}
+        <div>
+        <h7><span id='title'> {{title}}</span>שם העסק:</h7>
+		<h7><span id='name'> {{name}}</span>שם בעל העסק:</h7>            
+		<h7><span id='emailBuss'> {{emailBuss}}</span>אימייל העסק ליצירת קשר:</h7>   
+		<h7><span id='address'> {{address}}</span>כתובת העסק:</h7>   
+		<h7><span id='details'> {{details}}</span>פרטי העסק:</h7>                   
+        </div>
+    {% else %}
+	<ul><h7><br>
+    שם העסק: <input type="text" id="title"/>{{title}}<br>
+   שם בעל העסק: <input type="text" id="name"/>{{name}}<br>
+   אימייל העסק ליצירת קשר: <input type="text" id="emailBuss"/>{{emailBuss}}<br>
+        כתובת העסק: <input type="text" id="address"/>{{address}}<br>
+    פרטי העסק:<textarea name="comments"  id="details" cols="30" rows="10">{{details}}</textarea><br>
+        <li id="liStyle">
+            <label>העלאת לוגו העסק:</label>
+            <input type="file" />
+        </li><br></h7>
+		</ul>
+		<li>		
+
+ <div class="b1"> העלאת תמונות:  </div>
+	        <li id="liStyle">
+            <label></label>
+            <input type="file" />
+        </li>
+		<br>
+		<br>
+	  <div class="b1"> שינוי התמונות שלי:  </div>
+	<br><br><br><br>
+	<center>
+<button id="save">שמירה</button>
+    {% endif %}
+</div>
+</div> </div>   
+   	   <!-- footer -->
+    <footer>
+      <div class="row-top">
+        <div class="row-padding">
+          <div class="wrapper">
+            <div class="col-1">
+              <h4>Address:</h4>
+              <dl class="address">
+                <dt><span>Country:</span>Israel</dt>
+                <dd><span>City:</span>Jerusalem</dd>
+                <dd><span>Email:</span><a href="#">MyLittleBusinessSite@gmail.com</a></dd>
+              </dl>
+            </div>
+            <div class="col-2">
+              <h4>Follow Us:</h4>
+              <ul class="list-services">
+                <li class="item-1"><a href="#">Facebook</a></li>
+                <li class="item-2"><a href="#">Twitter</a></li>
+                <li class="item-3"><a href="#">LinkedIn</a></li>
+              </ul>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+      <div class="row-bot">
+        <div class="aligncenter">
+          <center>
+		  <p class="p0">Copyright &copy; <a href="#">Racheli Elkaslasi, Hanni Gabai, Michal Gisri,Uriel Shani</a></p>
+        </center>
+		</div>
+      </div>
+    </footer>
+    
+</body>
+</html>

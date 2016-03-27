@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="he">
+    <meta charset="UTF-8">
+    <title>My Events Page</title>
+    
+	<link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="/static/css/layout.css" type="text/css" media="screen">
+	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+ <script type="application/javascript" src="/static/js/createPageEvent.js"></script>
+ 
+
+  </head>
+<body id="page1" dir="rtl">
+	<div class="bg">
+		<div class="main">
+		<header>
+			<h1> <a class="logo" href="home">My Little Business</a> <strong class="slog">The most creative ideas</strong> </h1>
+
+		<div class="row-1">             
+            <center><h7>ברוך הבא,<span id='emailUser'> {{email}}</span></h7> </center>            
+			<a href="logout"><img src="/static/img/out.png" alt="signout" /></a>      
+		</div>
+<div class="row-pages"><h7><br>
+<br> 
+<center>   האירועים שלי :</center>
+<br>
+   נושא האירוע: <input type="text" id="page_title1"/><br>
+    תאריך האירוע: <input type="text" id="page_date"/><br>
+    מיקום האירוע: <input type="text" id="page_place"/><br>
+    קטגוריית האירוע: <input type="text" id="page_category"/><br>
+  <button id="createPageE">צור אירוע מכירה</button><br><br>
+
+<div id="events">
+       
+   </div>
+
+<!--
+<form name="myform">
+
+<textarea name="inputtext" cols="135" rows="6" dir="rtl">
+נושא האירוע:    			    תאריך:   		   מיקום: 		     פרטים נוספים:   		
+</textarea>
+<p>
+<input type="button" value="הוסף אירוע" onClick="addtext();">
+<p>
+<textarea id="outputtext" name="outputtext" cols="135" rows="200" dir="rtl"></textarea>
+
+
+
+</form>-->
+  
+   </h7>
+</div> </div>   
+   	   <!-- footer -->
+    <footer>
+      <div class="row-top">
+        <div class="row-padding">
+          <div class="wrapper">
+            <div class="col-1">
+              <h4>Address:</h4>
+              <dl class="address">
+                <dt><span>Country:</span>Israel</dt>
+                <dd><span>City:</span>Jerusalem</dd>
+                <dd><span>Email:</span><a href="#">MyLittleBusinessSite@gmail.com</a></dd>
+              </dl>
+            </div>
+            <div class="col-2">
+              <h4>Follow Us:</h4>
+              <ul class="list-services">
+                <li class="item-1"><a href="#">Facebook</a></li>
+                <li class="item-2"><a href="#">Twitter</a></li>
+                <li class="item-3"><a href="#">LinkedIn</a></li>
+              </ul>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+      <div class="row-bot">
+        <div class="aligncenter">
+          <center>
+		  <p class="p0">Copyright &copy; <a href="#">Racheli Elkaslasi, Hanni Gabai, Michal Gisri,Uriel Shani</a></p>
+        </center>
+		</div>
+      </div>
+    </footer>
+    
+<script language="javascript" type="text/javascript">
+function addtext() {
+	var newtext = document.myform.inputtext.value;
+	document.myform.inputtext.value="";
+	document.myform.outputtext.value +="\n";
+	document.myform.outputtext.value += newtext;
+}
+</script>
+</body>
+</html>
